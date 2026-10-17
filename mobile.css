@@ -1,0 +1,314 @@
+/* mobile.css — підключати ПІСЛЯ styles.css */
+
+html {
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: var(--header-height);
+  }
+  
+  body {
+    overflow-x: clip;
+  }
+  
+  /* Не залипають hover-ефекти на touch-екранах */
+  @media (hover: none) {
+    .logo-link:hover,
+    .btn:hover,
+    .course-card:hover,
+    .audience-card:hover,
+    .offer-card:hover,
+    .hero-benefits li:hover,
+    .course-btn:hover,
+    .offer-cta:hover {
+      transform: none;
+    }
+  }
+  
+  @media (max-width: 960px) {
+    /* ---------- Header ---------- */
+    .site-header {
+      position: sticky; /* залишається зверху при скролі */
+      padding-top: env(safe-area-inset-top, 0px);
+      height: calc(var(--header-height) + env(safe-area-inset-top, 0px));
+    }
+  
+    .header-inner {
+      gap: 12px;
+    }
+  
+    .nav-toggle {
+      margin-left: auto;
+      min-height: 44px;
+      padding: 8px 16px;
+    }
+  
+    /* кнопка "Записатися" лишається видимою */
+    .header-cta.btn {
+      display: inline-flex;
+      padding: 10px 16px;
+      min-height: 44px;
+      font-size: 0.875rem;
+    }
+  
+    .main-nav {
+      top: var(--header-height);
+      padding: 8px 24px 20px;
+      gap: 0;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    }
+  
+    .main-nav a {
+      padding: 14px 0;
+      font-size: 1.0625rem;
+      border-bottom: 1px solid var(--border);
+    }
+  
+    .main-nav a:last-child {
+      border-bottom: none;
+    }
+  
+    .main-nav a::after {
+      display: none;
+    }
+  
+    /* ---------- Hero ---------- */
+    /* прибираємо "рівно один екран" — на телефоні контент вищий */
+    .hero {
+      height: auto;
+      max-height: none;
+      overflow: hidden;
+      padding: 28px 0 0;
+    }
+  
+    .hero > .container {
+      align-items: flex-start;
+    }
+  
+    .hero-grid {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 28px;
+    }
+  
+    .hero-content {
+      width: 100%;
+      padding-inline: 20px;
+    }
+  
+    .hero-title {
+      font-size: clamp(1.75rem, 8vw, 2.5rem);
+    }
+  
+    .hero-subtitle {
+      font-size: 1rem;
+      margin-bottom: 24px;
+    }
+  
+    /* редактор під текстом, а не над ним */
+    .hero-visual {
+      order: 0;
+      flex: none;
+      width: 100%;
+      min-height: 0;
+      padding-inline: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+  
+    .editor-window {
+      flex: 1 1 100%;
+      min-width: 0;
+    }
+  
+    .editor-body {
+      padding: 20px 0;
+      font-size: 0.75rem;
+      overflow: hidden;
+    }
+  
+    .code-content {
+      margin: 0;
+      min-width: 0;
+      overflow-x: auto;
+    }
+  
+    /* плаваючі картки більше не виходять за екран */
+    .float-card {
+      position: static;
+      animation: none;
+      flex: 1 1 150px;
+      min-width: 0;
+    }
+  
+    .float-card--progress,
+    .float-card--feedback {
+      top: auto;
+      right: auto;
+      bottom: auto;
+      left: auto;
+    }
+  
+    .hero-benefits {
+      margin-top: 28px;
+      padding: 16px 20px;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px 16px;
+      font-size: 0.875rem;
+    }
+  
+    /* ---------- Відступи секцій ---------- */
+    .why,
+    .courses,
+    .path,
+    .audience {
+      padding: 56px 0 64px;
+    }
+  
+    .offers {
+      padding: 24px 0 72px;
+    }
+  
+    .why-kicker,
+    .path-kicker {
+      justify-content: flex-start;
+    }
+  
+    .path-header {
+      text-align: left;
+      margin-bottom: 32px;
+    }
+  
+    .path-title {
+      margin-top: 8px;
+    }
+  
+    /* ---------- Why ---------- */
+    .why-card {
+      min-height: 0;
+      padding: 20px 20px 12px;
+    }
+  
+    .why-card-icon {
+      width: 110px;
+      padding-top: 16px;
+    }
+  
+    /* ---------- Courses ---------- */
+    .courses-grid {
+      max-width: 520px;
+      gap: 20px;
+    }
+  
+    .courses-title {
+      letter-spacing: 0.02em;
+    }
+  
+    .course-card {
+      min-height: 0;
+      padding: 28px 20px 20px;
+    }
+  
+    .course-label {
+      margin-bottom: 20px;
+    }
+  
+    .course-name {
+      font-size: 1.5rem;
+    }
+  
+    .course-desc,
+    .course-tags {
+      margin-bottom: 20px;
+    }
+  
+    .course-meta {
+      gap: 8px;
+    }
+  
+    .course-btn {
+      min-height: 44px;
+    }
+  
+    /* ---------- Path ---------- */
+    .path-flow {
+      max-width: none;
+      padding: 0;
+    }
+  
+    .path-box {
+      min-height: 0;
+      padding: 16px 36px 16px 16px;
+    }
+  
+    /* ---------- Audience ---------- */
+    .audience-card {
+      min-height: 0;
+      padding: 18px 20px;
+    }
+  
+    .audience-card-text {
+      max-width: none;
+    }
+  
+    /* ---------- Offers ---------- */
+    .offer-card {
+      padding: 20px;
+    }
+  
+    .offer-featured-top,
+    .offer-featured-price,
+    .offer-rules {
+      padding: 18px 20px;
+    }
+  
+    .offer-featured-top,
+    .offer-featured-price {
+      flex-wrap: wrap;
+    }
+  
+    .offer-rules h3 {
+      font-size: 1.125rem;
+    }
+  
+    .offer-cta {
+      width: calc(100% - 40px);
+      min-height: 48px;
+      margin: 18px 20px 20px;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .audience-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .hero-actions .btn {
+      min-height: 48px;
+    }
+  
+    /* 2 колонки замість 4 рядків в один стовпчик */
+    .hero-benefits {
+      grid-template-columns: 1fr 1fr;
+    }
+  
+    .why-card-icon {
+      width: 96px;
+    }
+  }
+  
+  @media (max-width: 380px) {
+    .header-cta.btn {
+      padding: 10px 12px;
+      font-size: 0.8125rem;
+    }
+  
+    .nav-toggle {
+      padding: 8px 12px;
+    }
+  
+    .course-meta {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
