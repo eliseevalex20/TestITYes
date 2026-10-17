@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ITYes — Онлайн-школа програмування</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto:wght@400;500&family=Roboto+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="mobile.css">
+  <link rel="stylesheet" href="path.css">
+</head>
+<body>
+  <div class="cursor" aria-hidden="true">
+    <span class="cursor-ring"></span>
+    <span class="cursor-dot"></span>
+  </div>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="logo-link" aria-label="ITYes — на головну">
+        <img src="logo.svg" width="48" height="48" alt="ITYes">
+      </a>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="main-nav">Меню</button>
+      <nav id="main-nav" class="main-nav" aria-label="Головна навігація">
+        <a href="#courses">Курси</a>
+        <a href="#pricing">Ціни</a>
+        <a href="#how">Як навчаємо</a>
+        <a href="#about">Про школу</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a href="#signup" class="btn btn-orange header-cta">Записатися</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <p class="hero-label">
+            <span class="hero-label-dot" aria-hidden="true"></span>
+            Онлайн-школа програмування / Україна
+          </p>
+          <h1 class="hero-title">
+            Програмування, що приводить до <span class="accent">результату</span>
+          </h1>
+          <p class="hero-subtitle">
+            Вивчай Python, Django та Data Analytics з викладачем, практикою та реальними проєктами.
+          </p>
+          <div class="hero-actions">
+            <a href="#courses" class="btn btn-primary-hero">Обрати курс</a>
+            <a href="#programs" class="btn btn-ghost">Переглянути програми</a>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="editor-window">
+            <div class="editor-titlebar">
+              <span class="editor-dot"></span>
+              <span class="editor-dot"></span>
+              <span class="editor-dot"></span>
+            </div>
+            <div class="editor-body">
+              <div class="line-numbers">
+                <span>01</span>
+                <span>02</span>
+                <span>03</span>
+                <span>04</span>
+                <span>05</span>
+                <span>06</span>
+                <span>07</span>
+                <span>08</span>
+              </div>
+              <pre class="code-content"><code><span class="kw">class</span> <span class="cls">LearningPath</span>:
+    <span class="kw">def</span> __init__(self, student):
+        self.student = student
+        self.modules = []
+
+    <span class="kw">def</span> add_project(self, name):
+        self.modules.append(name)
+        <span class="kw">return</span> "ready_for_review"</code></pre>
+            </div>
+            <div class="editor-status">
+              <span>UTF-8</span>
+              <span>PYTHON 3.12</span>
+            </div>
+          </div>
+
+          <div class="float-card float-card--progress">
+            <div class="float-card-label">ПРОГРЕС КУРСУ</div>
+            <div class="float-card-value">08 / 12</div>
+            <div class="progress-bar">
+              <div class="progress-bar-fill"></div>
+            </div>
+          </div>
+
+          <div class="float-card float-card--feedback">
+            <div class="feedback-check">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="2.5">
+                <path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <div class="float-card-label">FEEDBACK</div>
+              <div class="feedback-text">Роботу перевірено</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <ul class="hero-benefits reveal" aria-label="Що входить у навчання">
+        <li>
+          <span class="hero-benefits-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          Практика
+        </li>
+        <li>
+          <span class="hero-benefits-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          Домашні завдання
+        </li>
+        <li>
+          <span class="hero-benefits-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          Перевірка викладачем
+        </li>
+        <li>
+          <span class="hero-benefits-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          Фінальний проєкт
+        </li>
+      </ul>
+    </section>
+
+    <section class="why" id="how">
+      <div class="why-inner">
+        <header class="why-header reveal">
+          <p class="why-kicker">
+            Чому ITYes
+            <span class="why-kicker-dot" aria-hidden="true"></span>
+          </p>
+          <h2 class="why-title">
+            Не просто дивишся
+            <span class="accent">Створюєш</span>
+          </h2>
+          <p class="why-subtitle">
+            Навчання побудоване навколо практики, діалогу та результату
+          </p>
+        </header>
+
+        <div class="why-grid">
+          <article class="why-card reveal">
+            <p class="why-card-heading">
+              <span class="why-card-num">01</span>
+              Живе навчання
+            </p>
+            <p class="why-card-text">Викладач пояснює матеріал і відповідає на запитання</p>
+            <img class="why-card-icon" src="01.svg" width="150" height="120" alt="">
+          </article>
+
+          <article class="why-card reveal">
+            <p class="why-card-heading">
+              <span class="why-card-num">02</span>
+              Практика
+            </p>
+            <p class="why-card-text">Кожну тему закріплюємо реальними завданнями</p>
+            <img class="why-card-icon" src="02.svg" width="150" height="120" alt="">
+          </article>
+
+          <article class="why-card reveal">
+            <p class="why-card-heading">
+              <span class="why-card-num">03</span>
+              Перевірка робіт
+            </p>
+            <p class="why-card-text">Отримуєш персональний фідбек до свого коду</p>
+            <img class="why-card-icon" src="03.svg" width="150" height="120" alt="">
+          </article>
+
+          <article class="why-card reveal">
+            <p class="why-card-heading">
+              <span class="why-card-num">04</span>
+              Фінальний проєкт
+            </p>
+            <p class="why-card-text">Створюєш завершений проєкт для портфоліо</p>
+            <img class="why-card-icon" src="04.svg" width="150" height="120" alt="">
+          </article>
+
+          <article class="why-card reveal">
+            <p class="why-card-heading">
+              <span class="why-card-num">05</span>
+              Малі групи
+            </p>
+            <p class="why-card-text">До 15 студентів. Достатньо уваги кожному</p>
+            <img class="why-card-icon" src="05.svg" width="150" height="120" alt="">
+          </article>
+
+          <article class="why-card reveal">
+            <p class="why-card-heading">
+              <span class="why-card-num">06</span>
+              Зручна платформа
+            </p>
+            <p class="why-card-text">Усі матеріали, прогрес і запитання в одному місці</p>
+            <img class="why-card-icon" src="06.svg" width="150" height="120" alt="">
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="courses" id="courses">
+      <div class="courses-inner">
+        <header class="courses-header reveal">
+          <p class="courses-kicker">
+            <span class="courses-kicker-dot" aria-hidden="true"></span>
+            Напрями навчання
+          </p>
+          <h2 class="courses-title"><span class="accent">Курси</span>, що дають систему</h2>
+          <p class="courses-subtitle">Від першого рядка коду до проєкту, який не соромно показати</p>
+        </header>
+
+        <div class="courses-grid">
+          <article class="course-card course-card--orange reveal">
+            <span class="course-badge">Рекомендуємо</span>
+            <p class="course-label"><span>01</span> Основний</p>
+            <h3 class="course-name">Python з нуля</h3>
+            <p class="course-desc">Для новачків без досвіду</p>
+            <ul class="course-tags">
+              <li>Python</li>
+              <li>Логіка</li>
+              <li>ООП</li>
+              <li>API</li>
+            </ul>
+            <dl class="course-meta">
+              <div>
+                <dt>Формат</dt>
+                <dd>Live online</dd>
+              </div>
+              <div>
+                <dt>Тривалість</dt>
+                <dd>3 місяці</dd>
+              </div>
+              <div>
+                <dt>Кількість</dt>
+                <dd>48 занять</dd>
+              </div>
+            </dl>
+            <div class="course-footer">
+              <p class="course-price">
+                <span>Вартість курсу</span>
+                XX XXX грн
+              </p>
+              <a href="#signup" class="course-btn">Детальніше про курс</a>
+            </div>
+          </article>
+
+          <article class="course-card course-card--cyan reveal">
+            <p class="course-label"><span>02</span> Backend</p>
+            <h3 class="course-name">Python + Django</h3>
+            <p class="course-desc">Для майбутніх backend-розробників</p>
+            <ul class="course-tags">
+              <li>Python</li>
+              <li>Django</li>
+              <li>REST API</li>
+              <li>Database</li>
+            </ul>
+            <dl class="course-meta">
+              <div>
+                <dt>Формат</dt>
+                <dd>Live online</dd>
+              </div>
+              <div>
+                <dt>Тривалість</dt>
+                <dd>3 місяці</dd>
+              </div>
+              <div>
+                <dt>Кількість</dt>
+                <dd>48 занять</dd>
+              </div>
+            </dl>
+            <div class="course-footer">
+              <p class="course-price">
+                <span>Вартість курсу</span>
+                XX XXX грн
+              </p>
+              <a href="#signup" class="course-btn">Детальніше про курс</a>
+            </div>
+          </article>
+
+          <article class="course-card course-card--cyan reveal">
+            <p class="course-label"><span>03</span> Data</p>
+            <h3 class="course-name">Python Data Analytics</h3>
+            <p class="course-desc">Для новачків без досвіду</p>
+            <ul class="course-tags">
+              <li>Python</li>
+              <li>NumPy</li>
+              <li>Pandas</li>
+              <li>Data cleaning</li>
+            </ul>
+            <dl class="course-meta">
+              <div>
+                <dt>Формат</dt>
+                <dd>Live online</dd>
+              </div>
+              <div>
+                <dt>Тривалість</dt>
+                <dd>3 місяці</dd>
+              </div>
+              <div>
+                <dt>Кількість</dt>
+                <dd>48 занять</dd>
+              </div>
+            </dl>
+            <div class="course-footer">
+              <p class="course-price">
+                <span>Вартість курсу</span>
+                XX XXX грн
+              </p>
+              <a href="#signup" class="course-btn">Детальніше про курс</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="path" id="process">
+      <div class="path-inner">
+        <header class="path-header reveal">
+          <p class="path-kicker">
+            Як проходить навчання
+            <span class="path-kicker-dot" aria-hidden="true"></span>
+          </p>
+          <h2 class="path-title">
+            Шлях від «не знаю» до <span class="accent">«зробив»</span>
+          </h2>
+        </header>
+
+        <div class="path-board">
+          <svg class="path-lines" aria-hidden="true"></svg>
+          <ol class="path-flow">
+            <li class="path-step" data-step="1">
+              <article class="path-box">
+                <p>Обираєш курс, отримуєш безкоштовну консультацію</p>
+                <span class="path-num">1</span>
+              </article>
+            </li>
+            <li class="path-step" data-step="2">
+              <article class="path-box">
+                <p>Потрапляєш у малу групу</p>
+                <span class="path-num">2</span>
+              </article>
+            </li>
+            <li class="path-step" data-step="3">
+              <article class="path-box">
+                <p>Проходиш онлайн навчання з викладачем</p>
+                <span class="path-num">3</span>
+              </article>
+            </li>
+            <li class="path-step" data-step="4">
+              <article class="path-box">
+                <p>Виконуєш домашні завдання</p>
+                <span class="path-num">4</span>
+              </article>
+            </li>
+            <li class="path-step" data-step="5">
+              <article class="path-box">
+                <p>Отримуєш фідбек</p>
+                <span class="path-num">5</span>
+              </article>
+            </li>
+            <li class="path-step" data-step="6">
+              <article class="path-box">
+                <p>Створюєш фінальний проєкт</p>
+                <span class="path-num">6</span>
+              </article>
+            </li>
+            <li class="path-step path-step--final" data-step="7">
+              <article class="path-box">
+                <p>Додаєш проєкт у портфоліо</p>
+                <span class="path-num">7</span>
+              </article>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="audience" id="audience">
+      <div class="audience-inner">
+        <header class="audience-header reveal">
+          <p class="audience-kicker">
+            <span class="audience-kicker-dot" aria-hidden="true"></span>
+            Для кого
+          </p>
+          <h2 class="audience-title">
+            Твоя стартова точка<br>
+            може бути <span class="accent">різною</span>
+          </h2>
+          <p class="audience-subtitle">Кожен може отримати необхідний навик для своєї мети</p>
+        </header>
+
+        <div class="audience-grid">
+          <article class="audience-card reveal">
+            <p class="audience-card-label"><span>01</span> Початківець</p>
+            <p class="audience-card-text">Хочеш отримати фундаментальні знання</p>
+          </article>
+          <article class="audience-card reveal">
+            <p class="audience-card-label"><span>02</span> Career changer</p>
+            <p class="audience-card-text">Плануєш системний перехід в IT індустрію</p>
+          </article>
+          <article class="audience-card reveal">
+            <p class="audience-card-label"><span>03</span> Студент</p>
+            <p class="audience-card-text">Потрібна практика паралельно з навчанням</p>
+          </article>
+          <article class="audience-card reveal">
+            <p class="audience-card-label"><span>04</span> Фрилансер</p>
+            <p class="audience-card-text">Хочеш брати складніші й високооплачувані проєкти</p>
+          </article>
+          <article class="audience-card reveal">
+            <p class="audience-card-label"><span>05</span> Upgrade кар’єри</p>
+            <p class="audience-card-text">Хочеш освоїти роботу з даними для кар’єрного росту</p>
+          </article>
+          <article class="audience-card reveal">
+            <p class="audience-card-label"><span>06</span> Батьки + підліток</p>
+            <p class="audience-card-text">Хочете навчатися разом у family-форматі</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="offers" id="pricing">
+      <div class="offers-inner">
+        <header class="offers-header reveal">
+          <p class="offers-kicker">
+            Варіанти вартості і пропозиції
+            <span class="offers-kicker-dot" aria-hidden="true"></span>
+          </p>
+          <h2 class="offers-title">Обери умови, що підходять тобі</h2>
+          <p class="offers-subtitle">Підходить для всіх курсів. Ми допоможемо знайти найвигідніший доступний варіант</p>
+        </header>
+
+        <div class="offers-grid">
+          <article class="offer-card offer-card--orange reveal">
+            <p class="offer-label">Early Bird</p>
+            <h3 class="offer-name">Реєстрація заздалегідь</h3>
+            <p class="offer-old">XX XXX грн</p>
+            <p class="offer-value">XX XXX грн</p>
+            <p class="offer-note">До підвищення ціни 12 днів</p>
+          </article>
+
+          <article class="offer-card offer-card--cyan offer-card--featured reveal">
+            <div class="offer-featured-top">
+              <p class="offer-label">Standard</p>
+              <p class="offer-course">“Python з нуля”</p>
+            </div>
+            <div class="offer-featured-price">
+              <span>Звичайна ціна</span>
+              <strong>XX XXX грн</strong>
+            </div>
+            <div class="offer-rules">
+              <h3>Прозорі правила</h3>
+              <ul>
+                <li>Пропозиції доступні для <a href="#courses">всіх курсів</a></li>
+                <li>Пропозиції не сумуються</li>
+                <li>Застосовується найвигідніша доступна умова</li>
+              </ul>
+            </div>
+            <a href="#signup" class="offer-cta">Перейти до розрахунку</a>
+          </article>
+
+          <article class="offer-card offer-card--orange reveal">
+            <p class="offer-label">Family</p>
+            <h3 class="offer-name">Навчайтеся разом</h3>
+            <p class="offer-value">-2 000 грн <span>для кожного</span></p>
+            <p class="offer-note">Для двох членів родини. Вигідніше, ніж referral</p>
+          </article>
+
+          <article class="offer-card offer-card--orange reveal">
+            <p class="offer-label">Referral</p>
+            <h3 class="offer-name">Приведи друга</h3>
+            <p class="offer-value">-1 000 грн <span>для тебе</span></p>
+            <p class="offer-note">Твоя персональна знижка за друга</p>
+          </article>
+
+          <article class="offer-card offer-card--orange reveal">
+            <p class="offer-label">Combo</p>
+            <h3 class="offer-name">Розвивай своє навчання</h3>
+            <p class="offer-value">-15% <span>на наступний курс</span></p>
+            <p class="offer-note">Зберігається за кожним студентом ITYes</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const toggle = document.querySelector(".nav-toggle");
+    const nav = document.getElementById("main-nav");
+    toggle?.addEventListener("click", () => {
+      const open = nav.classList.toggle("is-open");
+      toggle.setAttribute("aria-expanded", String(open));
+    });
+    nav.querySelectorAll("a").forEach((a) =>
+      a.addEventListener("click", () => {
+        nav.classList.remove("is-open");
+        toggle.setAttribute("aria-expanded", "false");
+      })
+    );
+
+    const pathBoard = document.querySelector(".path-board");
+    const pathSvg = document.querySelector(".path-lines");
+    const pathSteps = [...document.querySelectorAll(".path-step")];
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    /* --- path v3: стрелки буквой Г --- */
+/* path.js — подключать ПОСЛЕ основного inline-скрипта в index.html.
+   Переопределяет layoutPathLines() и revealPath(). */
+
+const PL_NS = "http://www.w3.org/2000/svg";
+const PL_HEAD = 6;        // длина наконечника стрелки
+const PL_HALF = 3.5;      // половина ширины наконечника
+const PL_SPEED = 0.45;    // скорость «тока», px/мс
+
+let plConnectors = [];
+let plStep = 0;           // сколько шагов уже загорелось
+
+function plTriangle(x, y, dir) {
+  // dir: "down" | "up"
+  const base = dir === "down" ? y - PL_HEAD : y + PL_HEAD;
+  return `M ${x - PL_HALF} ${base} L ${x} ${y} L ${x + PL_HALF} ${base} Z`;
+}
+
+function plMarkDrawn(c) {
+  if (!c) return;
+  c.path.style.transition = "none";
+  c.path.style.strokeDashoffset = "0";
+  c.head.style.transition = "none";
+  c.head.style.opacity = "1";
+}
+
+function layoutPathLines() {
+  if (!pathBoard || !pathSvg || pathSteps.length < 2) return;
+
+  const board = pathBoard.getBoundingClientRect();
+  pathSvg.setAttribute("viewBox", `0 0 ${board.width} ${board.height}`);
+  pathSvg.setAttribute("width", String(board.width));
+  pathSvg.setAttribute("height", String(board.height));
+
+  const stacked = window.matchMedia("(max-width: 960px)").matches;
+
+  const boxes = pathSteps.map((step) => {
+    const r = step.querySelector(".path-box").getBoundingClientRect();
+    return {
+      left: r.left - board.left,
+      right: r.right - board.left,
+      top: r.top - board.top,
+      bottom: r.bottom - board.top,
+      cx: r.left - board.left + r.width / 2,
+      cy: r.top - board.top + r.height / 2,
+    };
+  });
+
+  pathSvg.replaceChildren();
+
+  const defs = document.createElementNS(PL_NS, "defs");
+  defs.innerHTML = `
+    <filter id="path-glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="2.4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>`;
+  pathSvg.append(defs);
+
+  const baseGroup = document.createElementNS(PL_NS, "g");
+  const litGroup = document.createElementNS(PL_NS, "g");
+  pathSvg.append(baseGroup, litGroup);
+
+  plConnectors = [];
+
+  boxes.slice(0, -1).forEach((from, i) => {
+    const to = boxes[i + 1];
+    let d, headD;
+
+    if (stacked) {
+      const x = from.cx;
+      d = `M ${x} ${from.bottom} V ${to.top - PL_HEAD}`;
+      headD = plTriangle(x, to.top, "down");
+    } else {
+      // из правого края блока (от квадратика с цифрой) -> по центру следующего блока
+      const down = to.cy > from.cy;
+      const endY = down ? to.top : to.bottom;
+      const lineEndY = down ? endY - PL_HEAD : endY + PL_HEAD;
+      d = `M ${from.right} ${from.cy} H ${to.cx} V ${lineEndY}`;
+      headD = plTriangle(to.cx, endY, down ? "down" : "up");
+    }
+
+    // серая «выключенная» стрелка
+    const basePath = document.createElementNS(PL_NS, "path");
+    basePath.setAttribute("d", d);
+    basePath.setAttribute("fill", "none");
+    basePath.setAttribute("stroke", "rgba(244,244,245,0.7)");
+    basePath.setAttribute("stroke-width", "1");
+    const baseHead = document.createElementNS(PL_NS, "path");
+    baseHead.setAttribute("d", headD);
+    baseHead.setAttribute("fill", "rgba(244,244,245,0.85)");
+    baseGroup.append(basePath, baseHead);
+
+    // голубой «ток», который бежит по стрелке
+    const path = document.createElementNS(PL_NS, "path");
+    path.setAttribute("d", d);
+    path.setAttribute("fill", "none");
+    path.setAttribute("stroke", "#00E5FF");
+    path.setAttribute("stroke-width", "1.5");
+    path.setAttribute("filter", "url(#path-glow)");
+    litGroup.append(path);
+    const len = path.getTotalLength();
+    path.style.strokeDasharray = String(len);
+    path.style.strokeDashoffset = String(len);
+
+    const head = document.createElementNS(PL_NS, "path");
+    head.setAttribute("d", headD);
+    head.setAttribute("fill", "#00E5FF");
+    head.setAttribute("filter", "url(#path-glow)");
+    head.style.opacity = "0";
+    litGroup.append(head);
+
+    plConnectors.push({ path, head, len });
+  });
+
+  // после resize восстанавливаем уже пройденные стрелки
+  plConnectors.forEach((c, i) => {
+    if (i < plStep - 1) plMarkDrawn(c);
+  });
+}
+
+function revealPath() {
+  const total = pathSteps.length;
+
+  if (reduceMotion) {
+    pathSteps.forEach((s) => s.classList.add("is-in"));
+    plStep = total;
+    plConnectors.forEach(plMarkDrawn);
+    return;
+  }
+
+  const run = (n) => {
+    pathSteps[n].classList.add("is-in"); // загорается квадратик с цифрой
+    plStep = n + 1;
+    if (n >= total - 1) return;          // последний блок загорелся — конец
+
+    const c = plConnectors[n];
+    const dur = Math.max(350, c.len / PL_SPEED);
+    c.path.style.transition = `stroke-dashoffset ${dur}ms linear`;
+    c.path.getBoundingClientRect();      // reflow, чтобы transition сработал
+    c.path.style.strokeDashoffset = "0";
+
+    window.setTimeout(() => {
+      // берём актуальный connector (мог пересоздаться при resize)
+      const cur = plConnectors[n];
+      cur.head.style.transition = "opacity 0.15s ease";
+      cur.head.style.opacity = "1";
+      plMarkDrawn(cur);
+      run(n + 1);
+    }, dur + 60);
+  };
+
+  window.setTimeout(() => run(0), 250);
+}
+    console.log("path v3 loaded");
+
+    let pathDrawn = false;
+    let resizeTimer;
+
+    window.addEventListener("resize", () => {
+      window.clearTimeout(resizeTimer);
+      resizeTimer = window.setTimeout(() => {
+        const wasVisible = pathDrawn;
+        layoutPathLines();
+        if (wasVisible) {
+          pathSvg.querySelectorAll(".path-connector").forEach((line) => {
+            line.classList.add("is-drawn");
+          });
+        }
+      }, 120);
+    });
+
+    const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+    const cursor = document.querySelector(".cursor");
+    const cursorDot = document.querySelector(".cursor-dot");
+    const cursorRing = document.querySelector(".cursor-ring");
+
+    if (finePointer && cursor && !reduceMotion) {
+      document.documentElement.classList.add("has-cursor");
+      let mouseX = 0;
+      let mouseY = 0;
+      let ringX = 0;
+      let ringY = 0;
+      let ticking = false;
+
+      document.addEventListener("mousemove", (event) => {
+        mouseX = event.clientX;
+        mouseY = event.clientY;
+        cursor.classList.add("is-visible");
+        cursorDot.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+        if (!ticking) {
+          ticking = true;
+          requestAnimationFrame(followCursor);
+        }
+      });
+
+      document.addEventListener("mousedown", () => cursor.classList.add("is-down"));
+      document.addEventListener("mouseup", () => cursor.classList.remove("is-down"));
+
+      document.querySelectorAll("a, button, .course-card, .why-card, .path-box, .audience-card, .offer-card").forEach((el) => {
+        el.addEventListener("mouseenter", () => cursor.classList.add("is-hover"));
+        el.addEventListener("mouseleave", () => cursor.classList.remove("is-hover"));
+      });
+
+      function followCursor() {
+        ringX += (mouseX - ringX) * 0.18;
+        ringY += (mouseY - ringY) * 0.18;
+        cursorRing.style.transform = `translate(${ringX}px, ${ringY}px)`;
+        if (Math.abs(mouseX - ringX) > 0.2 || Math.abs(mouseY - ringY) > 0.2) {
+          requestAnimationFrame(followCursor);
+        } else {
+          ticking = false;
+        }
+      }
+    }
+
+    const revealItems = document.querySelectorAll(".reveal");
+    if (revealItems.length) {
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("is-revealed");
+            revealObserver.unobserve(entry.target);
+          });
+        },
+        { threshold: 0.18, rootMargin: "0px 0px -8% 0px" }
+      );
+      revealItems.forEach((item, index) => {
+        item.style.setProperty("--reveal-delay", `${Math.min(index % 6, 5) * 70}ms`);
+        revealObserver.observe(item);
+      });
+    }
+
+    if (pathBoard) {
+      layoutPathLines();
+      window.addEventListener("load", () => {
+        layoutPathLines();
+        if (pathDrawn) {
+          pathSvg.querySelectorAll(".path-connector").forEach((line) => {
+            line.classList.add("is-drawn");
+          });
+        }
+      });
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (!entry.isIntersecting || pathDrawn) return;
+          pathDrawn = true;
+          revealPath();
+          observer.disconnect();
+        },
+        { threshold: 0.35 }
+      );
+      observer.observe(pathBoard);
+    }
+  </script>
+</body>
+</html>

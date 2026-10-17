@@ -1,0 +1,55 @@
+/* path.css — подключать ПОСЛЕ styles.css и mobile.css */
+
+/* Блоки видны сразу, загораются только цифры и последний блок */
+.path-box {
+    display: flex;
+    align-items: center;
+    opacity: 1;
+    transform: none;
+    padding: 16px 36px 16px 16px;
+    border: 1px solid #f4f4f5;
+    box-shadow: none;
+  }
+  
+  @media (min-width: 961px) {
+    .path-box {
+      min-height: 108px;
+    }
+  }
+  
+  /* Квадратик с цифрой — по центру правого края, как в дизайне */
+  .path-num {
+    top: 50%;
+    right: -1px;
+    width: 20px;
+    height: 20px;
+    transform: translateY(-50%);
+    background: #121214;
+    border: 1px solid #f4f4f5;
+    color: #f4f4f5;
+    transition: border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Шаг дошёл: горит только квадратик с цифрой */
+  .path-step.is-in .path-box {
+    border-color: #f4f4f5;
+    box-shadow: none;
+  }
+  
+  .path-step.is-in .path-num {
+    border-color: #00e5ff;
+    color: #00e5ff;
+    box-shadow: 0 0 14px rgba(0, 229, 255, 0.7);
+  }
+  
+  /* Последний блок загорается целиком */
+  .path-step--final .path-box {
+    transition: border-color 0.5s ease, box-shadow 0.5s ease;
+  }
+  
+  .path-step--final.is-in .path-box {
+    border-color: #00e5ff;
+    box-shadow:
+      0 0 18px rgba(0, 229, 255, 0.25),
+      0 0 42px rgba(0, 229, 255, 0.45);
+  }
