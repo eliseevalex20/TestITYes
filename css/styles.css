@@ -414,6 +414,11 @@ img {
 
 .float-card--feedback {
   animation-delay: -2.4s;
+  bottom: 20px;
+  left: -60px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .float-card--progress {
@@ -452,13 +457,6 @@ img {
   animation: fill-bar 1.4s 0.6s ease both;
 }
 
-.float-card--feedback {
-  bottom: 20px;
-  left: -60px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
 
 .feedback-check {
   width: 22px;

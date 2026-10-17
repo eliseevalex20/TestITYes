@@ -1,3 +1,10 @@
+// Learning path connectors and reveal animation
+const pathBoard = document.querySelector(".path-board");
+    const pathSvg = document.querySelector(".path-lines");
+    const pathSteps = [...document.querySelectorAll(".path-step")];
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    /* --- path v3: стрелки буквой Г --- */
 /* path.js — подключать ПОСЛЕ основного inline-скрипта в index.html.
    Переопределяет layoutPathLines() и revealPath(). */
 
@@ -153,5 +160,43 @@ function revealPath() {
 
   window.setTimeout(() => run(0), 250);
 }
+    console.log("path v3 loaded");
 
-layoutPathLines();
+    let pathDrawn = false;
+    let resizeTimer;
+
+    window.addEventListener("resize", () => {
+      window.clearTimeout(resizeTimer);
+      resizeTimer = window.setTimeout(() => {
+        const wasVisible = pathDrawn;
+        layoutPathLines();
+        if (wasVisible) {
+          pathSvg.querySelectorAll(".path-connector").forEach((line) => {
+            line.classList.add("is-drawn");
+          });
+        }
+      }, 120);
+    });
+
+
+    if (pathBoard) {
+      layoutPathLines();
+      window.addEventListener("load", () => {
+        layoutPathLines();
+        if (pathDrawn) {
+          pathSvg.querySelectorAll(".path-connector").forEach((line) => {
+            line.classList.add("is-drawn");
+          });
+        }
+      });
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (!entry.isIntersecting || pathDrawn) return;
+          pathDrawn = true;
+          revealPath();
+          observer.disconnect();
+        },
+        { threshold: 0.35 }
+      );
+      observer.observe(pathBoard);
+    }

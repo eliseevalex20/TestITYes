@@ -7,9 +7,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto:wght@400;500&family=Roboto+Mono:wght@400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="mobile.css">
-  <link rel="stylesheet" href="path.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/mobile.css">
+  <link rel="stylesheet" href="css/path.css">
 </head>
 <body>
   <div class="cursor" aria-hidden="true">
@@ -19,7 +19,7 @@
   <header class="site-header">
     <div class="container header-inner">
       <a href="#" class="logo-link" aria-label="ITYes — на головну">
-        <img src="logo.svg" width="48" height="48" alt="ITYes">
+        <img src="images/logo.svg" width="48" height="48" alt="ITYes">
       </a>
       <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="main-nav">Меню</button>
       <nav id="main-nav" class="main-nav" aria-label="Головна навігація">
@@ -27,9 +27,8 @@
         <a href="#pricing">Ціни</a>
         <a href="#how">Як навчаємо</a>
         <a href="#about">Про школу</a>
-        <a href="#faq">FAQ</a>
-      </nav>
-      <a href="#signup" class="btn btn-orange header-cta">Записатися</a>
+              </nav>
+      <a href="#pricing" class="btn btn-orange header-cta">Записатися</a>
     </div>
   </header>
 
@@ -49,7 +48,7 @@
           </p>
           <div class="hero-actions">
             <a href="#courses" class="btn btn-primary-hero">Обрати курс</a>
-            <a href="#programs" class="btn btn-ghost">Переглянути програми</a>
+            <a href="#courses" class="btn btn-ghost">Переглянути програми</a>
           </div>
         </div>
 
@@ -145,7 +144,7 @@
     </section>
 
     <section class="why" id="how">
-      <div class="why-inner">
+      <div class="why-inner" id="about">
         <header class="why-header reveal">
           <p class="why-kicker">
             Чому ITYes
@@ -167,7 +166,7 @@
               Живе навчання
             </p>
             <p class="why-card-text">Викладач пояснює матеріал і відповідає на запитання</p>
-            <img class="why-card-icon" src="01.svg" width="150" height="120" alt="">
+            <img class="why-card-icon" src="images/01.svg" width="150" height="120" alt="">
           </article>
 
           <article class="why-card reveal">
@@ -176,7 +175,7 @@
               Практика
             </p>
             <p class="why-card-text">Кожну тему закріплюємо реальними завданнями</p>
-            <img class="why-card-icon" src="02.svg" width="150" height="120" alt="">
+            <img class="why-card-icon" src="images/02.svg" width="150" height="120" alt="">
           </article>
 
           <article class="why-card reveal">
@@ -185,7 +184,7 @@
               Перевірка робіт
             </p>
             <p class="why-card-text">Отримуєш персональний фідбек до свого коду</p>
-            <img class="why-card-icon" src="03.svg" width="150" height="120" alt="">
+            <img class="why-card-icon" src="images/03.svg" width="150" height="120" alt="">
           </article>
 
           <article class="why-card reveal">
@@ -194,7 +193,7 @@
               Фінальний проєкт
             </p>
             <p class="why-card-text">Створюєш завершений проєкт для портфоліо</p>
-            <img class="why-card-icon" src="04.svg" width="150" height="120" alt="">
+            <img class="why-card-icon" src="images/04.svg" width="150" height="120" alt="">
           </article>
 
           <article class="why-card reveal">
@@ -203,7 +202,7 @@
               Малі групи
             </p>
             <p class="why-card-text">До 15 студентів. Достатньо уваги кожному</p>
-            <img class="why-card-icon" src="05.svg" width="150" height="120" alt="">
+            <img class="why-card-icon" src="images/05.svg" width="150" height="120" alt="">
           </article>
 
           <article class="why-card reveal">
@@ -212,7 +211,7 @@
               Зручна платформа
             </p>
             <p class="why-card-text">Усі матеріали, прогрес і запитання в одному місці</p>
-            <img class="why-card-icon" src="06.svg" width="150" height="120" alt="">
+            <img class="why-card-icon" src="images/06.svg" width="150" height="120" alt="">
           </article>
         </div>
       </div>
@@ -260,7 +259,7 @@
                 <span>Вартість курсу</span>
                 XX XXX грн
               </p>
-              <a href="#signup" class="course-btn">Детальніше про курс</a>
+              <a href="#pricing" class="course-btn">Детальніше про курс</a>
             </div>
           </article>
 
@@ -293,7 +292,7 @@
                 <span>Вартість курсу</span>
                 XX XXX грн
               </p>
-              <a href="#signup" class="course-btn">Детальніше про курс</a>
+              <a href="#pricing" class="course-btn">Детальніше про курс</a>
             </div>
           </article>
 
@@ -326,7 +325,7 @@
                 <span>Вартість курсу</span>
                 XX XXX грн
               </p>
-              <a href="#signup" class="course-btn">Детальніше про курс</a>
+              <a href="#pricing" class="course-btn">Детальніше про курс</a>
             </div>
           </article>
         </div>
@@ -475,7 +474,7 @@
                 <li>Застосовується найвигідніша доступна умова</li>
               </ul>
             </div>
-            <a href="#signup" class="offer-cta">Перейти до розрахунку</a>
+            <a href="#pricing" class="offer-cta">Перейти до розрахунку</a>
           </article>
 
           <article class="offer-card offer-card--orange reveal">
@@ -503,282 +502,10 @@
     </section>
   </main>
 
-  <script>
-    const toggle = document.querySelector(".nav-toggle");
-    const nav = document.getElementById("main-nav");
-    toggle?.addEventListener("click", () => {
-      const open = nav.classList.toggle("is-open");
-      toggle.setAttribute("aria-expanded", String(open));
-    });
-    nav.querySelectorAll("a").forEach((a) =>
-      a.addEventListener("click", () => {
-        nav.classList.remove("is-open");
-        toggle.setAttribute("aria-expanded", "false");
-      })
-    );
+  <script type="module" src="js/navigation.js"></script>
+  <script type="module" src="js/path.js"></script>
+  <script type="module" src="js/cursor.js"></script>
+  <script type="module" src="js/reveal.js"></script>
 
-    const pathBoard = document.querySelector(".path-board");
-    const pathSvg = document.querySelector(".path-lines");
-    const pathSteps = [...document.querySelectorAll(".path-step")];
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-    /* --- path v3: стрелки буквой Г --- */
-/* path.js — подключать ПОСЛЕ основного inline-скрипта в index.html.
-   Переопределяет layoutPathLines() и revealPath(). */
-
-const PL_NS = "http://www.w3.org/2000/svg";
-const PL_HEAD = 6;        // длина наконечника стрелки
-const PL_HALF = 3.5;      // половина ширины наконечника
-const PL_SPEED = 0.45;    // скорость «тока», px/мс
-
-let plConnectors = [];
-let plStep = 0;           // сколько шагов уже загорелось
-
-function plTriangle(x, y, dir) {
-  // dir: "down" | "up"
-  const base = dir === "down" ? y - PL_HEAD : y + PL_HEAD;
-  return `M ${x - PL_HALF} ${base} L ${x} ${y} L ${x + PL_HALF} ${base} Z`;
-}
-
-function plMarkDrawn(c) {
-  if (!c) return;
-  c.path.style.transition = "none";
-  c.path.style.strokeDashoffset = "0";
-  c.head.style.transition = "none";
-  c.head.style.opacity = "1";
-}
-
-function layoutPathLines() {
-  if (!pathBoard || !pathSvg || pathSteps.length < 2) return;
-
-  const board = pathBoard.getBoundingClientRect();
-  pathSvg.setAttribute("viewBox", `0 0 ${board.width} ${board.height}`);
-  pathSvg.setAttribute("width", String(board.width));
-  pathSvg.setAttribute("height", String(board.height));
-
-  const stacked = window.matchMedia("(max-width: 960px)").matches;
-
-  const boxes = pathSteps.map((step) => {
-    const r = step.querySelector(".path-box").getBoundingClientRect();
-    return {
-      left: r.left - board.left,
-      right: r.right - board.left,
-      top: r.top - board.top,
-      bottom: r.bottom - board.top,
-      cx: r.left - board.left + r.width / 2,
-      cy: r.top - board.top + r.height / 2,
-    };
-  });
-
-  pathSvg.replaceChildren();
-
-  const defs = document.createElementNS(PL_NS, "defs");
-  defs.innerHTML = `
-    <filter id="path-glow" x="-40%" y="-40%" width="180%" height="180%">
-      <feGaussianBlur stdDeviation="2.4" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>`;
-  pathSvg.append(defs);
-
-  const baseGroup = document.createElementNS(PL_NS, "g");
-  const litGroup = document.createElementNS(PL_NS, "g");
-  pathSvg.append(baseGroup, litGroup);
-
-  plConnectors = [];
-
-  boxes.slice(0, -1).forEach((from, i) => {
-    const to = boxes[i + 1];
-    let d, headD;
-
-    if (stacked) {
-      const x = from.cx;
-      d = `M ${x} ${from.bottom} V ${to.top - PL_HEAD}`;
-      headD = plTriangle(x, to.top, "down");
-    } else {
-      // из правого края блока (от квадратика с цифрой) -> по центру следующего блока
-      const down = to.cy > from.cy;
-      const endY = down ? to.top : to.bottom;
-      const lineEndY = down ? endY - PL_HEAD : endY + PL_HEAD;
-      d = `M ${from.right} ${from.cy} H ${to.cx} V ${lineEndY}`;
-      headD = plTriangle(to.cx, endY, down ? "down" : "up");
-    }
-
-    // серая «выключенная» стрелка
-    const basePath = document.createElementNS(PL_NS, "path");
-    basePath.setAttribute("d", d);
-    basePath.setAttribute("fill", "none");
-    basePath.setAttribute("stroke", "rgba(244,244,245,0.7)");
-    basePath.setAttribute("stroke-width", "1");
-    const baseHead = document.createElementNS(PL_NS, "path");
-    baseHead.setAttribute("d", headD);
-    baseHead.setAttribute("fill", "rgba(244,244,245,0.85)");
-    baseGroup.append(basePath, baseHead);
-
-    // голубой «ток», который бежит по стрелке
-    const path = document.createElementNS(PL_NS, "path");
-    path.setAttribute("d", d);
-    path.setAttribute("fill", "none");
-    path.setAttribute("stroke", "#00E5FF");
-    path.setAttribute("stroke-width", "1.5");
-    path.setAttribute("filter", "url(#path-glow)");
-    litGroup.append(path);
-    const len = path.getTotalLength();
-    path.style.strokeDasharray = String(len);
-    path.style.strokeDashoffset = String(len);
-
-    const head = document.createElementNS(PL_NS, "path");
-    head.setAttribute("d", headD);
-    head.setAttribute("fill", "#00E5FF");
-    head.setAttribute("filter", "url(#path-glow)");
-    head.style.opacity = "0";
-    litGroup.append(head);
-
-    plConnectors.push({ path, head, len });
-  });
-
-  // после resize восстанавливаем уже пройденные стрелки
-  plConnectors.forEach((c, i) => {
-    if (i < plStep - 1) plMarkDrawn(c);
-  });
-}
-
-function revealPath() {
-  const total = pathSteps.length;
-
-  if (reduceMotion) {
-    pathSteps.forEach((s) => s.classList.add("is-in"));
-    plStep = total;
-    plConnectors.forEach(plMarkDrawn);
-    return;
-  }
-
-  const run = (n) => {
-    pathSteps[n].classList.add("is-in"); // загорается квадратик с цифрой
-    plStep = n + 1;
-    if (n >= total - 1) return;          // последний блок загорелся — конец
-
-    const c = plConnectors[n];
-    const dur = Math.max(350, c.len / PL_SPEED);
-    c.path.style.transition = `stroke-dashoffset ${dur}ms linear`;
-    c.path.getBoundingClientRect();      // reflow, чтобы transition сработал
-    c.path.style.strokeDashoffset = "0";
-
-    window.setTimeout(() => {
-      // берём актуальный connector (мог пересоздаться при resize)
-      const cur = plConnectors[n];
-      cur.head.style.transition = "opacity 0.15s ease";
-      cur.head.style.opacity = "1";
-      plMarkDrawn(cur);
-      run(n + 1);
-    }, dur + 60);
-  };
-
-  window.setTimeout(() => run(0), 250);
-}
-    console.log("path v3 loaded");
-
-    let pathDrawn = false;
-    let resizeTimer;
-
-    window.addEventListener("resize", () => {
-      window.clearTimeout(resizeTimer);
-      resizeTimer = window.setTimeout(() => {
-        const wasVisible = pathDrawn;
-        layoutPathLines();
-        if (wasVisible) {
-          pathSvg.querySelectorAll(".path-connector").forEach((line) => {
-            line.classList.add("is-drawn");
-          });
-        }
-      }, 120);
-    });
-
-    const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
-    const cursor = document.querySelector(".cursor");
-    const cursorDot = document.querySelector(".cursor-dot");
-    const cursorRing = document.querySelector(".cursor-ring");
-
-    if (finePointer && cursor && !reduceMotion) {
-      document.documentElement.classList.add("has-cursor");
-      let mouseX = 0;
-      let mouseY = 0;
-      let ringX = 0;
-      let ringY = 0;
-      let ticking = false;
-
-      document.addEventListener("mousemove", (event) => {
-        mouseX = event.clientX;
-        mouseY = event.clientY;
-        cursor.classList.add("is-visible");
-        cursorDot.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
-        if (!ticking) {
-          ticking = true;
-          requestAnimationFrame(followCursor);
-        }
-      });
-
-      document.addEventListener("mousedown", () => cursor.classList.add("is-down"));
-      document.addEventListener("mouseup", () => cursor.classList.remove("is-down"));
-
-      document.querySelectorAll("a, button, .course-card, .why-card, .path-box, .audience-card, .offer-card").forEach((el) => {
-        el.addEventListener("mouseenter", () => cursor.classList.add("is-hover"));
-        el.addEventListener("mouseleave", () => cursor.classList.remove("is-hover"));
-      });
-
-      function followCursor() {
-        ringX += (mouseX - ringX) * 0.18;
-        ringY += (mouseY - ringY) * 0.18;
-        cursorRing.style.transform = `translate(${ringX}px, ${ringY}px)`;
-        if (Math.abs(mouseX - ringX) > 0.2 || Math.abs(mouseY - ringY) > 0.2) {
-          requestAnimationFrame(followCursor);
-        } else {
-          ticking = false;
-        }
-      }
-    }
-
-    const revealItems = document.querySelectorAll(".reveal");
-    if (revealItems.length) {
-      const revealObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (!entry.isIntersecting) return;
-            entry.target.classList.add("is-revealed");
-            revealObserver.unobserve(entry.target);
-          });
-        },
-        { threshold: 0.18, rootMargin: "0px 0px -8% 0px" }
-      );
-      revealItems.forEach((item, index) => {
-        item.style.setProperty("--reveal-delay", `${Math.min(index % 6, 5) * 70}ms`);
-        revealObserver.observe(item);
-      });
-    }
-
-    if (pathBoard) {
-      layoutPathLines();
-      window.addEventListener("load", () => {
-        layoutPathLines();
-        if (pathDrawn) {
-          pathSvg.querySelectorAll(".path-connector").forEach((line) => {
-            line.classList.add("is-drawn");
-          });
-        }
-      });
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (!entry.isIntersecting || pathDrawn) return;
-          pathDrawn = true;
-          revealPath();
-          observer.disconnect();
-        },
-        { threshold: 0.35 }
-      );
-      observer.observe(pathBoard);
-    }
-  </script>
 </body>
 </html>
