@@ -12,7 +12,8 @@
   --page-bg: #0d0d0f;
   --surface: #16161a;
   --border: rgba(244, 244, 245, 0.12);
-  --header-height: 72px;
+  --header-height: 80px;
+  --page-bg2: #1A1A1E;
 }
 
 html {
@@ -54,7 +55,8 @@ img {
   top: 0;
   z-index: 100;
   height: var(--header-height);
-  border: 1px solid #F4F4F5;
+  border-top: 1px solid #F4F4F5;
+  border-bottom: 1px solid #F4F4F5;
 }
 
 .header-inner {
@@ -85,7 +87,7 @@ img {
 .main-nav {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 35px;
   font-family: "Montserrat", sans-serif;
   font-size: 0.9375rem;
   font-weight: 500;
@@ -122,10 +124,10 @@ img {
   align-items: center;
   justify-content: center;
   font-family: "Montserrat", sans-serif;
-  font-weight: 600;
+  font-weight: medium;
   font-size: 0.9375rem;
   border-radius: 10px;
-  padding: 12px 24px;
+  padding: 7px 25px;
   border: none;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
@@ -141,9 +143,10 @@ img {
 
 .btn-orange {
   background: var(--orange);
-  color: #121214;
-  box-shadow: 0 4px 24px rgba(255, 92, 0, 0.45);
-  border-radius: 10px;
+  color: #F4F4F5;
+  box-shadow: 4px 4px 50px 1px rgba(255, 92, 0, 0.3);
+  border-radius: 5px;
+  border: 1px solid #F4F4F5;
 }
 
 .btn-orange:hover {
@@ -195,6 +198,12 @@ img {
   animation: glow-pulse 7s ease-in-out infinite;
 }
 
+
+.hero::before {
+  translate: var(--glow-x, 0px) var(--glow-y, 0px);
+  transition: translate 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
 .hero-grid {
   display: flex;
   align-items: center;
@@ -223,7 +232,8 @@ img {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
-  border: 1px solid #f4f4f5;
+  border-top: 1px solid #f4f4f5;
+  border-bottom: 1px solid #f4f4f5;
   font-family: "Roboto", sans-serif;
   font-size: 0.9375rem;
   color: var(--text);
@@ -268,7 +278,6 @@ img {
   height: 10px;
   background: var(--cyan);
   flex-shrink: 0;
-  animation: blink 2.4s ease-in-out infinite;
 }
 
 .hero-title {
@@ -277,7 +286,7 @@ img {
   font-size: clamp(2rem, 4vw, 3rem);
   line-height: 1.15;
   margin: 0 0 20px;
-  letter-spacing: -0.02em;
+  letter-spacing: 15%;
 }
 
 .hero-title .accent {
@@ -294,14 +303,16 @@ img {
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 70px;
 }
 
 .btn-primary-hero {
   background: var(--orange);
-  color: #0d0d0f;
-  padding: 14px 28px;
-  box-shadow: 0 8px 32px rgba(255, 92, 0, 0.4);
+  color: #F4F4F5;
+  padding: 7px 30px;
+  box-shadow: 4px 4px 50px 1px rgba(255, 92, 0, 0.3);
+  border-radius: 5px;
+  border: 1px solid #F4F4F5;
 }
 
 .btn-primary-hero:hover {
@@ -310,10 +321,10 @@ img {
 
 .btn-ghost {
   background: transparent;
-  color: var(--text);
-  border: 1px solid rgba(244, 244, 245, 0.35);
-  padding: 14px 28px;
-  box-shadow: 0 0 40px rgba(255, 92, 0, 0.12);
+  color: #FF5C00;
+  border: 1px solid #FF5C00;
+  padding: 7px 40px;
+  box-shadow: 4px 4px 50px 1px rgba(255, 92, 0, 0.3);
 }
 
 .btn-ghost:hover {
@@ -336,10 +347,7 @@ img {
   border: 1px solid var(--border);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow:
-    0 0 0 1px rgba(0, 229, 255, 0.08),
-    0 24px 80px rgba(0, 0, 0, 0.6),
-    0 0 60px rgba(0, 229, 255, 0.15);
+  box-shadow: 4px 4px 200px 10px rgba(0, 229, 255, 0.3);
 }
 
 .editor-titlebar {
@@ -377,6 +385,7 @@ img {
 }
 
 .code-content {
+  margin: 0;
   padding-right: 20px;
   color: rgba(244, 244, 245, 0.85);
 }
@@ -480,12 +489,13 @@ img {
 
 /* Why ITYes */
 .why {
-  padding: 72px 0 96px;
-  background: var(--page-bg);
+  padding: 80px 0;
+  background: var(--page-bg2);
 }
 
 .why-inner {
-  width: min(1100px, 100% - 48px);
+  width: calc(100% - 100px);
+  max-width: none;
   margin-inline: auto;
 }
 
@@ -515,7 +525,7 @@ img {
   font-weight: 700;
   font-size: clamp(1.75rem, 4vw, 2.75rem);
   line-height: 1.15;
-  letter-spacing: -0.02em;
+  letter-spacing: 15%;
   margin: 0 0 16px;
 }
 
@@ -593,7 +603,7 @@ img {
 
 /* Courses */
 .courses {
-  padding: 72px 0 96px;
+  padding: 80px 0 80px;
   background: var(--page-bg);
 }
 
@@ -626,10 +636,10 @@ img {
 
 .courses-title {
   font-family: "Montserrat", sans-serif;
-  font-weight: 400;
+  font-weight: 700;
   font-size: clamp(1.75rem, 4vw, 2.5rem);
   line-height: 1.15;
-  letter-spacing: 0.04em;
+  letter-spacing: 15%;
   color: #f4f4f5;
   margin: 0 0 12px;
 }
@@ -649,7 +659,7 @@ img {
 .courses-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 70px;
   align-items: stretch;
 }
 
@@ -676,9 +686,9 @@ img {
   box-shadow: 4px 4px 50px 1px rgba(255, 92, 0, 0.3);
 }
 
-.course-card--orange:hover {
+/* .course-card--orange:hover {
   box-shadow: 4px 8px 56px 2px rgba(255, 92, 0, 0.42);
-}
+} */
 
 .course-card--cyan {
   --card-accent: #00e5ff;
@@ -686,19 +696,19 @@ img {
   box-shadow: 4px 4px 50px 1px rgba(0, 229, 255, 0.3);
 }
 
-.course-card--cyan:hover {
+/* .course-card--cyan:hover {
   box-shadow: 4px 8px 56px 2px rgba(0, 229, 255, 0.42);
-}
+} */
 
 .course-badge {
   position: absolute;
-  top: -1px;
-  right: 20px;
+  top: 0;
+  right: 0;
   padding: 6px 14px;
   background: #1a1a1e;
   border: 1px solid #ff5c00;
   border-top: none;
-  border-radius: 0 0 10px 10px;
+  border-radius: 0 10px 0 10px;
   font-family: "Montserrat", sans-serif;
   font-weight: 300;
   font-size: 0.75rem;
@@ -831,8 +841,8 @@ img {
 
 /* Learning path */
 .path {
-  padding: 80px 0 100px;
-  background: var(--page-bg);
+  padding: 80px 0 80px;
+  background: var(--page-bg2);
 }
 
 .path-inner {
@@ -869,9 +879,9 @@ img {
 .path-title {
   margin: 24px 0 0;
   font-family: "Montserrat", sans-serif;
-  font-weight: 400;
+  font-weight: 700;
   font-size: clamp(1.5rem, 4vw, 2.35rem);
-  letter-spacing: 0.04em;
+  letter-spacing: 15%;
   color: #f4f4f5;
 }
 
@@ -997,7 +1007,7 @@ img {
 
 /* Audience */
 .audience {
-  padding: 80px 0 96px;
+  padding: 80px 0 80px;
   background: var(--page-bg);
 }
 
@@ -1031,10 +1041,10 @@ img {
 .offers-title {
   margin: 0 0 12px;
   font-family: "Montserrat", sans-serif;
-  font-weight: 400;
+  font-weight: 700;
   font-size: clamp(1.7rem, 4vw, 2.5rem);
   line-height: 1.15;
-  letter-spacing: 0.02em;
+  letter-spacing: 15%;
   color: #f4f4f5;
 }
 
@@ -1063,14 +1073,10 @@ img {
   background: #1a1a1e;
   border: 1px solid #00e5ff;
   border-radius: 10px;
-  box-shadow: 4px 4px 50px 1px rgba(0, 229, 255, 0.3);
+  box-shadow: 4px 4px 50px 1px rgba(0, 229, 255, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.audience-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 4px 8px 56px 2px rgba(0, 229, 255, 0.42);
-}
 
 .audience-card-label {
   display: flex;
@@ -1098,8 +1104,8 @@ img {
 
 /* Offers / pricing */
 .offers {
-  padding: 40px 0 110px;
-  background: var(--page-bg);
+  padding: 80px 0 80px;
+  background: var(--page-bg2);
 }
 
 .offers-header {

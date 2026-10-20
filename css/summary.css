@@ -38,7 +38,7 @@
     font-weight: 700;
     font-size: clamp(1.625rem, 4.2vw, 2.75rem);
     line-height: 1.15;
-    letter-spacing: 0.12em;
+    letter-spacing: 15%;
     color: var(--text);
   }
   
@@ -292,7 +292,7 @@
   /* ================= TABLET ================= */
   @media (max-width: 960px) {
     .result {
-      padding: 56px 0 64px;
+      padding: 0 0 70px;
     }
   
     .result-inner,

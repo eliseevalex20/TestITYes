@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Курс — ITYes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto:wght@400;500&family=Roboto+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/mobile.css">
+  <link rel="stylesheet" href="css/path.css">
+  <link rel="stylesheet" href="css/summary.css">
+  <link rel="stylesheet" href="css/course.css">
+</head>
+<body>
+  <div class="cursor" aria-hidden="true">
+    <span class="cursor-ring"></span>
+    <span class="cursor-dot"></span>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo-link" aria-label="ITYes — на головну">
+        <img src="images/logo.svg" width="48" height="48" alt="ITYes">
+      </a>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="main-nav">Меню</button>
+      <nav id="main-nav" class="main-nav" aria-label="Головна навігація">
+        <a href="courses.html" class="is-current" aria-current="page">Курси</a>
+        <a href="index.html#pricing">Ціни</a>
+        <a href="index.html#how">Як навчаємо</a>
+        <a href="index.html#about">Про школу</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a href="index.html#pricing" class="btn btn-orange header-cta">Записатися</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="cx-hero">
+      <div class="cx-inner cx-hero-grid">
+        <div class="cx-hero-content">
+          <p class="cx-label"><span class="cx-dot" aria-hidden="true"></span>Початок</p>
+          <p class="cx-deadline">Набір у групу триває до 20.11</p>
+          <h1 class="cx-hero-title" id="c-name"></h1>
+          <p class="cx-hero-sub" id="c-sub"></p>
+          <a href="index.html#pricing" class="btn btn-ghost cx-hero-btn">Залишити заявку</a>
+        </div>
+
+        <div class="cx-hero-visual">
+          <div class="cx-panel">
+            <div class="cx-panel-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+            <ol class="cx-panel-list" id="c-list" aria-label="Курси ITYes"></ol>
+            <div class="cx-panel-status" aria-hidden="true"><span>UTF-8</span><span>PYTHON 3.12</span></div>
+          </div>
+
+          <div class="cx-float cx-float--course">
+            <p class="cx-float-label">Курс</p>
+            <p class="cx-float-value" id="c-index"></p>
+            <span class="cx-float-line" aria-hidden="true"></span>
+          </div>
+
+          <div class="cx-float cx-float--price">
+            <p class="cx-float-label">Вартість курсу</p>
+            <p class="cx-float-small">XX XXX грн</p>
+          </div>
+        </div>
+      </div>
+
+      <ul class="hero-benefits" aria-label="Коротко про курс">
+        <li><span class="hero-benefits-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>2.5 місяці</li>
+        <li><span class="hero-benefits-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>3 заняття / тиждень</li>
+        <li><span class="hero-benefits-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Live online</li>
+        <li><span class="hero-benefits-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Фінальний проєкт</li>
+      </ul>
+    </section>
+
+    <!-- ============ ROADMAP ============ -->
+    <section class="cx-road" id="roadmap">
+      <div class="cx-inner">
+        <header class="cx-head cx-head--right reveal">
+          <p class="cx-label cx-label--right">Roadmap<span class="cx-dot" aria-hidden="true"></span></p>
+          <h2 class="cx-title">Від <span class="accent">основ</span> до<br>фінального проєкту</h2>
+          <p class="cx-sub">Покрокова архітектура курсу від знайомства з мовою до фінальної розробки</p>
+        </header>
+
+        <div class="cx-road-board">
+          <svg class="cx-road-lines" aria-hidden="true"></svg>
+          <ol class="cx-road-flow" id="c-road"></ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROGRAM ============ -->
+    <section class="cx-prog" id="program">
+      <div class="cx-inner">
+        <header class="cx-head reveal">
+          <p class="cx-label"><span class="cx-dot" aria-hidden="true"></span>Програма</p>
+          <h2 class="cx-title">Карта знань та<br><span class="accent">структура модулів</span> курса</h2>
+          <p class="cx-sub">Структура програми може адаптуватися під темп групи без втрати ключових тем</p>
+        </header>
+
+        <div class="cx-prog-grid">
+          <aside class="cx-prog-card reveal">
+            <h3 id="c-card-name"></h3>
+            <p id="c-card-meta"></p>
+          </aside>
+          <div class="cx-acc reveal" id="c-acc"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a href="index.html" class="footer-logo" aria-label="ITYes — на головну">
+        <img src="images/logo.svg" width="76" height="76" alt="ITYes">
+      </a>
+      <p class="footer-brand">Онлайн-школа програмування</p>
+      <div class="footer-legal">
+        <a href="#">Політика конфіденційності</a>
+        <span>© 2026 ITYes</span>
+        <a href="#">Договір оферти</a>
+      </div>
+      <nav class="footer-nav" aria-label="Навігація у футері">
+        <h3 class="footer-heading">Навігація</h3>
+        <ul class="footer-links">
+          <li><a href="courses.html">Курси</a></li>
+          <li><a href="index.html#about">Про школу</a></li>
+          <li><a href="index.html#pricing">Ціни</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
+      <div class="footer-contacts">
+        <h3 class="footer-heading">Контакти</h3>
+        <a href="mailto:hello@ityes.ua" class="footer-email">hello@ityes.ua</a>
+        <div class="footer-social">
+          <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://t.me/" target="_blank" rel="noopener" aria-label="Telegram">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.5 3.3 2.9 10.5c-1 .4-1 1.2-.2 1.4l4.7 1.5 1.8 5.5c.2.6.4.8.8.8s.6-.2.9-.5l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.7c.3-1.2-.5-1.8-1.2-1.4ZM8.8 13.2l9.6-6c.5-.3.9-.1.5.2l-7.8 7-.3 3.3-2-4.5Z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="js/navigation.js"></script>
+  <script type="module" src="js/cursor.js"></script>
+  <script type="module" src="js/reveal.js"></script>
+  <script type="module" src="js/course.js"></script>
+</body>
+</html>

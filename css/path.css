@@ -53,3 +53,140 @@
       0 0 18px rgba(0, 229, 255, 0.25),
       0 0 42px rgba(0, 229, 255, 0.45);
   }
+  /* ---------- Card glow follows the cursor ---------- */
+  .course-card--orange,
+  .offer-card--orange {
+    --glow-rgb: 255, 92, 0;
+  }
+
+  .course-card--cyan,
+  .offer-card--cyan,
+  .audience-card {
+    --glow-rgb: 0, 229, 255;
+  }
+
+  .course-card,
+  
+  .offer-card {
+    --gx: 4px;
+    --gy: 4px;
+    --mx: 50%;
+    --my: 50%;
+    position: relative;
+    box-shadow: 4px 4px 50px 1px rgba(0, 229, 255, 0.2);
+  }
+
+
+
+  /* Bright spot on the border that follows the cursor */
+  .course-card::before,
+  .audience-card::before,
+  .offer-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 2px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background: radial-gradient(
+      220px circle at var(--mx) var(--my),
+      rgba(var(--glow-rgb), 1),
+      transparent 70%
+    );
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  }
+
+  .course-card:hover::before,
+  .audience-card:hover::before,
+  .offer-card:hover::before {
+    opacity: 1;
+  }
+
+  /* .reveal overrides the cards' transition, so restore box-shadow and hover lift */
+  .course-card.reveal,
+  .offer-card.reveal {
+    transition:
+      opacity 0.6s ease,
+      transform 0.6s ease,
+      box-shadow 0.25s ease;
+    transition-delay: var(--reveal-delay, 0ms), var(--reveal-delay, 0ms), 0ms;
+  }
+
+  .course-card.reveal.is-revealed:hover,
+  .audience-card.reveal.is-revealed:hover,
+  .offer-card.reveal.is-revealed:hover {
+    transform: translateY(-5px);
+  }
+
+  /* ---------- "Why ITYes" section ---------- */
+
+/* Section fills the screen under the header, content centered vertically */
+.why {
+  min-height: calc(100svh - var(--header-height));
+  display: flex;
+  align-items: center;
+}
+
+/* ---------- Same side margins for all sections ---------- */
+:root {
+  --gutter: 50px; /* side margin on desktop */
+}
+
+@media (max-width: 960px) {
+  :root { --gutter: 20px; }
+}
+
+@media (max-width: 480px) {
+  :root { --gutter: 16px; }
+}
+
+.why-inner,
+.courses-inner,
+.path-inner,
+.audience-inner,
+.offers-inner {
+  width: calc(100% - 2 * var(--gutter));
+  max-width: none;
+  margin-inline: auto;
+}
+
+/* No hover highlight on the cards */
+.why-card:hover {
+  background: transparent;
+}
+
+/* Text starts under the card title, not under the number */
+.why-card-num {
+  flex: 0 0 29px;
+}
+
+.why-card-text {
+  padding-left: 39px; /* 29px number + 10px gap */
+  max-width: 300px;
+}
+
+/* Icon centered in the card, slightly smaller */
+.why-card-icon {
+  align-self: center;
+  width: 120px;
+}
+
+@media (max-width: 960px) {
+  .why-inner {
+    width: min(1200px, 100% - 32px);
+  }
+
+  .why-card-icon {
+    width: 110px;
+  }
+}
+
+@media (max-width: 480px) {
+  .why-card-icon {
+    width: 96px;
+  }
+}

@@ -28,7 +28,7 @@ const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").match
       document.addEventListener("mousedown", () => cursor.classList.add("is-down"));
       document.addEventListener("mouseup", () => cursor.classList.remove("is-down"));
 
-      document.querySelectorAll("a, button, .course-card, .why-card, .path-box, .audience-card, .offer-card").forEach((el) => {
+      document.querySelectorAll("a, button, .course-card, .offer-card").forEach((el) => {
         el.addEventListener("mouseenter", () => cursor.classList.add("is-hover"));
         el.addEventListener("mouseleave", () => cursor.classList.remove("is-hover"));
       });
