@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ITYes — Онлайн-школа програмування</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto:wght@400;500&family=Roboto+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/mobile.css">
+  <link rel="stylesheet" href="css/path.css">
+  <link rel="stylesheet" href="css/summary.css">
+</head>
+<body>
+  <div class="cursor" aria-hidden="true">
+    <span class="cursor-ring"></span>
+    <span class="cursor-dot"></span>
+  </div>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="logo-link" aria-label="ITYes — на головну">
+        <img src="images/logo.svg" width="48" height="48" alt="ITYes">
+      </a>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="main-nav">Меню</button>
+      <nav id="main-nav" class="main-nav" aria-label="Головна навігація">
+        <a href="courses.html">Курси</a>
+        <a href="#pricing">Ціни</a>
+        <a href="#how">Як навчаємо</a>
+        <a href="#about">Про школу</a>
+              </nav>
+      <a href="#pricing" class="btn btn-orange header-cta">Записатися</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <p class="hero-label">
+            <span class="hero-label-dot" aria-hidden="true"></span>
+            Онлайн-школа програмування / Україна
+          </p>
+          <h1 class="hero-title">
+            Програмування, що приводить до <span class="accent">результату</span>
+          </h1>
+          <p class="hero-subtitle">
+            Вивчай Python, Django та Data Analytics з викладачем, практикою та реальними проєктами.
+          </p>
+          <div class="hero-actions">
+            <a href="#courses" class="btn btn-primary-hero">Обрати курс</a>
+            <a href="#courses" class="btn btn-ghost">Переглянути програми</a>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="editor-window">
+            <div class="editor-titlebar">
+              <span class="editor-dot"></span>
+              <span class="editor-dot"></span>
+              <span class="editor-dot"></span>
+            </div>
+            <div class="editor-body">
+              <div class="line-numbers">
+                <span>01</span>
+                <span>02</span>
+                <span>03</span>
+                <span>04</span>
+                <span>05</span>
+                <span>06</span>
+                <span>07</span>
+                <span>08</span>
+              </div>
+              <pre class="code-content"><code><span class="kw">class</span> <span class="cls">LearningPath</span>:
+    <span class="kw">def</span> __init__(self, student):
+        self.student = student
+        self.modules = []
+
+    <span class="kw">def</span> add_project(self, name):
+        self.modules.append(name)
+        <span class="kw">return</span> "ready_for_review"</code></pre>
+            </div>
+            <div class="editor-status">
+              <span>UTF-8</span>
+              <span>PYTHON 3.12</span>
+            </div>
+          </div>
+
+          <div class="float-card float-card--progress">
+            <div class="float-card-label">ПРОГРЕС КУРСУ</div>
+            <div class="float-card-value">08 / 12</div>
+            <div class="progress-bar">
+              <div class="progress-bar-fill"></div>
+            </div>
+          </div>
+
+          <div class="float-card float-card--feedback">
+            <div class="feedback-check">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="2.5">
+                <path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <div class="float-card-label">FEEDBACK</div>
+              <div class="feedback-text">Роботу перевірено</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <ul class="hero-benefits reveal" aria-label="Що входить у навчання">
+        <li>
+          <span class="hero-benefits-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          Практика
+        </li>
+        <li>
+          <span class="hero-benefits-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          Домашні завдання
+        </li>
+        <li>
+          <span class="hero-benefits-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          Перевірка викладачем
+        </li>
+        <li>
+          <span class="hero-benefits-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          Фінальний проєкт
+        </li>
+      </ul>
+    </section>
+
+    <section class="why" id="how">
+      <div class="why-inner" id="about">
+        <header class="why-header reveal">
+          <p class="why-kicker">
+            Чому ITYes
+            <span class="why-kicker-dot" aria-hidden="true"></span>
+          </p>
+          <h2 class="why-title">
+            Не просто дивишся
+            <span class="accent">Створюєш</span>
+          </h2>
+          <p class="why-subtitle">
+            Навчання побудоване навколо практики, діалогу та результату
+          </p>
+        </header>
+
+        <div class="why-grid">
+          <article class="why-card reveal">
+            <p class="why-card-heading">
+              <span class="why-card-num">01</span>
+              Живе навчання
+            </p>
+            <p class="why-card-text">Заняття з викладачем та миттєві відповіді на запитання, а не перегляд сухих відеозаписів</p>
+            <img class="why-card-icon" src="images/01.svg" width="150" height="120" alt="">
+          </article>
+
+          <article class="why-card reveal">
+            <p class="why-card-heading">
+              <span class="why-card-num">02</span>
+              Практика
+            </p>
+            <p class="why-card-text">100% практики: кожна година курсу — це написання коду через прості аналогії з реального життя </p>
+            <img class="why-card-icon" src="images/02.svg" width="150" height="120" alt="">
+          </article>
+
+          <article class="why-card reveal">
+            <p class="why-card-heading">
+              <span class="why-card-num">03</span>
+              Перевірка робіт
+            </p>
+            <p class="why-card-text">Окрім балів ти отримуєш плюси, мінуси твого коду та поради, як зробити його кращим</p>
+            <img class="why-card-icon" src="images/03.svg" width="150" height="120" alt="">
+          </article>
+
+          <article class="why-card reveal">
+            <p class="why-card-heading">
+              <span class="why-card-num">04</span>
+              Фінальний проєкт
+            </p>
+            <p class="why-card-text">Обирай і розробляй власний проєкт для портфоліо та захисти його за бажанням</p>
+            <img class="why-card-icon" src="images/04.svg" width="150" height="120" alt="">
+          </article>
+
+          <article class="why-card reveal">
+            <p class="why-card-heading">
+              <span class="why-card-num">05</span>
+              Малі групи
+            </p>
+            <p class="why-card-text">Набір до 15 студентів для максимального інтерактиву та живих дискусій</p>
+            <img class="why-card-icon" src="images/05.svg" width="150" height="120" alt="">
+          </article>
+
+          <article class="why-card reveal">
+            <p class="why-card-heading">
+              <span class="why-card-num">06</span>
+              Зручна платформа
+            </p>
+            <p class="why-card-text">Усе необхідне для курсу зібрано на платформі, а для спілкування є спільний чат у Telegram</p>
+            <img class="why-card-icon" src="images/06.svg" width="150" height="120" alt="">
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="courses" id="courses">
+      <div class="courses-inner">
+        <header class="courses-header reveal">
+          <p class="courses-kicker">
+            <span class="courses-kicker-dot" aria-hidden="true"></span>
+            Напрями навчання
+          </p>
+          <h2 class="courses-title"><span class="accent">Курси</span>, що дають систему</h2>
+          <p class="courses-subtitle">Від першого рядка коду до проєкту, який не соромно показати</p>
+        </header>
+
+        <div class="courses-grid">
+          <article class="course-card course-card--orange reveal">
+            <span class="course-badge">Рекомендуємо</span>
+            <p class="course-label"><span>01</span> Основний</p>
+            <h3 class="course-name">Python з нуля</h3>
+            <p class="course-desc">Для новачків без досвіду</p>
+            <ul class="course-tags">
+              <li>Python</li>
+              <li>Логіка</li>
+              <li>ООП</li>
+              <li>API</li>
+            </ul>
+            <dl class="course-meta">
+              <div>
+                <dt>Формат</dt>
+                <dd>Live online</dd>
+              </div>
+              <div>
+                <dt>Тривалість</dt>
+                <dd>3 місяці</dd>
+              </div>
+              <div>
+                <dt>Кількість</dt>
+                <dd>48 занять</dd>
+              </div>
+            </dl>
+            <div class="course-footer">
+              <p class="course-price">
+                <span>Вартість курсу</span>
+                XX XXX грн
+              </p>
+              <a href="course.html?course=python" class="course-btn">Детальніше про курс</a>
+            </div>
+          </article>
+
+          <article class="course-card course-card--cyan reveal">
+            <p class="course-label"><span>02</span> Backend</p>
+            <h3 class="course-name">Python + Django</h3>
+            <p class="course-desc">Для майбутніх backend-розробників</p>
+            <ul class="course-tags">
+              <li>Python</li>
+              <li>Django</li>
+              <li>REST API</li>
+              <li>Database</li>
+            </ul>
+            <dl class="course-meta">
+              <div>
+                <dt>Формат</dt>
+                <dd>Live online</dd>
+              </div>
+              <div>
+                <dt>Тривалість</dt>
+                <dd>3 місяці</dd>
+              </div>
+              <div>
+                <dt>Кількість</dt>
+                <dd>48 занять</dd>
+              </div>
+            </dl>
+            <div class="course-footer">
+              <p class="course-price">
+                <span>Вартість курсу</span>
+                XX XXX грн
+              </p>
+              <a href="course.html?course=django" class="course-btn">Детальніше про курс</a>
+            </div>
+          </article>
+
+          <article class="course-card course-card--cyan reveal">
+            <p class="course-label"><span>03</span> Data</p>
+            <h3 class="course-name">Python Data Analytics</h3>
+            <p class="course-desc">Для новачків без досвіду</p>
+            <ul class="course-tags">
+              <li>Python</li>
+              <li>NumPy</li>
+              <li>Pandas</li>
+              <li>Data cleaning</li>
+            </ul>
+            <dl class="course-meta">
+              <div>
+                <dt>Формат</dt>
+                <dd>Live online</dd>
+              </div>
+              <div>
+                <dt>Тривалість</dt>
+                <dd>3 місяці</dd>
+              </div>
+              <div>
+                <dt>Кількість</dt>
+                <dd>48 занять</dd>
+              </div>
+            </dl>
+            <div class="course-footer">
+              <p class="course-price">
+                <span>Вартість курсу</span>
+                XX XXX грн
+              </p>
+              <a href="course.html?course=data" class="course-btn">Детальніше про курс</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="path" id="process">
+      <div class="path-inner">
+        <header class="path-header reveal">
+          <p class="path-kicker">
+            Як проходить навчання
+            <span class="path-kicker-dot" aria-hidden="true"></span>
+          </p>
+          <h2 class="path-title">
+            Шлях від «не знаю» до <span class="accent">«зробив»</span>
+          </h2>
+        </header>
+
+        <div class="path-board">
+          <svg class="path-lines" aria-hidden="true"></svg>
+          <ol class="path-flow">
+            <li class="path-step" data-step="1">
+              <article class="path-box">
+                <p>Обираєш курс, отримуєш безкоштовну консультацію</p>
+                <span class="path-num">1</span>
+              </article>
+            </li>
+            <li class="path-step" data-step="2">
+              <article class="path-box">
+                <p>Потрапляєш у малу групу</p>
+                <span class="path-num">2</span>
+              </article>
+            </li>
+            <li class="path-step" data-step="3">
+              <article class="path-box">
+                <p>Проходиш онлайн навчання з викладачем</p>
+                <span class="path-num">3</span>
+              </article>
+            </li>
+            <li class="path-step" data-step="4">
+              <article class="path-box">
+                <p>Виконуєш домашні завдання</p>
+                <span class="path-num">4</span>
+              </article>
+            </li>
+            <li class="path-step" data-step="5">
+              <article class="path-box">
+                <p>Отримуєш фідбек</p>
+                <span class="path-num">5</span>
+              </article>
+            </li>
+            <li class="path-step" data-step="6">
+              <article class="path-box">
+                <p>Створюєш фінальний проєкт</p>
+                <span class="path-num">6</span>
+              </article>
+            </li>
+            <li class="path-step path-step--final" data-step="7">
+              <article class="path-box">
+                <p>Додаєш проєкт у портфоліо</p>
+                <span class="path-num">7</span>
+              </article>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="audience" id="audience">
+      <div class="audience-inner">
+        <header class="audience-header reveal">
+          <p class="audience-kicker">
+            <span class="audience-kicker-dot" aria-hidden="true"></span>
+            Для кого
+          </p>
+          <h2 class="audience-title">
+            Твоя стартова точка<br>
+            може бути <span class="accent">різною</span>
+          </h2>
+          <p class="audience-subtitle">Кожен може отримати необхідний навик для своєї мети</p>
+        </header>
+
+        <div class="audience-grid">
+          <article class="audience-card">
+            <p class="audience-card-label"><span>01</span> Початківець</p>
+            <p class="audience-card-text">Хочеш отримати фундаментальні знання</p>
+          </article>
+          <article class="audience-card">
+            <p class="audience-card-label"><span>02</span> Career changer</p>
+            <p class="audience-card-text">Плануєш системний перехід в IT індустрію</p>
+          </article>
+          <article class="audience-card">
+            <p class="audience-card-label"><span>03</span> Студент</p>
+            <p class="audience-card-text">Потрібна практика паралельно з навчанням</p>
+          </article>
+          <article class="audience-card">
+            <p class="audience-card-label"><span>04</span> Фрилансер</p>
+            <p class="audience-card-text">Хочеш брати складніші й високооплачувані проєкти</p>
+          </article>
+          <article class="audience-card">
+            <p class="audience-card-label"><span>05</span> Upgrade кар’єри</p>
+            <p class="audience-card-text">Хочеш освоїти роботу з даними для кар’єрного росту</p>
+          </article>
+          <article class="audience-card">
+            <p class="audience-card-label"><span>06</span> Батьки + підліток</p>
+            <p class="audience-card-text">Хочете навчатися разом у family-форматі</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="offers" id="pricing">
+      <div class="offers-inner">
+        <header class="offers-header reveal">
+          <p class="offers-kicker">
+            Варіанти вартості і пропозиції
+            <span class="offers-kicker-dot" aria-hidden="true"></span>
+          </p>
+          <h2 class="offers-title">Обери <span class="accent">умови</span>, що <br> підходять тобі</h2>
+          <p class="offers-subtitle">Підходить для всіх курсів. Ми допоможемо знайти найвигідніший доступний варіант</p>
+        </header>
+
+        <div class="offers-grid">
+          <article class="offer-card offer-card--orange reveal">
+            <p class="offer-label">Early Bird</p>
+            <h3 class="offer-name">Реєстрація заздалегідь</h3>
+            <p class="offer-old">XX XXX грн</p>
+            <p class="offer-value">XX XXX грн</p>
+            <p class="offer-note">До підвищення ціни 12 днів</p>
+          </article>
+
+          <article class="offer-card offer-card--cyan offer-card--featured reveal">
+            <div class="offer-featured-top">
+              <p class="offer-label">Standard</p>
+              <p class="offer-course">“Python з нуля”</p>
+            </div>
+            <div class="offer-featured-price">
+              <span>Звичайна ціна</span>
+              <strong>XX XXX грн</strong>
+            </div>
+            <div class="offer-rules">
+              <h3>Прозорі правила</h3>
+              <ul>
+                <li>Пропозиції доступні для <a href="#courses">всіх курсів</a></li>
+                <li>Пропозиції не сумуються</li>
+                <li>Застосовується найвигідніша доступна умова</li>
+              </ul>
+            </div>
+            <a href="#pricing" class="offer-cta">Перейти до розрахунку</a>
+          </article>
+
+          <article class="offer-card offer-card--orange reveal">
+            <p class="offer-label">Family</p>
+            <h3 class="offer-name">Навчайтеся разом</h3>
+            <p class="offer-value">-2 000 грн <span>для кожного</span></p>
+            <p class="offer-note">Для двох членів родини. Вигідніше, ніж referral</p>
+          </article>
+
+          <article class="offer-card offer-card--orange reveal">
+            <p class="offer-label">Referral</p>
+            <h3 class="offer-name">Приведи друга</h3>
+            <p class="offer-value">-1 000 грн <span>для тебе</span></p>
+            <p class="offer-note">Твоя персональна знижка за друга</p>
+          </article>
+
+          <article class="offer-card offer-card--orange reveal">
+            <p class="offer-label">Combo</p>
+            <h3 class="offer-name">Розвивай своє навчання</h3>
+            <p class="offer-value">-15% <span>на наступний курс</span></p>
+            <p class="offer-note">Зберігається за кожним студентом ITYes</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="result" id="result">
+      <div class="result-inner">
+        <header class="result-header reveal">
+          <p class="result-kicker">
+            <span class="result-kicker-dot" aria-hidden="true"></span>
+            Підсумок
+          </p>
+          <h2 class="result-title">
+            Усі курси особливі,<br>
+            але є загальний <span class="accent">результат</span>
+          </h2>
+          <p class="result-subtitle">
+            Ми не обіцяємо магічного працевлаштування. Ми даємо фундамент, практику та підтримку, щоб ти міг рухатися далі
+          </p>
+        </header>
+    
+        <ul class="result-flow">
+          <li class="result-box">Фундаментальні<br>знання Python</li>
+          <li class="result-box">Свідоме програмування та розуміння внутрішніх процесів мови</li>
+          <li class="result-box">Фінальний проєкт на основі всіх модулів курсу</li>
+          <li class="result-box">Особистий проєкт, який ти обереш та реалізуєш для свого GitHub-портфоліо</li>
+          <li class="result-box">Тест-драйв співбесіди на основі твого кейсу (за бажанням)</li>
+          <li class="result-box">База для розвитку у суміжних або IT-нішах</li>
+        </ul>
+    
+        <div class="result-cta reveal">
+          <h2 class="result-cta-title">Готовий почати?</h2>
+          <div class="result-cta-actions">
+            <a href="#courses" class="btn btn-orange">Обрати курс</a>
+            <a href="mailto:hello@ityes.ua" class="btn btn-outline-orange">Поставити запитання</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a href="#" class="footer-logo" aria-label="ITYes — на головну">
+        <img src="images/logo.svg" width="76" height="76" alt="ITYes">
+      </a>
+  
+      <p class="footer-brand">Онлайн-школа програмування</p>
+  
+      <div class="footer-legal">
+        <a href="#">Політика конфіденційності</a>
+        <span>© 2026 ITYes</span>
+        <a href="#">Договір оферти</a>
+      </div>
+  
+      <nav class="footer-nav" aria-label="Навігація у футері">
+        <h3 class="footer-heading">Навігація</h3>
+        <ul class="footer-links">
+          <li><a href="#courses">Курси</a></li>
+          <li><a href="#pricing">Ціни</a></li>
+          <li><a href="#about">Про школу</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
+  
+      <div class="footer-contacts">
+        <h3 class="footer-heading">Контакти</h3>
+        <a href="mailto:hello@ityes.ua" class="footer-email">hello@ityes.ua</a>
+        <div class="footer-social">
+          <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+          <a href="https://t.me/" target="_blank" rel="noopener" aria-label="Telegram">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M21.5 3.3 2.9 10.5c-1 .4-1 1.2-.2 1.4l4.7 1.5 1.8 5.5c.2.6.4.8.8.8s.6-.2.9-.5l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.700c.3-1.200-.5-1.800-1.200-1.400ZM8.800 13.200l9.600-6c.5-.3.9-.1.5.2l-7.800 7-.3 3.300-2-4.500Z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+
+  <script type="module" src="js/navigation.js"></script>
+  <script type="module" src="js/path.js"></script>
+  <script type="module" src="js/cursor.js"></script>
+  <script type="module" src="js/reveal.js"></script>
+  <script type="module" src="js/result-flow.js"></script>
+  <script type="module" src="js/card-glow.js"></script>
+
+</body>
+</html>

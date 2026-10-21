@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Курси — ITYes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto:wght@400;500&family=Roboto+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/mobile.css">
+  <link rel="stylesheet" href="css/path.css">
+  <link rel="stylesheet" href="css/summary.css">
+  <link rel="stylesheet" href="css/courses.css">
+</head>
+<body>
+  <div class="cursor" aria-hidden="true">
+    <span class="cursor-ring"></span>
+    <span class="cursor-dot"></span>
+  </div>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo-link" aria-label="ITYes — на головну">
+        <img src="images/logo.svg" width="48" height="48" alt="ITYes">
+      </a>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="main-nav">Меню</button>
+      <nav id="main-nav" class="main-nav" aria-label="Головна навігація">
+        <a href="courses.html" class="is-current" aria-current="page">Курси</a>
+        <a href="index.html#pricing">Ціни</a>
+        <a href="index.html#how">Як навчаємо</a>
+        <a href="index.html#about">Про школу</a>
+      </nav>
+      <a href="index.html#pricing" class="btn btn-orange header-cta">Записатися</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="cp-intro">
+      <div class="cp-inner">
+        <p class="cp-crumbs"><i aria-hidden="true"></i><a href="index.html">Головна</a> / Курси</p>
+        <h1 class="cp-title">Три курси, один підхід: <span class="accent">практика</span></h1>
+        <p class="cp-lead">Кожен курс — 3 місяці живих занять із викладачем, домашні завдання з розбором і фінальний проєкт для портфоліо.</p>
+        <ul class="cp-jump" aria-label="Перейти до курсу"><li><a href="#python"><span>01</span>Python з нуля</a></li><li><a href="#django"><span>02</span>Python + Django</a></li><li><a href="#data"><span>03</span>Python Data Analytics</a></li></ul>
+      </div>
+    </section>
+
+    <section class="cp-list" aria-label="Список курсів">
+      <div class="cp-inner">
+      <article class="cd cd--orange reveal" id="python">
+        <span class="cd-badge">Рекомендуємо</span>
+        <div class="cd-main">
+          <h2 class="cd-name">Python з нуля</h2>
+          <p class="cd-for">Для новачків без досвіду</p>
+          <p class="cd-text">Починаєш з перших рядків коду й доходиш до власного проєкту. Кожне заняття — практика, а не лекція.</p>
+          <ul class="cd-tags"><li>Python</li><li>Логіка</li><li>ООП</li><li>API</li></ul>
+          <dl class="cd-meta">
+            <div><dt>Формат</dt><dd>Live online</dd></div>
+            <div><dt>Тривалість</dt><dd>3 місяці</dd></div>
+            <div><dt>Кількість</dt><dd>48 занять</dd></div>
+          </dl>
+          <div class="cd-foot">
+            <p class="cd-price"><span>Вартість курсу</span>XX XXX грн</p>
+            <a href="course.html?course=python" class="cd-btn">Детальніше про курс</a>
+          </div>
+        </div>
+        <div class="cd-program">
+          <h3>Програма курсу</h3>
+          <ol class="cd-steps"><li><strong>Основи мови</strong><span>Змінні, типи даних, умови та цикли</span></li><li><strong>Функції та структури даних</strong><span>Списки, словники, множини</span></li><li><strong>Файли та помилки</strong><span>Робота з файлами, винятки, модулі</span></li><li><strong>ООП</strong><span>Класи, об’єкти, наслідування</span></li><li><strong>Робота з API</strong><span>Запити, JSON, інтеграція сервісів</span></li><li><strong>Фінальний проєкт</strong><span>Проєкт для GitHub-портфоліо</span></li></ol>
+        </div>
+      </article>
+      <article class="cd reveal" id="django">
+        
+        <div class="cd-main">
+          <h2 class="cd-name">Python + Django</h2>
+          <p class="cd-for">Для майбутніх backend-розробників</p>
+          <p class="cd-text">Вчишся будувати вебсервіси: від моделей і маршрутів до REST API та розгортання.</p>
+          <ul class="cd-tags"><li>Python</li><li>Django</li><li>REST API</li><li>Database</li></ul>
+          <dl class="cd-meta">
+            <div><dt>Формат</dt><dd>Live online</dd></div>
+            <div><dt>Тривалість</dt><dd>3 місяці</dd></div>
+            <div><dt>Кількість</dt><dd>48 занять</dd></div>
+          </dl>
+          <div class="cd-foot">
+            <p class="cd-price"><span>Вартість курсу</span>XX XXX грн</p>
+            <a href="course.html?course=django" class="cd-btn">Детальніше про курс</a>
+          </div>
+        </div>
+        <div class="cd-program">
+          <h3>Програма курсу</h3>
+          <ol class="cd-steps"><li><strong>Python для вебу</strong><span>Повторення бази та інструменти розробника</span></li><li><strong>Основи Django</strong><span>Проєкт, маршрути, шаблони</span></li><li><strong>Бази даних</strong><span>Моделі та ORM, міграції</span></li><li><strong>Форми та авторизація</strong><span>Користувачі, права доступу</span></li><li><strong>REST API</strong><span>Серіалізація, ендпоінти, тестування</span></li><li><strong>Фінальний проєкт</strong><span>Повноцінний вебсервіс із розгортанням</span></li></ol>
+        </div>
+      </article>
+      <article class="cd reveal" id="data">
+        
+        <div class="cd-main">
+          <h2 class="cd-name">Python Data Analytics</h2>
+          <p class="cd-for">Для новачків без досвіду</p>
+          <p class="cd-text">Навчишся працювати з даними: чистити, аналізувати та показувати висновки наочно.</p>
+          <ul class="cd-tags"><li>Python</li><li>NumPy</li><li>Pandas</li><li>Data cleaning</li></ul>
+          <dl class="cd-meta">
+            <div><dt>Формат</dt><dd>Live online</dd></div>
+            <div><dt>Тривалість</dt><dd>3 місяці</dd></div>
+            <div><dt>Кількість</dt><dd>48 занять</dd></div>
+          </dl>
+          <div class="cd-foot">
+            <p class="cd-price"><span>Вартість курсу</span>XX XXX грн</p>
+            <a href="course.html?course=data" class="cd-btn">Детальніше про курс</a>
+          </div>
+        </div>
+        <div class="cd-program">
+          <h3>Програма курсу</h3>
+          <ol class="cd-steps"><li><strong>Python для аналізу</strong><span>Базові конструкції під задачі з даними</span></li><li><strong>NumPy</strong><span>Масиви та обчислення</span></li><li><strong>Pandas</strong><span>Таблиці, фільтрація, групування</span></li><li><strong>Очищення даних</strong><span>Пропуски, дублікати, помилки</span></li><li><strong>Візуалізація</strong><span>Графіки та підсумки для читача</span></li><li><strong>Фінальний проєкт</strong><span>Аналіз реального датасету</span></li></ol>
+        </div>
+      </article>
+      </div>
+    </section>
+
+    <section class="cp-compare" id="compare">
+      <div class="cp-inner">
+        <header class="cp-compare-head reveal">
+          <h2 class="cp-compare-title">Який курс <span class="accent">обрати</span></h2>
+          <p class="cp-compare-sub">Не впевнений? Порівняй курси або запишись на безкоштовну консультацію.</p>
+        </header>
+        <div class="cp-table-wrap reveal">
+          <table class="cp-table">
+            <thead>
+              <tr><th></th><th>Python з нуля</th><th>Python + Django</th><th>Python Data Analytics</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Для кого</th><td>Новачки без досвіду</td><td>Майбутні backend-розробники</td><td>Ті, хто хоче працювати з даними</td></tr>
+              <tr><th scope="row">Що вивчаєш</th><td>Python, ООП, API</td><td>Django, REST API, бази даних</td><td>NumPy, Pandas, очищення даних</td></tr>
+              <tr><th scope="row">Фінальний проєкт</th><td>Застосунок на Python</td><td>Вебсервіс із API</td><td>Аналіз реального датасету</td></tr>
+              <tr><th scope="row">Формат і тривалість</th><td>Live online, 3 місяці, 48 занять</td><td>Live online, 3 місяці, 48 занять</td><td>Live online, 3 місяці, 48 занять</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="cp-cta">
+      <div class="result-cta reveal">
+        <h2 class="result-cta-title">Готовий почати?</h2>
+        <div class="result-cta-actions">
+          <a href="index.html#pricing" class="btn btn-orange">Записатися</a>
+          <a href="mailto:hello@ityes.ua" class="btn btn-outline-orange">Поставити запитання</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a href="index.html" class="footer-logo" aria-label="ITYes — на головну">
+        <img src="images/logo.svg" width="76" height="76" alt="ITYes">
+      </a>
+      <p class="footer-brand">Онлайн-школа програмування</p>
+      <div class="footer-legal">
+        <a href="#">Політика конфіденційності</a>
+        <span>© 2026 ITYes</span>
+        <a href="#">Договір оферти</a>
+      </div>
+      <nav class="footer-nav" aria-label="Навігація у футері">
+        <h3 class="footer-heading">Навігація</h3>
+        <ul class="footer-links">
+          <li><a href="courses.html">Курси</a></li>
+          <li><a href="index.html#pricing">Ціни</a></li>
+          <li><a href="index.html#about">Про школу</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
+      <div class="footer-contacts">
+        <h3 class="footer-heading">Контакти</h3>
+        <a href="mailto:hello@ityes.ua" class="footer-email">hello@ityes.ua</a>
+        <div class="footer-social">
+          <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://t.me/" target="_blank" rel="noopener" aria-label="Telegram">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.5 3.3 2.9 10.5c-1 .4-1 1.2-.2 1.4l4.7 1.5 1.8 5.5c.2.6.4.8.8.8s.6-.2.9-.5l2.3-2.200 4.700 3.500c.9.5 1.500.2 1.700-.8l3.100-14.700c.3-1.200-.5-1.800-1.200-1.400ZM8.800 13.200l9.600-6c.5-.3.9-.1.5.2l-7.800 7-.3 3.300-2-4.500Z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="js/navigation.js"></script>
+  <script type="module" src="js/cursor.js"></script>
+  <script type="module" src="js/reveal.js"></script>
+</body>
+</html>

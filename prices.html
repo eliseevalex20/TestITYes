@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ціни — ITYes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&family=Roboto:wght@400;500&family=Roboto+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="css/prices.css">
+</head>
+<body>
+  <div class="cursor" aria-hidden="true">
+    <span class="cursor-ring"></span>
+    <span class="cursor-dot"></span>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo-link" aria-label="ITYes — на головну">
+        <img src="images/logo.svg" width="48" height="48" alt="ITYes">
+      </a>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="main-nav">Меню</button>
+      <nav id="main-nav" class="main-nav" aria-label="Головна навігація">
+        <a href="courses.html">Курси</a>
+        <a href="prices.html" class="is-current" aria-current="page">Ціни</a>
+        <a href="index.html#how">Як навчаємо</a>
+        <a href="index.html#about">Про школу</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a href="#calculator" class="btn btn-orange header-cta">Записатися</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="cx-hero pr-hero">
+      <div class="cx-inner cx-hero-grid">
+        <div class="cx-hero-content">
+          <p class="cx-label"><span class="cx-dot" aria-hidden="true"></span>Ціни та пропозиції</p>
+          <p class="pr-tagline">Розрахуй фінальну вартість</p>
+          <h1 class="pr-hero-title">Актуальні тарифи та пропозиції</h1>
+          <p class="cx-hero-sub">Зручний розрахунок ціни та знижок для кожного курсу</p>
+          <a href="#calculator" class="btn btn-outline-orange pr-hero-btn">Калькулятор</a>
+        </div>
+
+        <div class="cx-hero-visual">
+          <div class="cx-panel">
+            <div class="cx-panel-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+            <ol class="cx-panel-list pr-panel-list" aria-label="Пропозиції ITYes">
+              <li><span>01</span><a href="#early-bird">Early Bird</a></li>
+              <li><span>02</span><a href="#family">Family</a></li>
+              <li><span>03</span><a href="#referral">Referral</a></li>
+              <li><span>04</span><a href="#combo">Combo</a></li>
+            </ol>
+            <div class="cx-panel-status" aria-hidden="true"><span>UTF-8</span><span>PYTHON 3.12</span></div>
+          </div>
+
+          <div class="cx-float cx-float--course">
+            <p class="cx-float-label">Пропозиції</p>
+            <p class="cx-float-value">01 / 04</p>
+            <span class="cx-float-line" aria-hidden="true"></span>
+          </div>
+
+          <div class="cx-float pr-float-inst">
+            <p class="cx-float-label">Розстрочка</p>
+            <p class="cx-float-small">2 %</p>
+          </div>
+        </div>
+      </div>
+
+      <ul class="hero-benefits" aria-label="Розділи сторінки">
+        <li><span class="hero-benefits-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Ціни</li>
+        <li><span class="hero-benefits-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Пропозиції</li>
+        <li><span class="hero-benefits-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Калькулятор</li>
+      </ul>
+    </section>
+
+    <!-- ============ PRICE TABLE ============ -->
+    <section class="pr-sec pr-sec--alt" id="prices">
+      <div class="pr-inner">
+        <header class="pr-head pr-head--right reveal">
+          <p class="pr-kicker">Вартість навчання<span class="pr-dot" aria-hidden="true"></span></p>
+          <h2 class="pr-title">Актуальні <span class="accent">ціни 2026</span></h2>
+        </header>
+
+        <div class="pr-table-wrap reveal">
+          <table class="pr-table">
+            <thead>
+              <tr><th>Курс</th><th>Тривалість</th><th>Вартість</th><th>Early Bird</th><th>Розстрочка</th></tr>
+            </thead>
+            <tbody>
+              <tr data-course="python"><th scope="row">Python з нуля</th><td>2.5 місяців</td><td data-f="price">XX XXX грн</td><td data-f="early">XX XXX грн</td><td data-f="inst">X XXX грн/місяць</td></tr>
+              <tr data-course="django"><th scope="row">Python + Django</th><td>3 місяця</td><td data-f="price">XX XXX грн</td><td data-f="early">XX XXX грн</td><td data-f="inst">X XXX грн/місяць</td></tr>
+              <tr data-course="data"><th scope="row">Python + Data Analytics</th><td>3 місяця</td><td data-f="price">XX XXX грн</td><td data-f="early">XX XXX грн</td><td data-f="inst">X XXX грн/місяць</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EARLY BIRD ============ -->
+    <section class="pr-sec" id="early-bird">
+      <div class="pr-inner pr-split pr-split--eb">
+        <div class="pr-side reveal">
+          <div>
+            <p class="pr-kicker"><span class="pr-dot" aria-hidden="true"></span>Пропозиція</p>
+            <h2 class="pr-offer">Early Bird</h2>
+          </div>
+          <p class="pr-note">Інформація оновлюється автоматично</p>
+        </div>
+
+        <div class="pr-spots reveal">
+          <article class="pr-spot">
+            <div class="pr-spot-body">
+              <p class="pr-spot-label">Залишилося</p>
+              <p class="pr-spot-num">5</p>
+              <p class="pr-spot-unit">місць</p>
+            </div>
+            <p class="pr-spot-name">Python з нуля</p>
+          </article>
+          <article class="pr-spot">
+            <div class="pr-spot-body">
+              <p class="pr-spot-label">Залишилося</p>
+              <p class="pr-spot-num">4</p>
+              <p class="pr-spot-unit">місця</p>
+            </div>
+            <p class="pr-spot-name">Python<br>Django</p>
+          </article>
+          <article class="pr-spot">
+            <div class="pr-spot-body">
+              <p class="pr-spot-label">Залишилося</p>
+              <p class="pr-spot-num">1</p>
+              <p class="pr-spot-unit">місце</p>
+            </div>
+            <p class="pr-spot-name">Python<br>Data Analytics</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAMILY ============ -->
+    <section class="pr-sec pr-sec--alt" id="family">
+      <div class="pr-inner pr-split pr-split--rev">
+        <div class="pr-example reveal" aria-label="Приклад сімейної вартості">
+          <p class="pr-example-cap">На прикладі курсу “Python з нуля”</p>
+          <div class="pr-ex-row pr-ex-row--top"><span>Звичайна вартість x2</span><s data-x="regular">XX XXX</s></div>
+          <div class="pr-ex-row pr-ex-row--family"><span>Сімейна вартість</span><strong data-x="family">XX XXX грн</strong></div>
+          <div class="pr-ex-row"><span>Економія</span><strong data-x="saving">XX XXX грн</strong></div>
+        </div>
+
+        <div class="pr-copy reveal">
+          <p class="pr-kicker">Навчайтеся разом<span class="pr-dot" aria-hidden="true"></span></p>
+          <h2 class="pr-offer">Family</h2>
+          <p class="pr-lead">Навчайтеся разом із близькими та отримуйте сімейну знижку на будь-який обраний курс</p>
+          <p class="pr-note">Програмувати легше опановувати, коли поруч людина з тією самою метою</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ REFERRAL ============ -->
+    <section class="pr-sec" id="referral">
+      <div class="pr-inner pr-split pr-split--ref">
+        <div class="pr-side reveal">
+          <div>
+            <p class="pr-kicker"><span class="pr-dot" aria-hidden="true"></span>Запроси друга</p>
+            <h2 class="pr-offer">Referral</h2>
+          </div>
+          <p class="pr-note">Активується одразу після першої оплати друга. Отримуй бонус на свій наступний платіж або на картку</p>
+        </div>
+
+        <ol class="pr-steps reveal">
+          <li><span>01</span>Рекомендуєте ITYes другові</li>
+          <li><span>02</span>Друг записується на курс</li>
+          <li><span>03</span>Отримуєте бонус</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ COMBO ============ -->
+    <section class="pr-sec pr-sec--alt" id="combo">
+      <div class="pr-inner pr-split pr-split--rev">
+        <div class="pr-combo reveal">
+          <p class="pr-combo-num">-15 %</p>
+          <p class="pr-combo-tag">на наступний курс</p>
+        </div>
+
+        <div class="pr-copy reveal">
+          <p class="pr-kicker">Більше навчання<span class="pr-dot" aria-hidden="true"></span></p>
+          <h2 class="pr-offer">Combo</h2>
+          <p class="pr-lead">Плануєш масштабне навчання? Отримай знижку на свій наступний курс одразу після фіналу першого</p>
+          <p class="pr-note">Зберігається за кожним студентом ITYes</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CALCULATOR ============ -->
+    <section class="pr-calc-sec" id="calculator">
+      <div class="pr-calc reveal">
+        <div class="pr-calc-left">
+          <div class="pr-calc-intro">
+            <p class="pr-kicker"><span class="pr-dot" aria-hidden="true"></span>Калькулятор</p>
+            <h2 class="pr-calc-title"><span class="accent">Розрахуйте вартість</span> вашого навчання</h2>
+            <p class="pr-calc-text">Оберіть параметри, а фінальна ціна буде розрахована після підключення актуальних тарифів</p>
+
+            <div class="pr-field">
+              <label for="calc-course">Оберіть курс</label>
+              <div class="pr-select">
+                <select id="calc-course">
+                  <option value="python">Python з нуля</option>
+                  <option value="django">Python + Django</option>
+                  <option value="data">Python + Data Analytics</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <ul class="pr-toggles">
+            <li><span id="t-early">Early Birds</span><button type="button" class="pr-switch is-on" role="switch" aria-checked="true" aria-labelledby="t-early" data-offer="early"><i></i></button></li>
+            <li><span id="t-family">Family</span><button type="button" class="pr-switch" role="switch" aria-checked="false" aria-labelledby="t-family" data-offer="family"><i></i></button></li>
+            <li><span id="t-ref">Referral</span><button type="button" class="pr-switch" role="switch" aria-checked="false" aria-labelledby="t-ref" data-offer="referral"><i></i></button></li>
+          </ul>
+          <p class="pr-calc-foot">Застосовується найвигідніша доступна пропозиція. Пропозиції не сумуються</p>
+        </div>
+
+        <div class="pr-calc-right" aria-live="polite">
+          <div class="pr-res-top">
+            <p class="pr-kicker pr-kicker--plain">Розрахунок</p>
+            <p class="pr-res-old"><span>Звичайна вартість</span><s id="r-regular">XX XXX</s> грн</p>
+          </div>
+          <p class="pr-res-total" id="r-total">XX XXX грн</p>
+          <div class="pr-res-row"><span>Ви економите</span><strong id="r-saving">XX XXX грн</strong></div>
+          <div class="pr-res-row pr-res-row--sm"><span>В розстрочку</span><strong id="r-inst">X XXX грн/місяць</strong></div>
+          <div class="pr-res-applied">
+            <p>Застосовані Пропозиції</p>
+            <ul id="r-applied"><li>Early Bird</li></ul>
+            <a href="index.html#pricing" class="btn btn-orange pr-res-btn">Записатися на курс</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a href="index.html" class="footer-logo" aria-label="ITYes — на головну">
+        <img src="images/logo.svg" width="76" height="76" alt="ITYes">
+      </a>
+      <p class="footer-brand">Онлайн-школа програмування</p>
+      <div class="footer-legal">
+        <a href="#">Політика конфіденційності</a>
+        <span>© 2026 ITYes</span>
+        <a href="#">Договір оферти</a>
+      </div>
+      <nav class="footer-nav" aria-label="Навігація у футері">
+        <h3 class="footer-heading">Навігація</h3>
+        <ul class="footer-links">
+          <li><a href="courses.html">Курси</a></li>
+          <li><a href="index.html#about">Про школу</a></li>
+          <li><a href="prices.html">Ціни</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
+      <div class="footer-contacts">
+        <h3 class="footer-heading">Контакти</h3>
+        <a href="mailto:hello@ityes.ua" class="footer-email">hello@ityes.ua</a>
+        <div class="footer-social">
+          <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://t.me/" target="_blank" rel="noopener" aria-label="Telegram">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.5 3.3 2.9 10.5c-1 .4-1 1.2-.2 1.4l4.7 1.5 1.8 5.5c.2.6.4.8.8.8s.6-.2.9-.5l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.7c.3-1.2-.5-1.8-1.2-1.4ZM8.8 13.2l9.6-6c.5-.3.9-.1.5.2l-7.8 7-.3 3.3-2-4.5Z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="js/site.js"></script>
+  <script type="module" src="js/prices.js"></script>
+</body>
+</html>

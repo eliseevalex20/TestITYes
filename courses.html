@@ -7,17 +7,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto:wght@400;500&family=Roboto+Mono:wght@400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/mobile.css">
-  <link rel="stylesheet" href="css/path.css">
-  <link rel="stylesheet" href="css/summary.css">
-  <link rel="stylesheet" href="css/courses.css">
+  <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="css/courses-page.css">
 </head>
 <body>
   <div class="cursor" aria-hidden="true">
     <span class="cursor-ring"></span>
     <span class="cursor-dot"></span>
   </div>
+
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="logo-link" aria-label="ITYes — на головну">
@@ -29,120 +27,186 @@
         <a href="index.html#pricing">Ціни</a>
         <a href="index.html#how">Як навчаємо</a>
         <a href="index.html#about">Про школу</a>
+        <a href="#faq">FAQ</a>
       </nav>
       <a href="index.html#pricing" class="btn btn-orange header-cta">Записатися</a>
     </div>
   </header>
 
   <main>
-    <section class="cp-intro">
-      <div class="cp-inner">
-        <p class="cp-crumbs"><i aria-hidden="true"></i><a href="index.html">Головна</a> / Курси</p>
-        <h1 class="cp-title">Три курси, один підхід: <span class="accent">практика</span></h1>
-        <p class="cp-lead">Кожен курс — 3 місяці живих занять із викладачем, домашні завдання з розбором і фінальний проєкт для портфоліо.</p>
-        <ul class="cp-jump" aria-label="Перейти до курсу"><li><a href="#python"><span>01</span>Python з нуля</a></li><li><a href="#django"><span>02</span>Python + Django</a></li><li><a href="#data"><span>03</span>Python Data Analytics</a></li></ul>
+    <!-- ============ HERO ============ -->
+    <section class="cx-hero ct-hero">
+      <div class="cx-inner cx-hero-grid">
+        <div class="cx-hero-content">
+          <p class="cx-label"><span class="cx-dot" aria-hidden="true"></span>Каталог / 2026</p>
+          <h1 class="ct-hero-title">Навчання, що перетворює <span class="accent">знання на навички</span></h1>
+          <p class="cx-hero-sub">Три сфокусовані програми. Живі заняття, практика й персональний фідбек</p>
+        </div>
+
+        <div class="cx-hero-visual">
+          <div class="cx-panel">
+            <div class="cx-panel-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+            <ol class="cx-panel-list ct-panel-list" aria-label="Курси ITYes">
+              <li><span>01</span><a href="#python">Python з нуля</a></li>
+              <li><span>02</span><a href="#django">Python + Django</a></li>
+              <li><span>03</span><a href="#data">Python + Data Analytics</a></li>
+            </ol>
+            <div class="cx-panel-status" aria-hidden="true"><span>UTF-8</span><span>PYTHON 3.12</span></div>
+          </div>
+
+          <div class="cx-float cx-float--course">
+            <p class="cx-float-label">Курс</p>
+            <p class="cx-float-value">01 / 03</p>
+            <span class="cx-float-line" aria-hidden="true"></span>
+          </div>
+
+          <div class="cx-float ct-float-feedback">
+            <span class="ct-check" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="2.5"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <div>
+              <p class="cx-float-label">Feedback</p>
+              <p class="ct-float-text">Роботу перевірено</p>
+            </div>
+          </div>
+        </div>
       </div>
+
+      <ul class="hero-benefits" aria-label="Що входить у навчання">
+        <li><span class="hero-benefits-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Практика</li>
+        <li><span class="hero-benefits-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Домашні завдання</li>
+        <li><span class="hero-benefits-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Перевірка викладачем</li>
+        <li><span class="hero-benefits-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Фінальний проєкт</li>
+      </ul>
     </section>
 
-    <section class="cp-list" aria-label="Список курсів">
-      <div class="cp-inner">
-      <article class="cd cd--orange reveal" id="python">
-        <span class="cd-badge">Рекомендуємо</span>
-        <div class="cd-main">
-          <h2 class="cd-name">Python з нуля</h2>
-          <p class="cd-for">Для новачків без досвіду</p>
-          <p class="cd-text">Починаєш з перших рядків коду й доходиш до власного проєкту. Кожне заняття — практика, а не лекція.</p>
-          <ul class="cd-tags"><li>Python</li><li>Логіка</li><li>ООП</li><li>API</li></ul>
-          <dl class="cd-meta">
-            <div><dt>Формат</dt><dd>Live online</dd></div>
-            <div><dt>Тривалість</dt><dd>3 місяці</dd></div>
-            <div><dt>Кількість</dt><dd>48 занять</dd></div>
-          </dl>
-          <div class="cd-foot">
-            <p class="cd-price"><span>Вартість курсу</span>XX XXX грн</p>
-            <a href="course.html?course=python" class="cd-btn">Детальніше про курс</a>
-          </div>
-        </div>
-        <div class="cd-program">
-          <h3>Програма курсу</h3>
-          <ol class="cd-steps"><li><strong>Основи мови</strong><span>Змінні, типи даних, умови та цикли</span></li><li><strong>Функції та структури даних</strong><span>Списки, словники, множини</span></li><li><strong>Файли та помилки</strong><span>Робота з файлами, винятки, модулі</span></li><li><strong>ООП</strong><span>Класи, об’єкти, наслідування</span></li><li><strong>Робота з API</strong><span>Запити, JSON, інтеграція сервісів</span></li><li><strong>Фінальний проєкт</strong><span>Проєкт для GitHub-портфоліо</span></li></ol>
-        </div>
-      </article>
-      <article class="cd reveal" id="django">
-        
-        <div class="cd-main">
-          <h2 class="cd-name">Python + Django</h2>
-          <p class="cd-for">Для майбутніх backend-розробників</p>
-          <p class="cd-text">Вчишся будувати вебсервіси: від моделей і маршрутів до REST API та розгортання.</p>
-          <ul class="cd-tags"><li>Python</li><li>Django</li><li>REST API</li><li>Database</li></ul>
-          <dl class="cd-meta">
-            <div><dt>Формат</dt><dd>Live online</dd></div>
-            <div><dt>Тривалість</dt><dd>3 місяці</dd></div>
-            <div><dt>Кількість</dt><dd>48 занять</dd></div>
-          </dl>
-          <div class="cd-foot">
-            <p class="cd-price"><span>Вартість курсу</span>XX XXX грн</p>
-            <a href="course.html?course=django" class="cd-btn">Детальніше про курс</a>
-          </div>
-        </div>
-        <div class="cd-program">
-          <h3>Програма курсу</h3>
-          <ol class="cd-steps"><li><strong>Python для вебу</strong><span>Повторення бази та інструменти розробника</span></li><li><strong>Основи Django</strong><span>Проєкт, маршрути, шаблони</span></li><li><strong>Бази даних</strong><span>Моделі та ORM, міграції</span></li><li><strong>Форми та авторизація</strong><span>Користувачі, права доступу</span></li><li><strong>REST API</strong><span>Серіалізація, ендпоінти, тестування</span></li><li><strong>Фінальний проєкт</strong><span>Повноцінний вебсервіс із розгортанням</span></li></ol>
-        </div>
-      </article>
-      <article class="cd reveal" id="data">
-        
-        <div class="cd-main">
-          <h2 class="cd-name">Python Data Analytics</h2>
-          <p class="cd-for">Для новачків без досвіду</p>
-          <p class="cd-text">Навчишся працювати з даними: чистити, аналізувати та показувати висновки наочно.</p>
-          <ul class="cd-tags"><li>Python</li><li>NumPy</li><li>Pandas</li><li>Data cleaning</li></ul>
-          <dl class="cd-meta">
-            <div><dt>Формат</dt><dd>Live online</dd></div>
-            <div><dt>Тривалість</dt><dd>3 місяці</dd></div>
-            <div><dt>Кількість</dt><dd>48 занять</dd></div>
-          </dl>
-          <div class="cd-foot">
-            <p class="cd-price"><span>Вартість курсу</span>XX XXX грн</p>
-            <a href="course.html?course=data" class="cd-btn">Детальніше про курс</a>
-          </div>
-        </div>
-        <div class="cd-program">
-          <h3>Програма курсу</h3>
-          <ol class="cd-steps"><li><strong>Python для аналізу</strong><span>Базові конструкції під задачі з даними</span></li><li><strong>NumPy</strong><span>Масиви та обчислення</span></li><li><strong>Pandas</strong><span>Таблиці, фільтрація, групування</span></li><li><strong>Очищення даних</strong><span>Пропуски, дублікати, помилки</span></li><li><strong>Візуалізація</strong><span>Графіки та підсумки для читача</span></li><li><strong>Фінальний проєкт</strong><span>Аналіз реального датасету</span></li></ol>
-        </div>
-      </article>
-      </div>
-    </section>
-
-    <section class="cp-compare" id="compare">
-      <div class="cp-inner">
-        <header class="cp-compare-head reveal">
-          <h2 class="cp-compare-title">Який курс <span class="accent">обрати</span></h2>
-          <p class="cp-compare-sub">Не впевнений? Порівняй курси або запишись на безкоштовну консультацію.</p>
+    <!-- ============ COURSES ============ -->
+    <section class="ct-courses" id="courses">
+      <div class="ct-inner">
+        <header class="ct-head reveal">
+          <p class="ct-kicker">Напрями навчання<span class="ct-kicker-dot" aria-hidden="true"></span></p>
+          <h2 class="ct-title"><span class="accent">Курси,</span> що дають систему</h2>
+          <p class="ct-sub">Від першого рядка коду до проєкту, який не соромно показати</p>
         </header>
-        <div class="cp-table-wrap reveal">
-          <table class="cp-table">
-            <thead>
-              <tr><th></th><th>Python з нуля</th><th>Python + Django</th><th>Python Data Analytics</th></tr>
-            </thead>
-            <tbody>
-              <tr><th scope="row">Для кого</th><td>Новачки без досвіду</td><td>Майбутні backend-розробники</td><td>Ті, хто хоче працювати з даними</td></tr>
-              <tr><th scope="row">Що вивчаєш</th><td>Python, ООП, API</td><td>Django, REST API, бази даних</td><td>NumPy, Pandas, очищення даних</td></tr>
-              <tr><th scope="row">Фінальний проєкт</th><td>Застосунок на Python</td><td>Вебсервіс із API</td><td>Аналіз реального датасету</td></tr>
-              <tr><th scope="row">Формат і тривалість</th><td>Live online, 3 місяці, 48 занять</td><td>Live online, 3 місяці, 48 занять</td><td>Live online, 3 місяці, 48 занять</td></tr>
-            </tbody>
-          </table>
+
+        <div class="ct-list">
+          <!-- 01 -->
+          <article class="ct-card reveal" id="python" data-side="left">
+            <div class="ct-info">
+              <h3 class="ct-name">Python з нуля</h3>
+              <p class="ct-for">Для новачків без досвіду</p>
+              <ul class="ct-tags"><li>Python</li><li>Логіка</li><li>ООП</li><li>API</li></ul>
+              <dl class="ct-meta">
+                <div><dt>Тривалість:</dt><dd>2.5 місяці <span>(25 занять)</span></dd></div>
+                <div><dt>Формат:</dt><dd>Live online</dd></div>
+              </dl>
+              <div class="ct-foot">
+                <p class="ct-price"><span>Вартість курсу</span>XX XXX грн</p>
+                <a href="course.html?course=python" class="ct-btn">Детальніше</a>
+              </div>
+            </div>
+            <div class="ct-program">
+              <span class="ct-badge">Рекомендуємо</span>
+              <h4>Програма курсу</h4>
+              <ol class="ct-steps">
+                <li><strong>Основи мови</strong><span>Змінні, типи даних, умови та цикли</span></li>
+                <li><strong>Функції та структури даних</strong><span>Списки, словники, множини</span></li>
+                <li><strong>Файли та помилки</strong><span>Робота з файлами, винятки, модулі</span></li>
+                <li><strong>ООП</strong><span>Класи, об’єкти, наслідування</span></li>
+                <li><strong>Робота з API</strong><span>Запити, JSON, інтеграція сервісів</span></li>
+                <li><strong>Фінальний проєкт</strong><span>Проєкт для GitHub-портфоліо</span></li>
+              </ol>
+            </div>
+          </article>
+
+          <!-- 02 (mirrored) -->
+          <article class="ct-card ct-card--flip reveal" id="django" data-side="right">
+            <div class="ct-info">
+              <h3 class="ct-name">Python + Django</h3>
+              <p class="ct-for">Для майбутніх backend-розробників</p>
+              <ul class="ct-tags"><li>Python</li><li>Django</li><li>REST API</li><li>Database</li></ul>
+              <dl class="ct-meta">
+                <div><dt>Тривалість:</dt><dd>3 місяці <span>(32 заняття)</span></dd></div>
+                <div><dt>Формат:</dt><dd>Live online</dd></div>
+              </dl>
+              <div class="ct-foot">
+                <p class="ct-price"><span>Вартість курсу</span>XX XXX грн</p>
+                <a href="course.html?course=django" class="ct-btn">Детальніше</a>
+              </div>
+            </div>
+            <div class="ct-program">
+              <h4>Програма курсу</h4>
+              <ol class="ct-steps">
+                <li><strong>Python для вебу</strong><span>Повторення бази та інструменти розробника</span></li>
+                <li><strong>Основи Django</strong><span>Проєкт, маршрути, шаблони</span></li>
+                <li><strong>Бази даних</strong><span>Моделі та ORM, міграції</span></li>
+                <li><strong>Форми та авторизація</strong><span>Користувачі, права доступу</span></li>
+                <li><strong>REST API</strong><span>Серіалізація, ендпоінти, тестування</span></li>
+                <li><strong>Фінальний проєкт</strong><span>Повноцінний вебсервіс із розгортанням</span></li>
+              </ol>
+            </div>
+          </article>
+
+          <!-- 03 -->
+          <article class="ct-card reveal" id="data" data-side="right">
+            <div class="ct-info">
+              <h3 class="ct-name">Python<br>Data Analytics</h3>
+              <p class="ct-for">Для тих, хто хоче розуміти та керувати даними</p>
+              <ul class="ct-tags"><li>Python</li><li>NumPy</li><li>Pandas</li><li>Data cleaning</li></ul>
+              <dl class="ct-meta">
+                <div><dt>Тривалість:</dt><dd>3 місяці <span>(30 занять)</span></dd></div>
+                <div><dt>Формат:</dt><dd>Live online</dd></div>
+              </dl>
+              <div class="ct-foot">
+                <p class="ct-price"><span>Вартість курсу</span>XX XXX грн</p>
+                <a href="course.html?course=data" class="ct-btn">Детальніше</a>
+              </div>
+            </div>
+            <div class="ct-program">
+              <h4>Програма курсу</h4>
+              <ol class="ct-steps">
+                <li><strong>Python для аналізу</strong><span>Базові конструкції під задачі з даними</span></li>
+                <li><strong>NumPy</strong><span>Масиви та обчислення</span></li>
+                <li><strong>Pandas</strong><span>Таблиці, фільтрація, групування</span></li>
+                <li><strong>Очищення даних</strong><span>Пропуски, дублікати, помилки</span></li>
+                <li><strong>Візуалізація</strong><span>Графіки та підсумки для читача</span></li>
+                <li><strong>Фінальний проєкт</strong><span>Аналіз реального датасету</span></li>
+              </ol>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="cp-cta">
+    <!-- ============ PATH ============ -->
+    <section class="path" id="process">
+      <div class="path-inner">
+        <header class="path-header reveal">
+          <p class="path-kicker">Як проходить навчання<span class="path-kicker-dot" aria-hidden="true"></span></p>
+          <h2 class="path-title">Шлях від «не знаю» до <span class="accent">«зробив»</span></h2>
+        </header>
+
+        <div class="path-board">
+          <svg class="path-lines" aria-hidden="true"></svg>
+          <ol class="path-flow">
+            <li class="path-step" data-step="1"><article class="path-box"><p>Обираєш курс, отримуєш безкоштовну консультацію</p><span class="path-num">1</span></article></li>
+            <li class="path-step" data-step="2"><article class="path-box"><p>Потрапляєш у малу групу</p><span class="path-num">2</span></article></li>
+            <li class="path-step" data-step="3"><article class="path-box"><p>Проходиш онлайн навчання з викладачем</p><span class="path-num">3</span></article></li>
+            <li class="path-step" data-step="4"><article class="path-box"><p>Виконуєш домашні завдання</p><span class="path-num">4</span></article></li>
+            <li class="path-step" data-step="5"><article class="path-box"><p>Отримуєш фідбек</p><span class="path-num">5</span></article></li>
+            <li class="path-step" data-step="6"><article class="path-box"><p>Створюєш фінальний проєкт</p><span class="path-num">6</span></article></li>
+            <li class="path-step path-step--final" data-step="7"><article class="path-box"><p>Додаєш проєкт у портфоліо</p><span class="path-num">7</span></article></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="ct-cta">
       <div class="result-cta reveal">
         <h2 class="result-cta-title">Готовий почати?</h2>
         <div class="result-cta-actions">
           <a href="index.html#pricing" class="btn btn-orange">Записатися</a>
-          <a href="mailto:hello@ityes.ua" class="btn btn-outline-orange">Поставити запитання</a>
         </div>
       </div>
     </section>
@@ -163,8 +227,8 @@
         <h3 class="footer-heading">Навігація</h3>
         <ul class="footer-links">
           <li><a href="courses.html">Курси</a></li>
-          <li><a href="index.html#pricing">Ціни</a></li>
           <li><a href="index.html#about">Про школу</a></li>
+          <li><a href="index.html#pricing">Ціни</a></li>
           <li><a href="#faq">FAQ</a></li>
         </ul>
       </nav>
@@ -176,15 +240,14 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg>
           </a>
           <a href="https://t.me/" target="_blank" rel="noopener" aria-label="Telegram">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.5 3.3 2.9 10.5c-1 .4-1 1.2-.2 1.4l4.7 1.5 1.8 5.5c.2.6.4.8.8.8s.6-.2.9-.5l2.3-2.200 4.700 3.500c.9.5 1.500.2 1.700-.8l3.100-14.700c.3-1.200-.5-1.800-1.200-1.400ZM8.800 13.200l9.600-6c.5-.3.9-.1.5.2l-7.800 7-.3 3.300-2-4.500Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.5 3.3 2.9 10.5c-1 .4-1 1.2-.2 1.4l4.7 1.5 1.8 5.5c.2.6.4.8.8.8s.6-.2.9-.5l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.7c.3-1.2-.5-1.8-1.2-1.4ZM8.8 13.2l9.6-6c.5-.3.9-.1.5.2l-7.8 7-.3 3.3-2-4.5Z"/></svg>
           </a>
         </div>
       </div>
     </div>
   </footer>
 
-  <script type="module" src="js/navigation.js"></script>
-  <script type="module" src="js/cursor.js"></script>
-  <script type="module" src="js/reveal.js"></script>
+  <script type="module" src="js/site.js"></script>
+  <script type="module" src="js/courses-page.js"></script>
 </body>
 </html>
