@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ — ITYes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto:wght@400;500&family=Roboto+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="css/faq.css">
+</head>
+<body>
+  <div class="cursor" aria-hidden="true">
+    <span class="cursor-ring"></span>
+    <span class="cursor-dot"></span>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo-link" aria-label="ITYes — на головну">
+        <img src="images/logo.svg" width="48" height="48" alt="ITYes">
+      </a>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="main-nav">Меню</button>
+      <nav id="main-nav" class="main-nav" aria-label="Головна навігація">
+        <a href="courses.html">Курси</a>
+        <a href="prices.html">Ціни</a>
+        <a href="index.html#how">Як навчаємо</a>
+        <a href="index.html#about">Про школу</a>
+        <a href="faq.html" class="is-current" aria-current="page">FAQ</a>
+      </nav>
+      <a href="#contact" class="btn btn-orange header-cta">Записатися</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="cx-hero fq-hero">
+      <div class="cx-inner cx-hero-grid">
+        <div class="cx-hero-content">
+          <p class="cx-label"><span class="cx-dot" aria-hidden="true"></span>FAQ / підтримка</p>
+          <h1 class="fq-hero-title">Запитання та відповіді</h1>
+          <p class="cx-hero-sub">Усе важливе про навчання, оплату, знижки та формат занять</p>
+        </div>
+
+        <div class="cx-hero-visual">
+          <div class="cx-panel">
+            <div class="cx-panel-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+            <ol class="cx-panel-list fq-panel-list" aria-label="Приклад запитань">
+              <li class="is-active"><span>01</span><a href="#faq">Як проходить навчання?</a></li>
+              <li><span>02</span><a href="#faq">Обираєш курс</a></li>
+              <li><span>03</span><a href="#faq">Залишаєш заявку</a></li>
+              <li><span>04</span><a href="#faq">Потрапляєш в групу…</a></li>
+            </ol>
+            <div class="cx-panel-status" aria-hidden="true"><span>UTF-8</span><span>PYTHON 3.12</span></div>
+          </div>
+
+          <div class="cx-float cx-float--course">
+            <p class="cx-float-label">Запитання</p>
+            <p class="cx-float-value">99 /100</p>
+            <span class="cx-float-line" aria-hidden="true"></span>
+          </div>
+
+          <div class="cx-float fq-float-qa">
+            <span class="fq-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#121214" stroke-width="3"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <p class="cx-float-label">питання<br>відповідь</p>
+          </div>
+        </div>
+      </div>
+
+      <ul class="hero-benefits" aria-label="Розділи сторінки">
+        <li><span class="hero-benefits-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Запитання</li>
+        <li><span class="hero-benefits-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Відповіді</li>
+        <li><span class="hero-benefits-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Зв’язок</li>
+      </ul>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="fq-sec" id="faq">
+      <div class="fq-inner">
+        <header class="fq-head reveal">
+          <p class="fq-kicker">FAQ<span class="fq-dot" aria-hidden="true"></span></p>
+          <h2 class="fq-title">Відповідаємо на<br>поширені <span class="accent">запитання</span></h2>
+          <p class="fq-sub">Усе, що варто знати про формат навчання, програму, розстрочку та практику на курсі</p>
+        </header>
+
+        <div class="fq-grid">
+          <div class="fq-acc reveal" id="fq-acc">
+            <div class="fq-item">
+              <h3><button type="button" class="fq-btn" aria-expanded="false" aria-controls="fq-a0" id="fq-q0">
+                <span class="fq-num">01</span><span class="fq-q">Який курс підійде, якщо я ніколи не програмував?</span><span class="fq-chev" aria-hidden="true"></span>
+              </button></h3>
+              <div class="fq-panel" id="fq-a0" role="region" aria-labelledby="fq-q0"><div><p>Найкраще почати з курсу «Python з нуля» — він створений для новачків без досвіду. Якщо тобі ближча робота з даними, «Python Data Analytics» теж розрахований на старт з нуля. Не впевнений у виборі — запишись на безкоштовну консультацію.</p></div></div>
+            </div>
+            <div class="fq-item">
+              <h3><button type="button" class="fq-btn" aria-expanded="false" aria-controls="fq-a1" id="fq-q1">
+                <span class="fq-num">02</span><span class="fq-q">Скільки людей у групі?</span><span class="fq-chev" aria-hidden="true"></span>
+              </button></h3>
+              <div class="fq-panel" id="fq-a1" role="region" aria-labelledby="fq-q1"><div><p>Ми набираємо до 15 студентів, щоб на кожному занятті вистачало часу на запитання, живі дискусії та розбір твого коду.</p></div></div>
+            </div>
+            <div class="fq-item">
+              <h3><button type="button" class="fq-btn" aria-expanded="false" aria-controls="fq-a2" id="fq-q2">
+                <span class="fq-num">03</span><span class="fq-q">Скільки триває навчання?</span><span class="fq-chev" aria-hidden="true"></span>
+              </button></h3>
+              <div class="fq-panel" id="fq-a2" role="region" aria-labelledby="fq-q2"><div><p>«Python з нуля» триває 2.5 місяці, «Python + Django» та «Python Data Analytics» — по 3 місяці. Заняття проходять у форматі live online з викладачем.</p></div></div>
+            </div>
+            <div class="fq-item">
+              <h3><button type="button" class="fq-btn" aria-expanded="false" aria-controls="fq-a3" id="fq-q3">
+                <span class="fq-num">04</span><span class="fq-q">Чи є домашні завдання?</span><span class="fq-chev" aria-hidden="true"></span>
+              </button></h3>
+              <div class="fq-panel" id="fq-a3" role="region" aria-labelledby="fq-q3"><div><p>Так. Після кожної теми ти виконуєш практичні завдання, а викладач перевіряє роботу й дає фідбек: що вийшло добре, що можна покращити і як зробити код кращим.</p></div></div>
+            </div>
+            <div class="fq-item">
+              <h3><button type="button" class="fq-btn" aria-expanded="false" aria-controls="fq-a4" id="fq-q4">
+                <span class="fq-num">05</span><span class="fq-q">Що, якщо я пропустив заняття?</span><span class="fq-chev" aria-hidden="true"></span>
+              </button></h3>
+              <div class="fq-panel" id="fq-a4" role="region" aria-labelledby="fq-q4"><div><p>Усі матеріали курсу зібрані на платформі, а в спільному чаті Telegram можна поставити запитання викладачу та групі й наздогнати тему. Про деталі щодо пропущених занять уточнюй у менеджера.</p></div></div>
+            </div>
+          </div>
+
+          <aside class="fq-aside reveal">
+            <p>Можливо,<br>відповідь уже тут</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="fq-contact" id="contact">
+      <div class="fq-inner">
+        <header class="fq-head fq-head--left reveal">
+          <p class="fq-kicker"><span class="fq-dot" aria-hidden="true"></span>Зв’язок з нами</p>
+          <h2 class="fq-title">Залишилися запитання?<br><span class="accent">Ми на зв’язку</span></h2>
+          <p class="fq-sub">Знаємо, що робити перший крок буває непросто.<br>Саме тому ми поруч і з радістю відповімо на всі запитання</p>
+        </header>
+
+        <div class="fq-ways reveal">
+          <div class="fq-way">
+            <p class="fq-way-box">заповнити заявку<br>та додати запитання</p>
+            <a href="index.html#pricing" class="btn btn-orange fq-way-btn">Записатися</a>
+          </div>
+          <div class="fq-way">
+            <p class="fq-way-box">написати у зручному<br>для Вас месенджері</p>
+            <div class="fq-social">
+              <a href="https://wa.me/" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 21l1.65-4.9A8.5 8.5 0 1 1 8 19.4L3 21z" stroke-linejoin="round"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1.2-1.4-2.2-1.1-.9.8c-1.3-.6-2.2-1.5-2.8-2.8l.8-.9-1.1-2.2L9 8.5z" fill="currentColor" stroke="none"/></svg></a>
+              <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></a>
+              <a href="https://t.me/" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.5 3.3 2.9 10.5c-1 .4-1 1.2-.2 1.4l4.7 1.5 1.8 5.5c.2.6.4.8.8.8s.6-.2.9-.5l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.7c.3-1.2-.5-1.8-1.2-1.4ZM8.8 13.2l9.6-6c.5-.3.9-.1.5.2l-7.8 7-.3 3.3-2-4.5Z"/></svg></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a href="index.html" class="footer-logo" aria-label="ITYes — на головну">
+        <img src="images/logo.svg" width="76" height="76" alt="ITYes">
+      </a>
+      <p class="footer-brand">Онлайн-школа програмування</p>
+      <div class="footer-legal">
+        <a href="#">Політика конфіденційності</a>
+        <span>© 2026 ITYes</span>
+        <a href="#">Договір оферти</a>
+      </div>
+      <nav class="footer-nav" aria-label="Навігація у футері">
+        <h3 class="footer-heading">Навігація</h3>
+        <ul class="footer-links">
+          <li><a href="courses.html">Курси</a></li>
+          <li><a href="index.html#about">Про школу</a></li>
+          <li><a href="prices.html">Ціни</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </nav>
+      <div class="footer-contacts">
+        <h3 class="footer-heading">Контакти</h3>
+        <a href="mailto:hello@ityes.ua" class="footer-email">hello@ityes.ua</a>
+        <div class="footer-social">
+          <a href="https://wa.me/" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 21l1.65-4.9A8.5 8.5 0 1 1 8 19.4L3 21z" stroke-linejoin="round"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1.2-1.4-2.2-1.1-.9.8c-1.3-.6-2.2-1.5-2.8-2.8l.8-.9-1.1-2.2L9 8.5z" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://t.me/" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.5 3.3 2.9 10.5c-1 .4-1 1.2-.2 1.4l4.7 1.5 1.8 5.5c.2.6.4.8.8.8s.6-.2.9-.5l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.7c.3-1.2-.5-1.8-1.2-1.4ZM8.8 13.2l9.6-6c.5-.3.9-.1.5.2l-7.8 7-.3 3.3-2-4.5Z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="js/site.js"></script>
+  <script type="module" src="js/faq.js"></script>
+</body>
+</html>
