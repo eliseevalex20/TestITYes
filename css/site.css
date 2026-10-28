@@ -265,7 +265,7 @@ img {
 .hero-label {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
-  letter-spacing: 10%;
+  letter-spacing: 0.1em;
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -288,7 +288,7 @@ img {
   font-size: clamp(2rem, 4vw, 3rem);
   line-height: 1;
   margin: 0 0 30px;
-  letter-spacing: 20%;
+  letter-spacing: 0.2em;
 }
 
 .hero-title .accent {
@@ -351,7 +351,6 @@ img {
   position: relative;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 12px;
   overflow: hidden;
   box-shadow: 4px 4px 200px 10px rgba(0, 229, 255, 0.3);
 }
@@ -394,7 +393,7 @@ img {
 
 .code-content {
   font-family: "Roboto", sans-serif;
-  letter-spacing: 10%;
+  letter-spacing: 0.1em;
   font-weight: 300;
   margin: 0;
   padding-right: 20px;
@@ -459,7 +458,7 @@ img {
   font-family: "Roboto", system-ui, sans-serif;
   font-size: 1.85rem;
   margin-bottom: 10px;
-  letter-spacing: 10%;
+  letter-spacing: 0.1em;
 }
 
 .progress-bar {
@@ -501,13 +500,12 @@ img {
   color: #F4F4F5;
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
-  letter-spacing: 10%;
+  letter-spacing: 0.1em;
 }
 
 /* Why ITYes */
 .why {
   padding: 80px 0;
-  background: var(--page-bg2);
 }
 
 .why-inner {
@@ -517,14 +515,13 @@ img {
 }
 
 .why-header {
-  text-align: right;
-  margin-bottom: 36px;
+  margin-bottom: 50px;
 }
 
 .why-kicker {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
-  letter-spacing: 10%;
+  letter-spacing: 0.1em;
   display: inline-flex;
   align-items: center;
   justify-content: flex-end;
@@ -545,7 +542,7 @@ img {
   font-weight: 800;
   font-size: clamp(2rem, 4vw, 3rem);
   line-height: 1;
-  letter-spacing: 20%;
+  letter-spacing: 0.2em;
   margin: 0 0 30px;
 }
 
@@ -560,7 +557,6 @@ img {
   margin: 0;
   font-size: 1rem;
   color: #F4F4F5;
-  margin: 0 0 50px;
 }
 
 .why-grid {
@@ -600,14 +596,14 @@ img {
   font-family: "Roboto", sans-serif;
   font-size: 1.2rem;
   font-weight: 400;
-  letter-spacing: 10%;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--cyan);
 }
 
 .why-card-num {
   font-family: "Roboto", sans-serif;
-  letter-spacing: 10%;
+  letter-spacing: 0.1em;
   color: #F4F4F54D;
   font-weight: 400;
 }
@@ -620,7 +616,7 @@ img {
   max-width: 260px;
   font-size: 0.9375rem;
   color: #C4C4C6;
-  letter-spacing: 10%;
+  letter-spacing: 0.1em;
 }
 
 .why-card-icon {
@@ -633,7 +629,7 @@ img {
 /* Courses */
 .courses {
   padding: 80px 0 80px;
-  background: var(--page-bg);
+  background: var(--page-bg2);
 }
 
 .courses-inner {
@@ -643,6 +639,7 @@ img {
 
 .courses-header {
   margin-bottom: 36px;
+  text-align: right;
 }
 
 .courses-kicker {
@@ -652,7 +649,7 @@ img {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 0.8125rem;
-  letter-spacing: 10%;
+  letter-spacing: 0.1em;
   color: #f4f4f5;
   margin: 0 0 30px;
 }
@@ -669,7 +666,7 @@ img {
   font-weight: 800;
   font-size: clamp(2rem, 4vw, 3rem);
   line-height: 1;
-  letter-spacing: 20%;
+  letter-spacing: 0.2em;
   color: #f4f4f5;
   margin: 0 0 30px;
 }
@@ -700,7 +697,7 @@ img {
   flex-direction: column;
   min-height: 460px;
   padding: 28px 24px 24px;
-  background: #1a1a1e;
+  background: #121214;
   color: #f4f4f5;
   border-radius: 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -767,7 +764,7 @@ img {
   font-size: 1.2rem;
   font-weight: 400;
   color: #F4F4F54D;
-  letter-spacing: 10%;
+  letter-spacing: 0.1em;
 }
 
 .course-name {
@@ -882,7 +879,7 @@ img {
 /* Learning path */
 .path {
   padding: 80px 0 80px;
-  background: var(--page-bg2);
+  background: var(--page-bg);
 }
 
 .path-inner {
@@ -891,23 +888,19 @@ img {
 }
 
 .path-header {
-  text-align: center;
-  margin-bottom: 48px;
-  position: relative;
+  margin-bottom: 50px;
 }
 
 .path-kicker {
-  position: absolute;
-  top: -30px;
-  right: 0;
   display: inline-flex;
   align-items: center;
   gap: 8px;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
-  letter-spacing: 10%;
   font-size: 0.8125rem;
+  letter-spacing: 0.1em;
   color: #f4f4f5;
+  margin: 0 0 30px;
 }
 
 .path-kicker-dot {
@@ -917,12 +910,13 @@ img {
 }
 
 .path-title {
-  margin: 24px 0 0;
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: clamp(1.5rem, 4vw, 2.35rem);
-  letter-spacing: 15%;
+  letter-spacing: 0.15em;;
   color: #f4f4f5;
+  margin-top: 0;
+  margin-bottom: 50px;
 }
 
 .path-title .accent {
@@ -990,7 +984,7 @@ img {
 .path-box {
   position: relative;
   min-height: 108px;
-  padding: 16px 28px 16px 16px;
+  padding: 25px 22px;
   border: 1px solid #f4f4f5;
   background: #121214;
   color: #f4f4f5;
@@ -1006,10 +1000,11 @@ img {
 
 .path-box p {
   margin: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 400;
   font-size: 0.875rem;
   line-height: 1.4;
+  letter-spacing: 0.1em;
 }
 
 .path-num {
@@ -1048,7 +1043,11 @@ img {
 /* Audience */
 .audience {
   padding: 80px 0 80px;
-  background: var(--page-bg);
+  background: var(--page-bg2);
+}
+
+.audience-header{
+  text-align: right;
 }
 
 .audience-inner,
@@ -1062,7 +1061,7 @@ img {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin: 0 0 16px;
+  margin: 0 0 30px;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 0.8125rem;
@@ -1079,12 +1078,12 @@ img {
 
 .audience-title,
 .offers-title {
-  margin: 0 0 12px;
+  margin: 0 0 30px;
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: clamp(1.7rem, 4vw, 2.5rem);
   line-height: 1.15;
-  letter-spacing: 15%;
+  letter-spacing: 0.15em;
   color: #f4f4f5;
 }
 
@@ -1095,7 +1094,7 @@ img {
 
 .audience-subtitle,
 .offers-subtitle {
-  margin: 0 0 36px;
+  margin: 0 0 50px;
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
   color: #f4f4f5;
@@ -1104,15 +1103,14 @@ img {
 .audience-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
+  gap: 50px;
 }
 
 .audience-card {
-  min-height: 148px;
-  padding: 22px 24px;
+  /* min-height: 140px; */
+  padding: 30px;
   background: #1a1a1e;
-  border: 1px solid #00e5ff;
-  border-radius: 10px;
+  border: 1px solid #F4F4F5;
   box-shadow: 4px 4px 50px 1px rgba(0, 229, 255, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -1123,21 +1121,28 @@ img {
   align-items: baseline;
   gap: 10px;
   margin: 0 0 12px;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
   font-size: 1rem;
+  letter-spacing: 0.1em;
   color: var(--cyan);
 }
 
 .audience-card-label span {
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
-  color: rgba(244, 244, 245, 0.45);
+  color: rgba(244, 244, 245, 0.3);
+  letter-spacing: 0.1em;
 }
 
 .audience-card-text {
-  margin: 0;
+  margin-left: 35px;
+  margin-bottom: 0;
+  margin-top: 0;
   max-width: 280px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.1em;
   font-size: 0.9375rem;
   color: #f4f4f5;
 }
@@ -1145,22 +1150,17 @@ img {
 /* Offers / pricing */
 .offers {
   padding: 80px 0 80px;
-  background: var(--page-bg2);
+  background: var(--page-bg);
 }
 
 .offers-header {
-  text-align: right;
-  margin-bottom: 36px;
+  margin-bottom: 50px;
 }
 
 .offers-kicker {
   justify-content: flex-end;
 }
 
-.offers-subtitle {
-  max-width: 520px;
-  margin-left: auto;
-}
 
 .offers-grid {
   display: grid;
@@ -1168,7 +1168,7 @@ img {
   grid-template-areas:
     "early featured family"
     "referral featured combo";
-  gap: 20px;
+  gap: 30px;
   align-items: stretch;
 }
 
@@ -1182,8 +1182,7 @@ img {
   display: flex;
   flex-direction: column;
   padding: 22px 24px;
-  background: #1a1a1e;
-  border-radius: 10px;
+  background: #121214;
   color: #f4f4f5;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -1982,7 +1981,7 @@ html {
   
     .path-box {
       min-height: 0;
-      padding: 16px 36px 16px 16px;
+      padding: 25px 22px;
     }
   
     /* ---------- Audience ---------- */
@@ -2067,7 +2066,7 @@ html {
     align-items: center;
     opacity: 1;
     transform: none;
-    padding: 16px 36px 16px 16px;
+    padding: 25px 22px;
     border: 1px solid #f4f4f5;
     box-shadow: none;
   }
@@ -2209,7 +2208,8 @@ html {
 .courses-inner,
 .path-inner,
 .audience-inner,
-.offers-inner {
+.offers-inner,
+.result-inner {
   width: calc(100% - 2 * var(--gutter));
   max-width: none;
   margin-inline: auto;
@@ -2265,16 +2265,20 @@ html {
     background: var(--page-bg);
   }
   
-  .result-inner {
+  .result-header{
+    text-align: right;
+  }
+
+  /* .result-inner {
     width: min(1140px, 100% - 48px);
     margin-inline: auto;
-  }
+  } */
   
   .result-kicker {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    margin: 0 0 16px;
+    margin: 0 0 30px;
     font-family: "Roboto", sans-serif;
     font-size: 0.8125rem;
     color: var(--text);
@@ -2288,12 +2292,12 @@ html {
   }
   
   .result-title {
-    margin: 0 0 16px;
+    margin: 0 0 30px;
     font-family: "Montserrat", sans-serif;
     font-weight: 700;
-    font-size: clamp(1.625rem, 4.2vw, 2.75rem);
-    line-height: 1.15;
-    letter-spacing: 15%;
+    font-size: clamp(1.7rem, 4vw, 2.5rem);
+    line-height: 0.9;
+    letter-spacing: 0.15em;
     color: var(--text);
   }
   
@@ -2302,12 +2306,10 @@ html {
   }
   
   .result-subtitle {
-    max-width: 560px;
-    margin: 0 0 48px;
+    margin: 0 0 50px;
     font-family: "Roboto", sans-serif;
     font-size: 1rem;
-    line-height: 1.7;
-    color: rgba(244, 244, 245, 0.92);
+    color: #F4F4F5;
   }
   
   /* --- 3 x 2 grid with connectors --- */
@@ -3230,4 +3232,425 @@ html {
 }
 @media (prefers-reduced-motion: reduce) {
   .cx-hero-content > *, .cx-hero-visual, .cx-float, .cx-float-line { animation: none !important; }
+}
+
+/* ===== about.css ===== */
+.about {
+  padding: 80px 0;
+  background: var(--page-bg2);
+}
+
+.about-inner {
+  width: calc(100% - 2 * var(--gutter));
+  margin-inline: auto;
+}
+
+.about-header {
+  text-align: right;
+  margin-bottom: 50px;
+}
+
+.about-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 30px;
+  font-size: 0.8125rem;
+  color: rgba(244, 244, 245, 0.85);
+}
+
+.about-kicker-dot {
+  width: 10px;
+  height: 10px;
+  background: var(--cyan);
+}
+
+.about-title {
+  margin: 0 0 30px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 3.6vw, 2.75rem);
+  line-height: 1.15;
+  letter-spacing: 0.15em;
+}
+
+.about-title .accent { color: var(--cyan); }
+
+.about-subtitle {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  letter-spacing: 0.04em;
+  color: rgba(244, 244, 245, 0.92);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
+  grid-template-areas:
+    "intro side"
+    "stats side";
+  column-gap: 42px;
+  row-gap: 42px;
+}
+
+.about-intro { grid-area: intro; }
+.about-stats { grid-area: stats; }
+.about-side  { grid-area: side; }
+
+/* intro */
+.about-intro {
+  padding: 28px 24px;
+  border: 1px solid rgba(0, 229, 255, 0.55);
+  background: #1a1a1e;
+}
+
+.about-intro p {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.7;
+  letter-spacing: 0.08em;
+}
+
+/* stats */
+.about-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 42px;
+}
+
+.about-stat {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(0, 229, 255, 0.55);
+  background: #16161a;
+}
+
+.about-stat-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 28px 16px 16px;
+}
+
+.about-stat-num {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-size: clamp(4rem, 7vw, 7rem);
+  line-height: 1;
+  color: var(--orange);
+}
+
+.about-stat-unit {
+  margin: 8px 0 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-size: 1.5rem;
+  color: rgba(255, 92, 0, 0.6);
+}
+
+.about-stat-label {
+  margin: 0;
+  padding: 14px 12px;
+  text-align: center;
+  background: var(--cyan);
+  color: #121214;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.125rem;
+}
+
+/* right column */
+.about-side {
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+}
+
+.about-note {
+  flex: 1;
+  padding: 22px 24px 22px 28px;
+  border: 1px solid #f4f4f5;
+  background: transparent;
+}
+
+.about-note h3 {
+  position: relative;
+  margin: 0 0 12px;
+  padding-left: 28px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  color: var(--cyan);
+}
+
+.about-note h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.3em;
+  width: 9px;
+  height: 9px;
+  background: var(--cyan);
+}
+
+.about-note p {
+  margin: 0;
+  padding-left: 28px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  letter-spacing: 0.05em;
+}
+
+/* tablet / mobile */
+@media (max-width: 960px) {
+  .about { padding: 56px 0 64px; }
+  .about-header { text-align: left; margin-bottom: 36px; }
+  .about-title br,
+  .about-subtitle br { display: none; }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas: "intro" "stats" "side";
+    row-gap: 20px;
+  }
+
+  .about-stats { gap: 20px; }
+  .about-side { gap: 20px; }
+  .about-intro p { font-size: 1rem; letter-spacing: 0.04em; }
+}
+
+@media (max-width: 480px) {
+  .about-stat-label { font-size: 0.9375rem; }
+  .about-note { padding: 18px 16px; }
+}
+
+/* =====================================================
+   OFFERS v2 — як на макеті (додано в кінець файлу)
+   Старі правила .offers-* / .offer-* вище можна видалити
+   ===================================================== */
+.offers-header { text-align: left; margin-bottom: 50px; }
+.offers-kicker { justify-content: flex-start; }
+.offers-title {
+  font-size: clamp(1.7rem, 4vw, 2.5rem);
+  line-height: 0.9;
+  letter-spacing: 0.15em;           /* було 15% — у CSS це невалідне значення */
+}
+.offers-subtitle { margin-bottom: 0; }
+
+.offers-grid { gap: 24px; }
+@media (min-width: 961px) {
+  .offers-grid {
+    grid-template-columns: 1fr 1.337fr 1fr;
+    gap: 46px;
+  }
+}
+
+/* --- спільне для всіх карток --- */
+.offer-card {
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+}
+.offer-label {
+  margin: 0;
+  font-weight: 400;
+  font-size: 0.8125rem;
+  letter-spacing: 0.06em;
+}
+
+/* --- малі картки: ЦИАН --- */
+.offer-card--cyan {
+  border: 1px solid var(--cyan);
+  box-shadow: 0 0 40px rgba(0, 229, 255, 0.18);
+}
+.offer-card--cyan .offer-label {
+  padding: 6px 16px;
+  color: var(--cyan);
+  border-bottom: 1px solid rgba(0, 229, 255, 0.7);
+}
+.offer-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 14px 34px 12px;
+}
+.offer-name {
+  margin: 0 0 8px;
+  font-size: 0.95rem;
+  letter-spacing: 0.1em;
+}
+.offer-old {
+  margin: 0 0 2px;
+  font-size: 0.75rem;
+  color: rgba(244, 244, 245, 0.5);
+}
+.offer-value {
+  margin: 0 0 8px;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+.offer-value span {
+  font-weight: 600;
+  font-size: 0.8125rem;
+  letter-spacing: 0.04em;
+}
+.offer-note {
+  margin: auto 0 0;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--cyan);
+}
+
+/* --- центральна картка: ПОМАРАНЧЕВА, заокруглена --- */
+.offer-card--orange.offer-card--featured {
+  border: 1px solid var(--orange);
+  border-radius: 8px;
+  box-shadow: 0 0 40px rgba(255, 92, 0, 0.12);
+  overflow: visible;                 /* щоб кнопка виступала за межі */
+  margin-bottom: 13px;               /* картка закінчується трохи вище за бічні */
+}
+.offer-card--orange .offer-label { color: var(--orange); }
+.offer-card--featured .offer-featured-top,
+.offer-card--featured .offer-featured-price,
+.offer-card--featured .offer-rules {
+  border-bottom: 1px solid rgba(255, 92, 0, 0.7);
+}
+.offer-card--featured .offer-featured-top {
+  padding: 8px 16px;
+  align-items: center;
+}
+.offer-card--featured .offer-course {
+  font-size: 0.8125rem;
+  letter-spacing: 0.06em;
+  color: var(--orange);
+}
+.offer-card--featured .offer-featured-price {
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  padding: 18px 16px;
+}
+.offer-card--featured .offer-featured-price span {
+  font-size: 0.9375rem;
+  letter-spacing: 0.1em;
+}
+.offer-card--featured .offer-featured-price strong {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+.offer-card--featured .offer-rules {
+  flex: 1;
+  padding: 26px 36px 56px;
+  border-bottom: 0;
+}
+.offer-card--featured .offer-rules h3 {
+  margin: 0 0 30px;
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--orange);
+}
+.offer-card--featured .offer-rules ul { gap: 21px; }
+.offer-card--featured .offer-rules li {
+  padding-left: 28px;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  letter-spacing: 0.1em;
+}
+.offer-card--featured .offer-rules li::before {
+  top: 0.4em;
+  width: 7px;
+  height: 7px;
+  background: var(--orange);
+}
+.offer-card--featured .offer-rules a {
+  color: inherit;                    /* білий, не кольоровий */
+  text-decoration: underline;
+}
+
+/* кнопка сидить на нижній межі картки */
+.offer-card--featured .offer-cta {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 50%);
+  margin: 0;
+  padding: 5px 10px;
+  background: var(--orange);
+  color: #fff;
+  border-radius: 6px;
+  font-size: 0.8125rem;
+  white-space: nowrap;
+}
+.offer-card--featured .offer-cta:hover {
+  transform: translate(-50%, calc(50% - 1px));
+}
+
+@media (max-width: 480px) {
+  .offer-body { padding: 14px 20px 12px; }
+  .offer-card--featured .offer-featured-price { flex-wrap: nowrap; gap: 16px; }
+  .offer-card--featured .offer-rules { padding: 22px 20px 48px; }
+  .offer-card--featured .offer-cta { width: auto; min-height: 0; margin: 0; }
+}
+
+/* ===== path-figma.css — path blocks as in Figma (used by index.html and courses.html via .path--figma) ===== */
+/* Path blocks: sizes and styling from the Figma frame (boxes 230x130, 6px between columns, 50px between rows) ---------- */
+.path--figma .path-flow { column-gap: 6px; }
+.path--figma .path-box {
+  min-height: clamp(104px, 6.6vw, 130px);
+  padding: 0 22px;
+  justify-content: center; align-items: center;
+  background: rgba(26, 26, 30, .8);
+  border: 1px solid #f4f4f5;
+  box-shadow: 4px 4px 50px 10px rgba(0, 0, 0, .1);
+}
+.path--figma .path-box p {
+  font-size: clamp(.8125rem, 1.01vw, 1.25rem);   /* 20px at the 1980px frame */
+  line-height: 1;
+  letter-spacing: .1em;
+  text-align: left;
+}
+
+/* number tab: light 20x20 square on the right edge, dark digit */
+.path--figma .path-num {
+  width: 20px; height: 20px; right: -1px;
+  background: #f4f4f5; border: 1px solid #f4f4f5; color: #1a1a1e;
+  font-family: "Roboto", sans-serif; font-size: 16px; line-height: 1; letter-spacing: 0;
+}
+/* lit step: the tab turns cyan */
+.path--figma .path-step.is-in .path-num {
+  background: var(--cyan); border-color: var(--cyan); color: #121214;
+  box-shadow: 0 0 14px rgba(0, 229, 255, .7);
+}
+
+/* arrows: solid #F4F4F5 like in the design */
+.path--figma .path-lines g:first-of-type path:nth-child(odd)  { stroke: #f4f4f5; }
+.path--figma .path-lines g:first-of-type path:nth-child(even) { fill: #f4f4f5; }
+
+@media (min-width: 961px) {
+  .path--figma .path-flow { row-gap: 50px; }
+  /* text blocks keep the line breaks of the design (width in em of the 20px text: 186/163/151/133px) */
+  .path--figma .path-box p { width: min(var(--tw, 6.65em), 100%); }
+  .path--figma .path-step:nth-child(1) { --tw: 9.3em; }
+  .path--figma .path-step:nth-child(2) { --tw: 8.15em; }
+  .path--figma .path-step:nth-child(3) { --tw: 7.55em; }
+}
+
+
+/* ===== path heading as in Figma "Screen 4" (index.html only: .path--figma-head) ===== */
+.path--figma-head .path-header { margin-bottom: 60px; }
+.path--figma-head .path-kicker {
+  flex-direction: row-reverse; justify-content: flex-start; gap: 15px;
+  margin: 0 0 30px;
+  font-size: 1rem; line-height: 30px; letter-spacing: .1em; color: #fff;
+}
+.path--figma-head .path-title {
+  margin: 0;
+  font-size: clamp(1.5rem, 3.23vw, 4rem);   /* 64px at the 1980px frame */
+  font-weight: 800; line-height: .94; letter-spacing: .2em;
 }

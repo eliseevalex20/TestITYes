@@ -35,48 +35,73 @@
 
   <main>
     <!-- ============ HERO ============ -->
-    <section class="cx-hero ct-hero">
-      <div class="cx-inner cx-hero-grid">
-        <div class="cx-hero-content">
-          <p class="cx-label"><span class="cx-dot" aria-hidden="true"></span>Каталог / 2026</p>
-          <h1 class="ct-hero-title">Навчання, що перетворює <span class="accent">знання на навички</span></h1>
-          <p class="cx-hero-sub">Три сфокусовані програми. Живі заняття, практика й персональний фідбек</p>
+    <section class="hero ct-hero">
+      <div class="ct-hero-inner hero-grid">
+        <div class="hero-content">
+          <p class="hero-label">
+            <span class="hero-label-dot" aria-hidden="true"></span>
+            Каталог / 2026
+          </p>
+          <h1 class="hero-title">
+            Навчання, що перетворює <span class="accent">знання</span> на <span class="accent">навички</span>
+          </h1>
+          <p class="hero-subtitle">
+            Три сфокусовані програми. Живі заняття, практика й персональний фідбек
+          </p>
         </div>
 
-        <div class="cx-hero-visual">
-          <div class="cx-panel">
-            <div class="cx-panel-bar" aria-hidden="true"><i></i><i></i><i></i></div>
-            <ol class="cx-panel-list ct-panel-list" aria-label="Курси ITYes">
-              <li><span>01</span><a href="#python">Python з нуля</a></li>
-              <li><span>02</span><a href="#django">Python + Django</a></li>
-              <li><span>03</span><a href="#data">Python + Data Analytics</a></li>
-            </ol>
-            <div class="cx-panel-status" aria-hidden="true"><span>UTF-8</span><span>PYTHON 3.12</span></div>
+        <div class="hero-visual">
+          <div class="editor-window">
+            <div class="editor-titlebar" aria-hidden="true">
+              <span class="editor-dot"></span>
+              <span class="editor-dot"></span>
+              <span class="editor-dot"></span>
+            </div>
+            <div class="editor-body">
+              <div class="line-numbers" aria-hidden="true">
+                <span>01</span>
+                <span>02</span>
+                <span>03</span>
+              </div>
+              <ol class="code-content ct-code" aria-label="Курси ITYes">
+                <li><a href="#python">Python з нуля</a></li>
+                <li><a href="#django">Python + Django</a></li>
+                <li><a href="#data">Python + Data Analytics</a></li>
+              </ol>
+            </div>
+            <div class="editor-status" aria-hidden="true">
+              <span>UTF-8</span>
+              <span>PYTHON 3.12</span>
+            </div>
           </div>
 
-          <div class="cx-float cx-float--course">
-            <p class="cx-float-label">Курс</p>
-            <p class="cx-float-value">01 / 03</p>
-            <span class="cx-float-line" aria-hidden="true"></span>
+          <div class="float-card float-card--progress" aria-hidden="true">
+            <div class="float-card-label">КУРС</div>
+            <div class="float-card-value">01 / 03</div>
+            <div class="progress-bar">
+              <div class="progress-bar-fill" style="width:33.33%"></div>
+            </div>
           </div>
 
-          <div class="cx-float ct-float-feedback">
-            <span class="ct-check" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="2.5"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
+          <div class="float-card float-card--feedback" aria-hidden="true">
+            <div class="feedback-check">
+              <svg width="33" height="32" viewBox="0 0 33 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 15.3699C4.87744 20.6473 9.60654 25.3982 14.1524 31.407C19.0948 21.577 24.1534 11.7127 32.5001 1.03018L30.2511 0C23.2032 7.47441 17.7276 14.5496 12.9698 22.9578C9.66123 19.9773 4.31416 15.7596 1.04932 13.5926L0 15.3699Z" fill="#F4F4F5"/>
+              </svg>
+            </div>
             <div>
-              <p class="cx-float-label">Feedback</p>
-              <p class="ct-float-text">Роботу перевірено</p>
+              <div class="float-card-label">FEEDBACK</div>
+              <div class="feedback-text">Роботу перевірено</div>
             </div>
           </div>
         </div>
       </div>
 
       <ul class="hero-benefits" aria-label="Що входить у навчання">
-        <li><span class="hero-benefits-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Практика</li>
-        <li><span class="hero-benefits-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Домашні завдання</li>
-        <li><span class="hero-benefits-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Перевірка викладачем</li>
-        <li><span class="hero-benefits-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Фінальний проєкт</li>
+        <li><span class="hero-benefits-icon" aria-hidden="true"><svg viewBox="0 0 19 18" fill="none"><path d="M0 8.78281C2.78711 11.7984 5.48945 14.5133 8.08711 17.9469C10.9113 12.3297 13.802 6.69297 18.5715 0.588672L17.2863 0C13.259 4.27109 10.1301 8.31406 7.41133 13.1187C5.5207 11.4156 2.46523 9.00547 0.599609 7.76719L0 8.78281Z" fill="#00E5FF"/></svg></span>Практика</li>
+        <li><span class="hero-benefits-icon" aria-hidden="true"><svg viewBox="0 0 19 18" fill="none"><path d="M0 8.78281C2.78711 11.7984 5.48945 14.5133 8.08711 17.9469C10.9113 12.3297 13.802 6.69297 18.5715 0.588672L17.2863 0C13.259 4.27109 10.1301 8.31406 7.41133 13.1187C5.5207 11.4156 2.46523 9.00547 0.599609 7.76719L0 8.78281Z" fill="#00E5FF"/></svg></span>Домашні завдання</li>
+        <li><span class="hero-benefits-icon" aria-hidden="true"><svg viewBox="0 0 19 18" fill="none"><path d="M0 8.78281C2.78711 11.7984 5.48945 14.5133 8.08711 17.9469C10.9113 12.3297 13.802 6.69297 18.5715 0.588672L17.2863 0C13.259 4.27109 10.1301 8.31406 7.41133 13.1187C5.5207 11.4156 2.46523 9.00547 0.599609 7.76719L0 8.78281Z" fill="#00E5FF"/></svg></span>Перевірка викладачем</li>
+        <li><span class="hero-benefits-icon" aria-hidden="true"><svg viewBox="0 0 19 18" fill="none"><path d="M0 8.78281C2.78711 11.7984 5.48945 14.5133 8.08711 17.9469C10.9113 12.3297 13.802 6.69297 18.5715 0.588672L17.2863 0C13.259 4.27109 10.1301 8.31406 7.41133 13.1187C5.5207 11.4156 2.46523 9.00547 0.599609 7.76719L0 8.78281Z" fill="#00E5FF"/></svg></span>Фінальний проєкт</li>
       </ul>
     </section>
 
@@ -120,7 +145,7 @@
           </article>
 
           <!-- 02 (mirrored) -->
-          <article class="ct-card ct-card--flip reveal" id="django" data-side="right">
+          <article class="ct-card ct-card--flip reveal" id="django" data-side="center">
             <div class="ct-info">
               <h3 class="ct-name">Python + Django</h3>
               <p class="ct-for">Для майбутніх backend-розробників</p>
@@ -179,7 +204,7 @@
     </section>
 
     <!-- ============ PATH ============ -->
-    <section class="path" id="process">
+    <section class="path path--figma" id="process">
       <div class="path-inner">
         <header class="path-header reveal">
           <p class="path-kicker">Як проходить навчання<span class="path-kicker-dot" aria-hidden="true"></span></p>
@@ -248,6 +273,5 @@
   </footer>
 
   <script type="module" src="js/site.js"></script>
-  <script type="module" src="js/courses-page.js"></script>
 </body>
 </html>
