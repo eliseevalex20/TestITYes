@@ -2,14 +2,14 @@
    Scales the whole course page down (it was oversized). */
 
 /* ---------- shared type ---------- */
-.cx-label { font-size: .75rem; margin-bottom: 12px; }
+.cx-label { font-size: .75rem; margin-bottom: 30px; }
 .cx-title {
-  margin-bottom: 12px;
+  margin-bottom: 30px;
   font-size: clamp(1.5rem, 2.9vw, 2.25rem);
   line-height: 1.18; letter-spacing: .1em;
 }
 .cx-sub { font-size: .9375rem; line-height: 1.6; }
-.cx-head { margin-bottom: 36px; }
+.cx-head { margin-bottom: 50px; }
 
 /* ---------- Hero ---------- */
 .cx-deadline { margin-bottom: 10px; font-size: clamp(.9375rem, 1.3vw, 1.125rem); }
@@ -59,8 +59,8 @@
   .cx-panel-list { padding: 32px 30px 40px; gap: 20px; }
   .cx-float--course { top: -26px; width: 180px; padding: 14px 20px 14px; }
   .cx-float--price { bottom: -22px; left: -48px; padding: 12px 16px; }
-  .cx-road { padding: 56px 0 64px; }
-  .cx-prog { padding: 56px 0 72px; }
+  .cx-road { padding: 80px 0; }
+  .cx-prog { padding: 80px 0; }
   .cx-prog-grid { gap: 40px; }
   .cx-prog-card { padding: 36px 20px; }
   .cx-acc-panel ul { padding-left: 66px; }
@@ -76,3 +76,68 @@
   .cx-prog-card { padding: 28px 16px; }
   .cx-acc-btn { padding: 12px 14px; }
 }
+/* course-hero.css — put at the END of css/course-page.css (it must load after site.css).
+   Everything the new first screen of course.html needs, so it works even if the
+   shared .ct-hero rules were not moved into site.css. */
+
+   html { background: var(--page-bg); }
+
+   /* ---------- Layout: same container as the other pages, never clipped ---------- */
+   .ct-hero {
+     background: var(--page-bg);
+     height: auto;                                  /* content decides; no cut-off on short windows */
+     min-height: calc(100svh - var(--header-height));
+     max-height: none;
+     padding: 0;
+   }
+   .ct-hero > .ct-hero-inner {
+     flex: 1; display: flex; align-items: center;
+     width: calc(100% - 2 * var(--gutter)); margin-inline: auto;
+     padding-block: 64px 56px;                      /* room for the cards that hang out of the window */
+   }
+   .ct-hero .hero-content, .ct-hero .hero-visual { padding-inline: 0; }
+   
+   /* ---------- Text column ---------- */
+   .ct-deadline {
+     margin: 0 0 15px;
+     font-family: "Montserrat", sans-serif; font-weight: 400;
+     font-size: clamp(.9375rem, 1.3vw, 1.125rem); letter-spacing: .08em;
+     color: var(--orange);
+   }
+   .ct-hero .hero-title { font-size: clamp(1.75rem, 3.6vw, 3rem); margin-bottom: 30px; }
+   .ct-hero .hero-subtitle { max-width: 460px; margin-bottom: 30px; }
+   
+   /* ---------- Editor window with the course list ---------- */
+   .ct-hero .editor-titlebar { gap: 17px; padding: 19px 49px; border-bottom: 1px solid #f4f4f5; }
+   .ct-hero .editor-dot { width: 8px; height: 8px; background: transparent; border: 1px solid #f4f4f5; }
+   
+   .ct-hero .editor-body {
+     padding: clamp(24px, 2.5vw, 56px) 0;
+     font-size: clamp(1rem, 1.13vw, 1.4rem);
+     line-height: 3.7;
+   }
+   .ct-hero .line-numbers {
+     padding: 0 clamp(20px, 2.3vw, 48px) 0 clamp(24px, 4.6vw, 96px);
+     color: rgba(244, 244, 245, .35);
+   }
+   .ct-code { list-style: none !important; margin: 0; padding: 0; }   /* removes the "1." "2." "3." markers */
+   .ct-code li { list-style: none; }
+   .ct-hero .line-numbers span, .ct-code li { font-size: inherit; line-height: inherit; white-space: nowrap; }
+   .ct-code a { color: rgba(244, 244, 245, .92); transition: color .2s ease; }
+   .ct-code a:hover { color: var(--cyan); }
+   .ct-code .is-active a { color: var(--cyan); }
+   
+   .ct-hero .editor-status { gap: 55px; padding: 10px 34px; font-size: .75rem; letter-spacing: .06em; }
+   
+   /* ---------- Floating cards ---------- */
+   @media (min-width: 961px) {
+     .ct-hero .hero-visual { padding-left: calc(12.5vw - var(--gutter)); }
+     .ct-hero .float-card--progress { top: -31px; right: -20px; }
+     .ct-hero .float-card--feedback { left: 3vw; bottom: -26px; }
+   }
+   
+   /* ---------- Phone / tablet ---------- */
+   @media (max-width: 960px) {
+     .ct-hero > .ct-hero-inner { padding-block: 32px 24px; }
+     .ct-hero .hero-visual { padding-left: 0; }
+   }

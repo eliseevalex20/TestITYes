@@ -24,52 +24,59 @@
       <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="main-nav">Меню</button>
       <nav id="main-nav" class="main-nav" aria-label="Головна навігація">
         <a href="courses.html" class="is-current" aria-current="page">Курси</a>
-        <a href="index.html#pricing">Ціни</a>
-        <a href="index.html#how">Як навчаємо</a>
-        <a href="index.html#about">Про школу</a>
+        <a href="prices.html">Ціни</a>
         <a href="faq.html">FAQ</a>
       </nav>
-      <a href="index.html#pricing" class="btn btn-orange header-cta">Записатися</a>
+      <a href="apply.html" class="btn btn-orange header-cta">Записатися</a>
     </div>
   </header>
 
   <main>
     <!-- ============ HERO ============ -->
-    <section class="cx-hero">
-      <div class="cx-inner cx-hero-grid">
-        <div class="cx-hero-content">
-          <p class="cx-label"><span class="cx-dot" aria-hidden="true"></span>Початок</p>
-          <p class="cx-deadline">Набір у групу триває до 20.11</p>
-          <h1 class="cx-hero-title" id="c-name"></h1>
-          <p class="cx-hero-sub" id="c-sub"></p>
-          <a href="index.html#pricing" class="btn btn-ghost cx-hero-btn">Залишити заявку</a>
+    <section class="hero ct-hero">
+      <div class="ct-hero-inner hero-grid">
+        <div class="hero-content">
+          <p class="hero-label"><span class="hero-label-dot" aria-hidden="true"></span>Початок</p>
+          <p class="ct-deadline">Набір у групу триває до 20.11</p>
+          <h1 class="hero-title" id="c-name"></h1>
+          <p class="hero-subtitle" id="c-sub"></p>
+          <a href="apply.html" class="btn btn-ghost">Залишити заявку</a>
         </div>
-
-        <div class="cx-hero-visual">
-          <div class="cx-panel">
-            <div class="cx-panel-bar" aria-hidden="true"><i></i><i></i><i></i></div>
-            <ol class="cx-panel-list" id="c-list" aria-label="Курси ITYes"></ol>
-            <div class="cx-panel-status" aria-hidden="true"><span>UTF-8</span><span>PYTHON 3.12</span></div>
+    
+        <div class="hero-visual">
+          <div class="editor-window">
+            <div class="editor-titlebar" aria-hidden="true">
+              <span class="editor-dot"></span><span class="editor-dot"></span><span class="editor-dot"></span>
+            </div>
+            <div class="editor-body">
+              <div class="line-numbers" aria-hidden="true">
+                <span>01</span><span>02</span><span>03</span>
+              </div>
+              <ol class="code-content ct-code" id="c-list" aria-label="Курси ITYes"></ol>
+            </div>
+            <div class="editor-status" aria-hidden="true"><span>UTF-8</span><span>PYTHON 3.12</span></div>
           </div>
-
-          <div class="cx-float cx-float--course">
-            <p class="cx-float-label">Курс</p>
-            <p class="cx-float-value" id="c-index"></p>
-            <span class="cx-float-line" aria-hidden="true"></span>
+    
+          <div class="float-card float-card--progress" aria-hidden="true">
+            <div class="float-card-label">КУРС</div>
+            <div class="float-card-value" id="c-index"></div>
+            <div class="progress-bar"><div class="progress-bar-fill" id="c-fill"></div></div>
           </div>
-
-          <div class="cx-float cx-float--price">
-            <p class="cx-float-label">Вартість курсу</p>
-            <p class="cx-float-small">XX XXX грн</p>
+    
+          <div class="float-card float-card--feedback" aria-hidden="true">
+            <div>
+              <div class="float-card-label">ВАРТІСТЬ КУРСУ</div>
+              <div class="feedback-text">XX XXX грн</div>
+            </div>
           </div>
         </div>
       </div>
-
-      <ul class="hero-benefits" aria-label="Коротко про курс">
-        <li><span class="hero-benefits-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>2.5 місяці</li>
-        <li><span class="hero-benefits-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>3 заняття / тиждень</li>
-        <li><span class="hero-benefits-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Live online</li>
-        <li><span class="hero-benefits-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Фінальний проєкт</li>
+    
+      <ul class="hero-benefits hero-benefits--bar" aria-label="Коротко про курс">
+        <li><span class="hero-benefits-icon" aria-hidden="true"><svg viewBox="0 0 19 18" fill="none"><path d="M0 8.78281C2.78711 11.7984 5.48945 14.5133 8.08711 17.9469C10.9113 12.3297 13.802 6.69297 18.5715 0.588672L17.2863 0C13.259 4.27109 10.1301 8.31406 7.41133 13.1187C5.5207 11.4156 2.46523 9.00547 0.599609 7.76719L0 8.78281Z" fill="#00E5FF"/></svg></span>2.5 місяці</li>
+        <li><span class="hero-benefits-icon" aria-hidden="true"><svg viewBox="0 0 19 18" fill="none"><path d="M0 8.78281C2.78711 11.7984 5.48945 14.5133 8.08711 17.9469C10.9113 12.3297 13.802 6.69297 18.5715 0.588672L17.2863 0C13.259 4.27109 10.1301 8.31406 7.41133 13.1187C5.5207 11.4156 2.46523 9.00547 0.599609 7.76719L0 8.78281Z" fill="#00E5FF"/></svg></span>3 заняття / тиждень</li>
+        <li><span class="hero-benefits-icon" aria-hidden="true"><svg viewBox="0 0 19 18" fill="none"><path d="M0 8.78281C2.78711 11.7984 5.48945 14.5133 8.08711 17.9469C10.9113 12.3297 13.802 6.69297 18.5715 0.588672L17.2863 0C13.259 4.27109 10.1301 8.31406 7.41133 13.1187C5.5207 11.4156 2.46523 9.00547 0.599609 7.76719L0 8.78281Z" fill="#00E5FF"/></svg></span>Live online</li>
+        <li><span class="hero-benefits-icon" aria-hidden="true"><svg viewBox="0 0 19 18" fill="none"><path d="M0 8.78281C2.78711 11.7984 5.48945 14.5133 8.08711 17.9469C10.9113 12.3297 13.802 6.69297 18.5715 0.588672L17.2863 0C13.259 4.27109 10.1301 8.31406 7.41133 13.1187C5.5207 11.4156 2.46523 9.00547 0.599609 7.76719L0 8.78281Z" fill="#00E5FF"/></svg></span>Фінальний проєкт</li>
       </ul>
     </section>
 
@@ -124,9 +131,8 @@
         <h3 class="footer-heading">Навігація</h3>
         <ul class="footer-links">
           <li><a href="courses.html">Курси</a></li>
-          <li><a href="index.html#about">Про школу</a></li>
-          <li><a href="index.html#pricing">Ціни</a></li>
-          <li><a href="#faq">FAQ</a></li>
+          <li><a href="prices.html">Ціни</a></li>
+          <li><a href="faq.html">FAQ</a></li>
         </ul>
       </nav>
       <div class="footer-contacts">

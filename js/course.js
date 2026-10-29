@@ -19,11 +19,12 @@ const total = course.modules.reduce((n, m) => n + m.lessons.length, 0);
 $("c-card-meta").textContent = `${course.modules.length} модулів (${total} занять)`;
 
 $("c-list").innerHTML = keys
-  .map((k, i) => {
+  .map((k) => {
     const active = k === key;
-    return `<li${active ? ' class="is-active"' : ""}><span>${pad(i + 1)}</span><a href="course.html?course=${k}"${active ? ' aria-current="page"' : ""}>${COURSES[k].name}</a></li>`;
+    return `<li${active ? ' class="is-active"' : ""}><a href="course.html?course=${k}"${active ? ' aria-current="page"' : ""}>${COURSES[k].name}</a></li>`;
   })
   .join("");
+$("c-fill").style.width = `${((keys.indexOf(key) + 1) / keys.length) * 100}%`;
 
 $("c-road").innerHTML = course.nodes
   .map(

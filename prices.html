@@ -6,7 +6,7 @@
   <title>Ціни — ITYes</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&family=Roboto:wght@400;500&family=Roboto+Mono:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&family=Roboto:wght@100;300;400;500&family=Roboto+Mono:wght@400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/site.css">
   <link rel="stylesheet" href="css/prices.css">
 </head>
@@ -25,9 +25,7 @@
       <nav id="main-nav" class="main-nav" aria-label="Головна навігація">
         <a href="courses.html">Курси</a>
         <a href="prices.html" class="is-current" aria-current="page">Ціни</a>
-        <a href="index.html#how">Як навчаємо</a>
-        <a href="index.html#about">Про школу</a>
-        <a href="#faq">FAQ</a>
+        <a href="faq.html">FAQ</a>
       </nav>
       <a href="#calculator" class="btn btn-orange header-cta">Записатися</a>
     </div>
@@ -35,45 +33,54 @@
 
   <main>
     <!-- ============ HERO ============ -->
-    <section class="cx-hero pr-hero">
-      <div class="cx-inner cx-hero-grid">
-        <div class="cx-hero-content">
-          <p class="cx-label"><span class="cx-dot" aria-hidden="true"></span>Ціни та пропозиції</p>
-          <p class="pr-tagline">Розрахуй фінальну вартість</p>
-          <h1 class="pr-hero-title">Актуальні тарифи та пропозиції</h1>
-          <p class="cx-hero-sub">Зручний розрахунок ціни та знижок для кожного курсу</p>
-          <a href="#calculator" class="btn btn-outline-orange pr-hero-btn">Калькулятор</a>
+    <section class="hero ct-hero">
+      <div class="ct-hero-inner hero-grid">
+        <div class="hero-content">
+          <p class="hero-label"><span class="hero-label-dot" aria-hidden="true"></span>Ціни та пропозиції</p>
+          <p class="ct-deadline">Розрахуй фінальну вартість</p>
+          <h1 class="hero-title">Актуальні тарифи та пропозиції</h1>
+          <p class="hero-subtitle">Зручний розрахунок ціни та знижок для кожного курсу</p>
+          <a href="#calculator" class="btn btn-ghost">Калькулятор</a>
         </div>
 
-        <div class="cx-hero-visual">
-          <div class="cx-panel">
-            <div class="cx-panel-bar" aria-hidden="true"><i></i><i></i><i></i></div>
-            <ol class="cx-panel-list pr-panel-list" aria-label="Пропозиції ITYes">
-              <li><span>01</span><a href="#early-bird">Early Bird</a></li>
-              <li><span>02</span><a href="#family">Family</a></li>
-              <li><span>03</span><a href="#referral">Referral</a></li>
-              <li><span>04</span><a href="#combo">Combo</a></li>
-            </ol>
-            <div class="cx-panel-status" aria-hidden="true"><span>UTF-8</span><span>PYTHON 3.12</span></div>
+        <div class="hero-visual">
+          <div class="editor-window">
+            <div class="editor-titlebar" aria-hidden="true">
+              <span class="editor-dot"></span><span class="editor-dot"></span><span class="editor-dot"></span>
+            </div>
+            <div class="editor-body">
+              <div class="line-numbers" aria-hidden="true">
+                <span>01</span><span>02</span><span>03</span><span>04</span>
+              </div>
+              <ol class="code-content ct-code" aria-label="Пропозиції ITYes">
+                <li><a href="#early-bird">Early Bird</a></li>
+                <li><a href="#family">Family</a></li>
+                <li><a href="#referral">Referral</a></li>
+                <li><a href="#combo">Combo</a></li>
+              </ol>
+            </div>
+            <div class="editor-status" aria-hidden="true"><span>UTF-8</span><span>PYTHON 3.12</span></div>
           </div>
 
-          <div class="cx-float cx-float--course">
-            <p class="cx-float-label">Пропозиції</p>
-            <p class="cx-float-value">01 / 04</p>
-            <span class="cx-float-line" aria-hidden="true"></span>
+          <div class="float-card float-card--progress" aria-hidden="true">
+            <div class="float-card-label">ПРОПОЗИЦІЇ</div>
+            <div class="float-card-value">01 / 04</div>
+            <div class="progress-bar"><div class="progress-bar-fill" style="width:25%"></div></div>
           </div>
 
-          <div class="cx-float pr-float-inst">
-            <p class="cx-float-label">Розстрочка</p>
-            <p class="cx-float-small">2 %</p>
+          <div class="float-card float-card--feedback" aria-hidden="true">
+            <div>
+              <div class="float-card-label">РОЗСТРОЧКА</div>
+              <div class="feedback-text">2 %</div>
+            </div>
           </div>
         </div>
       </div>
 
-      <ul class="hero-benefits" aria-label="Розділи сторінки">
-        <li><span class="hero-benefits-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Ціни</li>
-        <li><span class="hero-benefits-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Пропозиції</li>
-        <li><span class="hero-benefits-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Калькулятор</li>
+      <ul class="hero-benefits hero-benefits--bar" aria-label="Розділи сторінки">
+        <li><span class="hero-benefits-icon" aria-hidden="true"><svg viewBox="0 0 19 18" fill="none"><path d="M0 8.78281C2.78711 11.7984 5.48945 14.5133 8.08711 17.9469C10.9113 12.3297 13.802 6.69297 18.5715 0.588672L17.2863 0C13.259 4.27109 10.1301 8.31406 7.41133 13.1187C5.5207 11.4156 2.46523 9.00547 0.599609 7.76719L0 8.78281Z" fill="#00E5FF"/></svg></span>Ціни</li>
+        <li><span class="hero-benefits-icon" aria-hidden="true"><svg viewBox="0 0 19 18" fill="none"><path d="M0 8.78281C2.78711 11.7984 5.48945 14.5133 8.08711 17.9469C10.9113 12.3297 13.802 6.69297 18.5715 0.588672L17.2863 0C13.259 4.27109 10.1301 8.31406 7.41133 13.1187C5.5207 11.4156 2.46523 9.00547 0.599609 7.76719L0 8.78281Z" fill="#00E5FF"/></svg></span>Пропозиції</li>
+        <li><span class="hero-benefits-icon" aria-hidden="true"><svg viewBox="0 0 19 18" fill="none"><path d="M0 8.78281C2.78711 11.7984 5.48945 14.5133 8.08711 17.9469C10.9113 12.3297 13.802 6.69297 18.5715 0.588672L17.2863 0C13.259 4.27109 10.1301 8.31406 7.41133 13.1187C5.5207 11.4156 2.46523 9.00547 0.599609 7.76719L0 8.78281Z" fill="#00E5FF"/></svg></span>Калькулятор</li>
       </ul>
     </section>
 
@@ -103,11 +110,10 @@
     <!-- ============ EARLY BIRD ============ -->
     <section class="pr-sec" id="early-bird">
       <div class="pr-inner pr-split pr-split--eb">
-        <div class="pr-side reveal">
-          <div>
-            <p class="pr-kicker"><span class="pr-dot" aria-hidden="true"></span>Пропозиція</p>
-            <h2 class="pr-offer">Early Bird</h2>
-          </div>
+        <div class="pr-text reveal">
+          <p class="pr-kicker"><span class="pr-dot" aria-hidden="true"></span>Пропозиція</p>
+          <h2 class="pr-offer">Early Bird</h2>
+          <p class="pr-lead">Долучайся до курсу раніше за інших та отримуй стартову знижку як приємний бонус</p>
           <p class="pr-note">Інформація оновлюється автоматично</p>
         </div>
 
@@ -142,19 +148,21 @@
 
     <!-- ============ FAMILY ============ -->
     <section class="pr-sec pr-sec--alt" id="family">
-      <div class="pr-inner pr-split pr-split--rev">
+      <div class="pr-inner pr-split pr-split--fam">
         <div class="pr-example reveal" aria-label="Приклад сімейної вартості">
-          <p class="pr-example-cap">На прикладі курсу “Python з нуля”</p>
-          <div class="pr-ex-row pr-ex-row--top"><span>Звичайна вартість x2</span><s data-x="regular">XX XXX</s></div>
+          <div class="pr-ex-head">
+            <p class="pr-example-cap">На прикладі курсу “Python з нуля”</p>
+            <div class="pr-ex-row pr-ex-row--top"><span>Звичайна вартість x2</span><span class="pr-ex-val"><s data-x="regular">XX XXX</s> грн</span></div>
+          </div>
           <div class="pr-ex-row pr-ex-row--family"><span>Сімейна вартість</span><strong data-x="family">XX XXX грн</strong></div>
-          <div class="pr-ex-row"><span>Економія</span><strong data-x="saving">XX XXX грн</strong></div>
+          <div class="pr-ex-row pr-ex-row--saving"><span>Економія</span><strong data-x="saving">XX XXX грн</strong></div>
         </div>
 
         <div class="pr-copy reveal">
-          <p class="pr-kicker">Навчайтеся разом<span class="pr-dot" aria-hidden="true"></span></p>
+          <p class="pr-kicker"><span class="pr-dot" aria-hidden="true"></span>Навчайтеся разом</p>
           <h2 class="pr-offer">Family</h2>
           <p class="pr-lead">Навчайтеся разом із близькими та отримуйте сімейну знижку на будь-який обраний курс</p>
-          <p class="pr-note">Програмувати легше опановувати, коли поруч людина з тією самою метою</p>
+          <p class="pr-note">Програмування легше опановувати, коли поруч людина з тією самою метою</p>
         </div>
       </div>
     </section>
@@ -162,11 +170,10 @@
     <!-- ============ REFERRAL ============ -->
     <section class="pr-sec" id="referral">
       <div class="pr-inner pr-split pr-split--ref">
-        <div class="pr-side reveal">
-          <div>
-            <p class="pr-kicker"><span class="pr-dot" aria-hidden="true"></span>Запроси друга</p>
-            <h2 class="pr-offer">Referral</h2>
-          </div>
+        <div class="pr-text reveal">
+          <p class="pr-kicker"><span class="pr-dot" aria-hidden="true"></span>Запроси друга</p>
+          <h2 class="pr-offer">Referral</h2>
+          <p class="pr-lead">Рекомендуй курс друзям чи запрошуй їх навчатися разом і отримуй знижку для себе</p>
           <p class="pr-note">Активується одразу після першої оплати друга. Отримуй бонус на свій наступний платіж або на картку</p>
         </div>
 
@@ -180,14 +187,14 @@
 
     <!-- ============ COMBO ============ -->
     <section class="pr-sec pr-sec--alt" id="combo">
-      <div class="pr-inner pr-split pr-split--rev">
+      <div class="pr-inner pr-split pr-split--combo">
         <div class="pr-combo reveal">
           <p class="pr-combo-num">-15 %</p>
           <p class="pr-combo-tag">на наступний курс</p>
         </div>
 
         <div class="pr-copy reveal">
-          <p class="pr-kicker">Більше навчання<span class="pr-dot" aria-hidden="true"></span></p>
+          <p class="pr-kicker"><span class="pr-dot" aria-hidden="true"></span>Більше навчання</p>
           <h2 class="pr-offer">Combo</h2>
           <p class="pr-lead">Плануєш масштабне навчання? Отримай знижку на свій наступний курс одразу після фіналу першого</p>
           <p class="pr-note">Зберігається за кожним студентом ITYes</p>
@@ -200,7 +207,7 @@
       <div class="pr-calc reveal">
         <div class="pr-calc-left">
           <div class="pr-calc-intro">
-            <p class="pr-kicker"><span class="pr-dot" aria-hidden="true"></span>Калькулятор</p>
+            <p class="pr-kicker"><span class="pr-dot pr-dot--orange" aria-hidden="true"></span>Калькулятор</p>
             <h2 class="pr-calc-title"><span class="accent">Розрахуйте вартість</span> вашого навчання</h2>
             <p class="pr-calc-text">Оберіть параметри, а фінальна ціна буде розрахована після підключення актуальних тарифів</p>
 
@@ -226,12 +233,12 @@
 
         <div class="pr-calc-right" aria-live="polite">
           <div class="pr-res-top">
-            <p class="pr-kicker pr-kicker--plain">Розрахунок</p>
+            <p class="pr-kicker pr-kicker--plain"><span class="pr-dot" aria-hidden="true"></span>Розрахунок</p>
             <p class="pr-res-old"><span>Звичайна вартість</span><s id="r-regular">XX XXX</s> грн</p>
           </div>
           <p class="pr-res-total" id="r-total">XX XXX грн</p>
           <div class="pr-res-row"><span>Ви економите</span><strong id="r-saving">XX XXX грн</strong></div>
-          <div class="pr-res-row pr-res-row--sm"><span>В розстрочку</span><strong id="r-inst">X XXX грн/місяць</strong></div>
+          <div class="pr-res-row"><span>В розстрочку</span><strong id="r-inst">X XXX грн/місяць</strong></div>
           <div class="pr-res-applied">
             <p>Застосовані Пропозиції</p>
             <ul id="r-applied"><li>Early Bird</li></ul>
@@ -258,7 +265,6 @@
         <ul class="footer-links">
           <li><a href="courses.html">Курси</a></li>
           <li><a href="index.html#about">Про школу</a></li>
-          <li><a href="prices.html">Ціни</a></li>
           <li><a href="faq.html">FAQ</a></li>
         </ul>
       </nav>

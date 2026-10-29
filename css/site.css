@@ -299,7 +299,7 @@ img {
   font-family: "Montserrat", sans-serif;
   font-size: 1.0625rem;
   max-width: 520px;
-  margin: 0 0 32px;
+  margin: 0 0 30px;
   color: #F4F4F5;
 }
 
@@ -422,7 +422,7 @@ img {
 
 .float-card {
   position: absolute;
-  background: rgba(22, 22, 26, 0.95);
+  background: #1A1A1E;
   border: 1px solid #F4F4F5;
   padding: 14px 18px;
   backdrop-filter: blur(8px);
@@ -3653,4 +3653,39 @@ html {
   margin: 0;
   font-size: clamp(1.5rem, 3.23vw, 4rem);   /* 64px at the 1980px frame */
   font-weight: 800; line-height: .94; letter-spacing: .2em;
+}
+
+/* ===== Benefits bar (shared): lighter strip, white lines top/bottom, items spread edge to edge ===== */
+ul.hero-benefits.hero-benefits--bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0 var(--gutter);
+  background: var(--page-bg2);
+  border-top: 1px solid #f4f4f5;
+  border-bottom: 1px solid #f4f4f5;
+  font-size: 0.9rem;
+  padding: 18px 8.5vw; 
+}
+
+ul.hero-benefits.hero-benefits--bar li {
+  gap: 14px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+
+ul.hero-benefits.hero-benefits--bar .hero-benefits-icon {
+  width: 18px;
+  height: 18px;
+  color: var(--cyan);
+}
+
+@media (max-width: 960px) {
+  ul.hero-benefits.hero-benefits--bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 16px;
+    padding: 16px var(--gutter);
+  }
 }
