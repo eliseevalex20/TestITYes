@@ -1,0 +1,499 @@
+/* mobile.css — подключать ПОСЛЕДНИМ на всех страницах (после site.css и страничного css).
+   Всё внутри @media (max-width: 960px) — десктоп не затрагивается. */
+
+   .nav-toggle .burger { display: none; }
+   .nav-cta { display: none; }
+   
+   @media (max-width: 960px) {
+     :root { --header-height: 64px; }
+   
+     html.menu-open { overflow: hidden; }
+   
+     /* ================= HEADER ================= */
+     .site-header {
+       position: sticky; top: 0; z-index: 100;
+       border: 0;
+       background: var(--header-bg);
+     }
+     .site-header::after {
+       content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px;
+       background: linear-gradient(90deg, var(--cyan), var(--orange)); opacity: .75;
+     }
+     .site-header .container { width: calc(100% - 2 * var(--gutter)); }
+     .header-inner { gap: 12px; }
+     .logo-link img { width: 40px; height: 40px; }
+   
+     .header-cta.btn {
+       display: inline-flex; order: 1; margin-left: auto;
+       min-height: 40px; padding: 0 14px;
+       font-size: .8125rem; letter-spacing: .02em;
+     }
+   
+     /* burger */
+     .nav-toggle {
+       display: grid; place-items: center; order: 2; margin-left: 0;
+       width: 44px; height: 44px; min-height: 44px; padding: 0;
+       font-size: 0; color: var(--text);
+       background: transparent; border: 1px solid #f4f4f5; border-radius: 0;
+       transition: border-color .25s ease, color .25s ease, box-shadow .25s ease;
+     }
+     .nav-toggle .burger { display: block; position: relative; width: 20px; height: 14px; }
+     .burger i {
+       position: absolute; left: 0; width: 100%; height: 2px; background: currentColor;
+       transition: top .35s cubic-bezier(.22, 1, .36, 1), transform .35s cubic-bezier(.22, 1, .36, 1), opacity .2s ease;
+     }
+     .burger i:nth-child(1) { top: 0; }
+     .burger i:nth-child(2) { top: 6px; }
+     .burger i:nth-child(3) { top: 12px; }
+     .nav-toggle[aria-expanded="true"] { color: var(--cyan); border-color: var(--cyan); box-shadow: 0 0 18px rgba(0, 229, 255, .35); }
+     .nav-toggle[aria-expanded="true"] .burger i:nth-child(1) { top: 6px; transform: rotate(45deg); }
+     .nav-toggle[aria-expanded="true"] .burger i:nth-child(2) { opacity: 0; transform: scaleX(0); }
+     .nav-toggle[aria-expanded="true"] .burger i:nth-child(3) { top: 6px; transform: rotate(-45deg); }
+   
+     /* menu panel */
+     .main-nav {
+       position: fixed; z-index: 90;
+       top: calc(var(--header-height) + env(safe-area-inset-top, 0px)); left: 0; right: 0; bottom: 0;
+       display: flex; flex-direction: column; justify-content: flex-start; align-items: stretch; gap: 0;
+       padding: 8px var(--gutter) calc(28px + env(safe-area-inset-bottom, 0px));
+       overflow-y: auto; counter-reset: n;
+       background:
+         radial-gradient(420px 300px at 100% 0%, rgba(0, 229, 255, .10), transparent 70%),
+         radial-gradient(360px 280px at 0% 100%, rgba(255, 92, 0, .10), transparent 70%),
+         #0d0d0f;
+       box-shadow: none; border: 0;
+       opacity: 0; visibility: hidden; transform: translateY(-10px);
+       transition: opacity .35s ease, transform .4s cubic-bezier(.22, 1, .36, 1), visibility 0s linear .4s;
+     }
+     .main-nav.is-open {
+       opacity: 1; visibility: visible; transform: none;
+       transition: opacity .35s ease, transform .4s cubic-bezier(.22, 1, .36, 1), visibility 0s;
+     }
+     .main-nav a {
+       display: flex; align-items: baseline; gap: 16px;
+       padding: 18px 4px; border-bottom: 1px solid var(--border);
+       font-size: 1.375rem; font-weight: 500;
+       opacity: 0; transform: translateY(14px);
+       transition: opacity .4s ease, transform .5s cubic-bezier(.22, 1, .36, 1), color .2s ease;
+     }
+     .main-nav a:not(.nav-cta)::before {
+       counter-increment: n; content: counter(n, decimal-leading-zero);
+       font-family: "Roboto", sans-serif; font-weight: 300; font-size: .8125rem; letter-spacing: .08em;
+       color: rgba(244, 244, 245, .4);
+     }
+     .main-nav a:not(.nav-cta)::after {
+       content: "→"; display: block; position: static; width: auto; height: auto; margin-left: auto;
+       background: none; transform: none; color: var(--cyan); opacity: .6;
+     }
+     .main-nav a.is-current { color: var(--cyan); }
+     .main-nav a.is-current::before { color: rgba(0, 229, 255, .7); }
+     .main-nav .nav-cta {
+       display: flex; justify-content: center; align-items: center;
+       min-height: 52px; margin-top: 28px; padding: 0 20px;
+       font-size: 1rem; letter-spacing: .06em;
+     }
+     .main-nav.is-open a { opacity: 1; transform: none; }
+     .main-nav.is-open a:nth-child(1) { transition-delay: .06s; }
+     .main-nav.is-open a:nth-child(2) { transition-delay: .12s; }
+     .main-nav.is-open a:nth-child(3) { transition-delay: .18s; }
+     .main-nav.is-open a:nth-child(4) { transition-delay: .24s; }
+     .main-nav.is-open a:nth-child(5) { transition-delay: .30s; }
+     .main-nav.is-open a:nth-child(6) { transition-delay: .36s; }
+     .main-nav.is-open a:nth-child(7) { transition-delay: .42s; }
+   
+     /* ================= HERO ================= */
+     .hero-visual, .ct-hero .hero-visual { display: none !important; }
+   
+     .hero, .ct-hero {
+       height: auto; min-height: 0; max-height: none; overflow: hidden;
+       padding: 0;
+       background-image:
+         radial-gradient(360px 300px at 100% 0%, rgba(0, 229, 255, .10), transparent 70%),
+         radial-gradient(320px 260px at 0% 70%, rgba(255, 92, 0, .07), transparent 70%);
+     }
+     .hero::before { width: 300px; height: 300px; right: -80px; top: 0; }
+     .hero > .container, .hero > .ct-hero-inner {
+       width: calc(100% - 2 * var(--gutter)); margin-inline: auto;
+       display: block; padding: 44px 0 40px;
+     }
+     .hero-content { width: 100%; padding-inline: 0; }
+     .hero-label { margin: 0 0 18px; font-size: .75rem; letter-spacing: .06em; }
+     .ct-deadline {
+       margin: 0 0 14px; padding-left: 12px; border-left: 2px solid var(--orange);
+       font-size: .875rem; letter-spacing: .04em;
+     }
+     .hero-title, .ct-hero .hero-title {
+       margin: 0 0 18px;
+       font-size: clamp(1.625rem, 7.4vw, 2.25rem); line-height: 1.15; letter-spacing: .06em;
+     }
+     .hero-subtitle, .ct-hero .hero-subtitle { max-width: none; margin: 0 0 26px; font-size: 1rem; line-height: 1.6; }
+     .hero-actions { flex-direction: column; gap: 12px; }
+     .hero-actions .btn, .hero-content > .btn, .btn-primary-hero, .btn-ghost {
+       width: 100%; min-height: 50px; padding: 0 20px; font-size: .9375rem;
+     }
+     .hero-content > .btn { display: flex; }
+   
+     ul.hero-benefits.hero-benefits--bar, .ct-hero ul.hero-benefits {
+       display: flex; flex-wrap: wrap; gap: 12px 22px;
+       margin: 0; padding: 16px var(--gutter);
+       font-size: .8125rem;
+       background: var(--page-bg2); border: 0; border-top: 1px solid #f4f4f5; border-bottom: 1px solid #f4f4f5;
+     }
+   
+     /* ================= SECTIONS: spacing ================= */
+     .about, .why, .courses, .path, .audience, .offers, .result, .ct-courses,
+     .cx-road, .cx-prog, .fq-sec, .fq-contact, .pr-sec, #family { padding-block: 56px; }
+     .ct-cta { padding-block: 0 56px; }
+     .why { min-height: 0; display: block; }
+     .why-inner, .courses-inner, .path-inner, .audience-inner, .offers-inner,
+     .result-inner, .about-inner, .ct-inner, .cx-inner, .fq-inner, .pr-inner {
+       width: calc(100% - 2 * var(--gutter));
+     }
+   
+     .why-header, .about-header, .courses-header, .path-header, .path--figma-head .path-header,
+     .audience-header, .offers-header, .result-header, .ct-head, .cx-head, .fq-head, .pr-head {
+       margin-bottom: 32px; text-align: left;
+     }
+     .fq-head--left { margin-bottom: 0; }
+   
+     .why-kicker, .courses-kicker, .path-kicker, .audience-kicker, .offers-kicker, .result-kicker,
+     .about-kicker, .ct-kicker, .pr-kicker, .cx-label, .fq-kicker, .path--figma-head .path-kicker {
+       flex-direction: row !important; justify-content: flex-start !important;
+       gap: 10px; margin-bottom: 16px; font-size: .8125rem; line-height: 1.4; width: auto;
+     }
+     .ct-kicker-dot, .path-kicker-dot, .pr-dot, .cx-dot { order: -1; }
+   
+     /* ================= TYPOGRAPHY ================= */
+     .why-title, .courses-title, .about-title, .audience-title, .offers-title, .result-title,
+     .ct-title, .cx-title, .fq-title, .pr-title, .path-title, .path--figma-head .path-title {
+       margin: 0 0 16px;
+       font-size: clamp(1.5rem, 6.4vw, 2rem); line-height: 1.2; letter-spacing: .05em;
+     }
+     .path-title, .path--figma-head .path-title { margin: 0; }
+     .why-subtitle, .about-subtitle, .courses-subtitle, .audience-subtitle, .offers-subtitle,
+     .result-subtitle, .ct-sub, .cx-sub, .fq-sub {
+       margin: 0; font-size: .9375rem; line-height: 1.6; letter-spacing: .01em;
+     }
+     .about-subtitle br, .result-subtitle br, .fq-sub br, .offers-title br { display: none; }
+     .result-cta-title { font-size: 1.625rem; letter-spacing: .05em; }
+   
+     .pr-offer { margin-bottom: 16px; font-size: clamp(1.75rem, 8vw, 2.5rem); line-height: 1.1; letter-spacing: .08em; }
+     .pr-lead { margin-bottom: 14px; font-size: 1rem; line-height: 1.6; letter-spacing: .03em; }
+     .pr-note { font-size: .875rem; line-height: 1.7; letter-spacing: .03em; }
+   
+     .why-card-text, .audience-card-text, .about-note p, .about-intro p { font-weight: 300; letter-spacing: .02em; line-height: 1.6; }
+     .why-card-text { color: #e4e4e6; }
+     .why-card-heading { font-size: 1.0625rem; }
+   
+     /* ================= WHY / COURSES / AUDIENCE ================= */
+     .course-meta { margin: 8px -20px 28px; padding: 18px 20px; }
+     .course-card { padding: 28px 20px 20px; }
+     .path-flow { row-gap: 32px; }
+     .audience-grid, .offers-grid { gap: 16px; }
+     .audience-card-text { margin-left: 0; }
+   
+     .ct-card { box-shadow: 4px 4px 40px 1px rgba(0, 229, 255, .18); }
+     .ct-name { font-size: 1.625rem; }
+     .ct-steps strong { font-size: 1rem; }
+   
+     .cx-road-box p { font-size: 1rem; }
+     .cx-acc-btn { font-size: .9375rem; }
+   
+     /* ================= FAQ ================= */
+     .fq-aside { display: none; }
+     .fq-title { font-weight: 800; }
+   
+     /* ================= FORMS (>=16px: no iOS zoom) ================= */
+     .ap-field input[type="text"], .ap-field input[type="email"], .ap-field input[type="tel"],
+     .ap-select select, .ap-field textarea, .pr-select select { font-size: 16px; }
+     .ap-title { font-size: clamp(1.75rem, 7.5vw, 2.25rem); letter-spacing: .06em; line-height: 1.15; margin-bottom: 20px; }
+     .ap-lead { font-size: 1rem; line-height: 1.6; }
+   
+     /* ================= FOOTER ================= */
+     .footer-inner { width: calc(100% - 2 * var(--gutter)); }
+     .footer-brand { font-size: 1.125rem; }
+   }
+   
+   /* ---- phone ---- */
+   @media (max-width: 640px) {
+     .why-grid { grid-template-columns: 1fr; }
+     .why-card { min-height: 0; }
+     .why-card, .why-card:nth-child(n) { border-right: none !important; border-bottom: 1px solid #f4f4f5 !important; }
+     .why-card:last-child { border-bottom: none !important; }
+   
+     /* таблица цен -> карточки */
+     .pr-table-wrap { border: 0; overflow: visible; }
+     .pr-table { min-width: 0; display: block; }
+     .pr-table thead { display: none; }
+     .pr-table tbody { display: grid; gap: 16px; }
+     .pr-table tr { display: block; border: 1px solid var(--cyan); background: #121214; }
+     .pr-table tbody th {
+       display: block; width: auto; padding: 14px 16px; text-align: left; font-size: 1rem;
+       border: 0; border-bottom: 1px solid var(--cyan) !important;
+     }
+     .pr-table td {
+       display: flex; justify-content: space-between; align-items: baseline; gap: 12px;
+       padding: 12px 16px; text-align: right; font-size: .875rem;
+       border-bottom: 1px solid rgba(0, 229, 255, .25) !important;
+     }
+     .pr-table td:last-child { border-bottom: 0 !important; }
+     .pr-table td::before { text-align: left; font-size: .8125rem; color: rgba(244, 244, 245, .6); }
+     .pr-table td:nth-child(2)::before { content: "Тривалість"; }
+     .pr-table td:nth-child(3)::before { content: "Вартість"; }
+     .pr-table td:nth-child(4)::before { content: "Early Bird"; }
+     .pr-table td:nth-child(5)::before { content: "Розстрочка"; }
+   }
+   
+   /* ---- narrow phone: CTA only inside the menu ---- */
+   @media (max-width: 419px) {
+     .header-cta.btn { display: none; }
+     .nav-toggle { margin-left: auto; }
+   }
+   
+   @media (prefers-reduced-motion: reduce) {
+     .main-nav, .main-nav a, .burger i { transition: none !important; }
+   }
+   
+   /* =====================================================================
+      v2 — правки по скриншотам
+      ===================================================================== */
+   @media (max-width: 960px) {
+     .main-nav { overscroll-behavior: contain; }
+   
+     /* ---------- hero-benefits: компактная сетка 2 колонки ---------- */
+     ul.hero-benefits.hero-benefits--bar, .ct-hero ul.hero-benefits {
+       display: grid; grid-template-columns: 1fr 1fr; justify-content: start;
+       gap: 10px 14px; padding: 14px var(--gutter); font-size: .75rem;
+     }
+     ul.hero-benefits.hero-benefits--bar li, .ct-hero ul.hero-benefits li {
+       gap: 8px; font-size: .75rem; line-height: 1.25;
+     }
+     ul.hero-benefits.hero-benefits--bar .hero-benefits-icon, .ct-hero .hero-benefits-icon {
+       width: 14px; height: 14px;
+     }
+   
+     /* ---------- «Чому ITYes»: иконка маленькая, в углу карточки ---------- */
+     .why-card {
+       display: grid; grid-template-columns: 1fr auto;
+       grid-template-areas: "head icon" "text text";
+       column-gap: 12px; row-gap: 10px; align-items: center;
+       min-height: 0; padding: 18px;
+     }
+     .why-card-heading { grid-area: head; margin: 0; }
+     .why-card-icon { grid-area: icon; width: 52px; height: auto; margin: 0; padding: 0; align-self: center; opacity: .9; }
+     .why-card-text { grid-area: text; padding-left: 0; max-width: none; font-size: .9375rem; }
+   
+     /* ---------- «Про нас» ---------- */
+     .about-header { margin-bottom: 24px; }
+     .about-grid { row-gap: 16px; }
+     .about-intro { padding: 18px; }
+     .about-intro p { font-size: .9375rem; line-height: 1.65; letter-spacing: .02em; }
+     .about-stats { grid-template-columns: 1fr 1fr; gap: 12px; }
+     .about-stat-body { padding: 20px 8px 12px; }
+     .about-stat-num { font-size: clamp(2.5rem, 13vw, 3.5rem); }
+     .about-stat-unit { margin-top: 4px; font-size: 1rem; }
+     .about-stat-label {
+       display: grid; place-items: center; min-height: 3.1em;
+       padding: 8px; font-size: .8125rem; line-height: 1.3; text-align: center;
+     }
+     .about-side { gap: 12px; }
+     .about-note { padding: 16px; }
+     .about-note h3 { margin-bottom: 8px; padding-left: 22px; font-size: .9375rem; }
+     .about-note p { padding-left: 22px; font-size: .875rem; }
+   
+     /* ---------- Курси (index): свайп-карусель ---------- */
+     .courses-grid {
+       display: flex; gap: 14px; max-width: none; margin-inline: calc(-1 * var(--gutter));
+       padding: 6px var(--gutter) 22px;
+       overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: var(--gutter);
+       -webkit-overflow-scrolling: touch; scrollbar-width: none;
+     }
+     .courses-grid::-webkit-scrollbar { display: none; }
+     .courses-grid .course-card {
+       flex: 0 0 min(84%, 340px); scroll-snap-align: start;
+       opacity: 1 !important; transform: none !important;
+       padding: 22px 18px 18px; min-height: 0;
+       background-image: linear-gradient(160deg, color-mix(in srgb, var(--card-accent) 14%, transparent), transparent 45%);
+     }
+     .course-label { margin-bottom: 16px; font-size: 1rem; }
+     .course-label span { font-size: 1rem; }
+     .course-header-content { text-align: left; }
+     .course-name { margin: 0 0 8px; text-align: left; font-size: 1.5rem; }
+     .course-desc { margin: 0 0 16px; text-align: left; font-size: .875rem; color: rgba(244, 244, 245, .75); }
+     .course-tags { justify-content: flex-start; gap: 8px; margin-bottom: 20px; }
+     .course-tags li { padding: 4px 10px; font-size: .6875rem; }
+     .course-meta {
+       grid-template-columns: repeat(3, 1fr); gap: 6px;
+       margin: 0 -18px 18px; padding: 14px 18px;
+     }
+     .course-meta dd { font-size: .8125rem; }
+     .course-meta dt { font-size: .6875rem; color: rgba(244, 244, 245, .6); }
+     .course-footer { flex-direction: column; align-items: stretch; gap: 14px; }
+     .course-price { display: flex; justify-content: space-between; align-items: baseline; font-size: 1.125rem; }
+     .course-price span { display: inline; margin: 0; }
+     .course-btn { width: 100%; min-height: 46px; font-weight: 500; font-size: .875rem; }
+     .course-card--cyan .course-btn { color: #0d0d0f; }
+   
+     /* ---------- Шлях: вертикальный таймлайн ---------- */
+     .path-board { min-height: 0; }
+     .path-lines { opacity: 0; pointer-events: none; }   /* стрелки из JS не нужны, но SVG остаётся «живым» */
+     .path-flow { grid-template-columns: 1fr; grid-template-rows: none; row-gap: 14px; max-width: none; padding: 0; }
+     .path--figma .path-step { position: relative; padding-left: 52px; }
+     .path--figma .path-step:not(:last-child)::before {
+       content: ""; position: absolute; left: 17px; top: 36px; bottom: -14px; width: 1px;
+       background: rgba(244, 244, 245, .25); transition: background .4s ease, box-shadow .4s ease;
+     }
+     .path--figma .path-step.is-in:not(:last-child)::before { background: var(--cyan); box-shadow: 0 0 8px rgba(0, 229, 255, .6); }
+     .path--figma .path-box { position: static; min-height: 56px; padding: 14px 16px; }
+     .path--figma .path-box p { width: auto; font-size: .9375rem; line-height: 1.4; letter-spacing: .03em; }
+     .path--figma .path-num {
+       position: absolute; left: 0; top: 0; right: auto; transform: none;
+       width: 36px; height: 36px; font-family: "Montserrat", sans-serif; font-size: 1rem; font-weight: 500;
+     }
+   }
+   
+   /* =====================================================================
+      v3 — таймлайн одной высоты, знижки, футер, courses, калькулятор, FAQ
+      ===================================================================== */
+   @media (max-width: 960px) {
+     /* возвращаем перенос строки в подзаголовках (иначе слипается «непросто.Саме») */
+     .about-subtitle br, .result-subtitle br, .fq-sub br { display: inline; }
+   
+     /* ---------- таймлайн: path-flow (index/courses) + cx-road-flow (course) ---------- */
+     .path--figma .path-box, .cx-road-box {
+       height: 76px; min-height: 76px; padding: 0 16px;
+       justify-content: flex-start; text-align: left;
+     }
+     .path--figma .path-box p, .cx-road-box p { width: 100%; text-align: left; }
+     .path--figma .path-num, .cx-road-num { top: 50%; transform: translateY(-50%); }
+   
+     .cx-road-lines { opacity: 0; pointer-events: none; }
+     .cx-road-flow { grid-template-columns: 1fr; row-gap: 14px; max-width: none; margin-inline: 0; }
+     .cx-road-step { position: relative; padding-left: 52px; }
+     .cx-road-box { position: static; }
+     .cx-road-box p { font-size: .9375rem; line-height: 1.4; letter-spacing: .03em; }
+     .cx-road-num {
+       position: absolute; left: 0; right: auto; width: 36px; height: 36px;
+       font-size: 1rem; font-weight: 500;
+     }
+     .cx-road-step.is-in .cx-road-num { background: var(--cyan); color: #121214; border-color: var(--cyan); }
+   
+     .path--figma .path-step:not(:last-child)::before,
+     .cx-road-step:not(:last-child)::before {
+       content: ""; position: absolute; left: 17px; top: 56px; bottom: -34px; width: 1px;
+       background: rgba(244, 244, 245, .25); transition: background .4s ease, box-shadow .4s ease;
+     }
+     .cx-road-step.is-in:not(:last-child)::before { background: var(--cyan); box-shadow: 0 0 8px rgba(0, 229, 255, .6); }
+   
+     /* ---------- Знижки: «купони» ---------- */
+     .offers-grid {
+       grid-template-columns: 1fr 1fr; gap: 12px;
+       grid-template-areas: "featured featured" "early family" "referral combo";
+     }
+     .offer-card--cyan {
+       border: 1px solid rgba(0, 229, 255, .6); box-shadow: none;
+       background-image: linear-gradient(180deg, rgba(0, 229, 255, .10), transparent 55%);
+     }
+     .offer-card--cyan .offer-label {
+       padding: 8px 12px; font-size: .6875rem; letter-spacing: .12em; text-transform: uppercase;
+       border-bottom: 1px dashed rgba(0, 229, 255, .6);
+     }
+     .offer-body { padding: 12px; }
+     .offer-name { margin: 0 0 12px; font-size: .75rem; line-height: 1.4; letter-spacing: .03em; color: rgba(244, 244, 245, .7); }
+     .offer-old { font-size: .75rem; }
+     .offer-value { margin: 0; font-size: 1.375rem; line-height: 1.1; color: var(--orange); }
+     .offer-value span { display: block; margin-top: 4px; font-size: .6875rem; font-weight: 400; color: #f4f4f5; }
+     .offer-note { margin-top: 12px; text-align: left; font-size: .6875rem; line-height: 1.4; }
+     .offer-card--orange.offer-card--featured { margin-bottom: 24px; }
+     .offer-card--featured .offer-featured-price { gap: 16px; }
+   
+     /* ---------- Футер ---------- */
+     .site-footer { padding: 32px 0 28px; }
+     .footer-inner {
+       grid-template-columns: auto 1fr;
+       grid-template-areas: "logo brand" "nav nav" "contacts contacts" "legal legal";
+       column-gap: 16px; row-gap: 28px; align-items: center;
+     }
+     .footer-logo img { width: 56px; height: 56px; }
+     .footer-brand { align-self: center; font-size: .9375rem; line-height: 1.4; letter-spacing: .08em; }
+     .footer-nav, .footer-contacts { padding-top: 0; }
+     .footer-heading {
+       margin: 0 0 12px; font-size: .6875rem; font-weight: 400;
+       letter-spacing: .14em; text-transform: uppercase; color: rgba(244, 244, 245, .5);
+     }
+     .footer-links { display: flex; flex-wrap: wrap; gap: 10px; }
+     .footer-links a { min-height: 44px; padding: 0 16px; border: 1px solid var(--border); font-size: .9375rem; }
+     .footer-links a::before { width: 6px; height: 6px; }
+     .footer-email { display: block; margin-bottom: 14px; font-size: 1rem; }
+     .footer-social { gap: 10px; }
+     .footer-social a { width: 48px; height: 48px; }
+     .footer-social svg { width: 22px; height: 22px; }
+     .footer-legal {
+       flex-direction: row; flex-wrap: wrap; justify-content: space-between; gap: 10px 16px;
+       padding-top: 20px; border-top: 1px solid var(--border); font-size: .75rem;
+     }
+     .footer-legal span { order: 3; width: 100%; opacity: .55; }
+   
+     /* ---------- courses.html: без ct-program (бейдж оставляем) ---------- */
+     .ct-program { display: contents; }
+     .ct-program h4, .ct-steps { display: none; }
+     .ct-card:has(.ct-badge) .ct-name { padding-top: 46px; }
+   
+     /* ---------- FAQ: блоки связи ---------- */
+     .fq-ways { gap: 28px; margin-top: 28px; }
+     .fq-way { align-items: stretch; gap: 12px; }
+     .fq-way-box {
+       width: 100%; min-height: 0; padding: 18px 20px; justify-items: start; text-align: left;
+       font-size: 1rem; line-height: 1.5; letter-spacing: .03em;
+       border-left: 3px solid var(--orange);
+     }
+     .fq-way-box br { display: none; }
+     .fq-way-btn { width: 100%; min-width: 0; height: 52px; font-size: 1rem; }
+     .fq-social { gap: 12px; }
+     .fq-social a { flex: 1; width: auto; height: 52px; }
+   
+     /* ---------- Калькулятор цен ---------- */
+     .pr-calc-sec { padding: 32px 0 56px; }
+     .pr-calc { display: flex; flex-direction: column; }
+     .pr-calc-left, .pr-calc-right { display: contents; }
+   
+     .pr-calc-intro { order: 1; min-height: 0; padding: 20px 16px 16px; }
+     .pr-calc-intro .pr-kicker { margin-left: 0; }
+     .pr-calc-title { margin: 14px 0 8px; font-size: 1.25rem; line-height: 1.3; letter-spacing: .05em; }
+     .pr-calc-text { margin: 0 0 18px; font-size: .875rem; line-height: 1.5; }
+     .pr-field { margin: 0; width: 100%; }
+     .pr-field label { margin-bottom: 10px; font-size: .9375rem; }
+     .pr-select select { height: 52px; padding-left: 14px; }
+   
+     .pr-toggles { order: 2; }
+     .pr-toggles li { min-height: 60px; padding: 0 16px; font-size: 1rem; }
+     .pr-switch { width: 60px; height: 32px; }
+     .pr-switch i { left: 4px; width: 22px; height: 22px; }
+     .pr-switch.is-on i { left: calc(100% - 26px); }
+     .pr-calc-foot { order: 3; min-height: 0; padding: 12px 16px; font-size: .75rem; }
+   
+     .pr-res-top {
+       order: 4; display: flex; justify-content: space-between; align-items: center; gap: 12px;
+       min-height: 0; padding: 14px 16px; background: #121214; border-top: 1px solid #f4f4f5;
+     }
+     .pr-res-old { margin: 0; text-align: right; font-size: .8125rem; line-height: 1.3; }
+     .pr-res-old span { font-size: .6875rem; }
+   
+     /* итоговая цена — липкая плашка внизу экрана */
+     .pr-res-total {
+       order: 5; position: sticky; bottom: 0; z-index: 20;
+       display: flex; justify-content: space-between; align-items: center;
+       height: 68px; padding: 0 16px; background: #121214;
+       border-block: 1px solid var(--orange); box-shadow: 0 -10px 24px rgba(0, 0, 0, .45);
+       font-size: 1.75rem; font-weight: 300;
+     }
+     .pr-res-total::before { content: "До сплати"; font-size: .75rem; font-weight: 400; letter-spacing: .08em; color: rgba(244, 244, 245, .6); }
+     .pr-res-row { min-height: 56px; padding: 0 16px; background: #121214; font-size: .875rem; }
+     .pr-res-row:nth-of-type(2) { order: 6; }
+     .pr-res-row:nth-of-type(3) { order: 7; }
+     .pr-res-row strong { font-size: 1rem; }
+     .pr-res-applied { order: 8; padding: 18px 16px 20px; background: #121214; }
+     .pr-res-applied > p { margin-bottom: 12px; }
+     .pr-res-applied li { min-height: 34px; font-size: .8125rem; }
+     .pr-res-btn { width: 100%; min-height: 52px; margin-top: 20px; font-size: 1rem; }
+   }

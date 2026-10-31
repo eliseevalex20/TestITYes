@@ -1,122 +1,130 @@
-/* apply.css — load AFTER site.css on apply.html */
+/* apply.css — load AFTER site.css on apply.html.
+   The whole page (header + form + footer) fits one screen on desktop:
+   --au is 1px on a 1980x1080 screen and shrinks with the smaller of width / height. */
 
-.ap {
-    display: grid;
-    grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
-    min-height: calc(100svh - var(--header-height));
+   .page-apply {
+    /* 1px on a 1980 x 1040 screen; shrinks with the smaller of width / (height - header). 960u = form + breathing room */
+    --au: clamp(.5px, min(calc(100vw / 1980), calc((100svh - 80px) / 960)), 1.25px);
+    --vu: clamp(.5px, .0505vw, 1.2px);
+  }
+  html { background: var(--page-bg); }
+  
+  .ap {
+    min-height: calc(100svh - var(--header-height));   /* the application = exactly one screen */
+    display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
     background: var(--page-bg);
   }
   
   /* ---------- left: message ---------- */
   .ap-intro {
     display: flex; align-items: center;
-    padding: 56px 48px 56px var(--gutter);
-    background: #111113;
-    border-right: 1px solid var(--orange);
+    padding: calc(40 * var(--au)) calc(40 * var(--au)) calc(40 * var(--au)) var(--gutter);
+    background: #111113; border-right: 1px solid var(--orange);
     position: relative; overflow: hidden;
   }
   .ap-intro::before {
     content: ""; position: absolute; left: -10%; top: 15%; width: 520px; height: 520px;
-    background: radial-gradient(circle, rgba(0,229,255,.07) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(0, 229, 255, .07) 0%, transparent 70%);
     pointer-events: none;
   }
-  .ap-intro-inner { position: relative; max-width: 520px; }
+  .ap-intro-inner { position: relative; max-width: calc(760 * var(--au)); }
   .ap-intro-inner > * { animation: fade-up .7s ease both; }
   .ap-intro-inner > :nth-child(2) { animation-delay: .1s; }
   .ap-intro-inner > :nth-child(3) { animation-delay: .2s; }
   
   .ap-label {
-    display: inline-flex; align-items: center; gap: 10px; margin: 0 0 18px;
-    font-family: "Montserrat", sans-serif; font-size: .8125rem; letter-spacing: .06em;
+    display: inline-flex; align-items: center; gap: 15px; margin: 0 0 calc(30 * var(--au));
+    font-family: "Montserrat", sans-serif; font-size: max(12px, calc(16 * var(--au))); letter-spacing: .1em;
   }
   .ap-dot { width: 10px; height: 10px; background: var(--cyan); }
   .ap-title {
-    margin: 0 0 24px;
-    font-family: "Montserrat", sans-serif; font-weight: 700;
-    font-size: clamp(2rem, 3.8vw, 3.25rem); line-height: 1.12; letter-spacing: .14em;
+    margin: 0 0 calc(34 * var(--au));
+    font-family: "Montserrat", sans-serif; font-weight: 800;
+    font-size: max(30px, calc(64 * var(--au))); line-height: 1.1; letter-spacing: .2em;
   }
   .ap-title .accent { display: block; color: var(--cyan); }
-  .ap-lead { margin: 0; max-width: 440px; font-size: 1.0625rem; line-height: 1.7; color: rgba(244,244,245,.92); }
+  .ap-lead {
+    margin: 0; max-width: calc(610 * var(--au));
+    font-family: "Montserrat", sans-serif; font-size: max(16px, calc(24 * var(--au))); line-height: 1.67; color: rgba(244, 244, 245, .92);
+  }
   
   /* ---------- right: form ---------- */
   .ap-form-sec {
     display: flex; align-items: center;
-    padding: 56px var(--gutter) 56px 12%;
+    padding: calc(40 * var(--au)) var(--gutter);
     background: var(--page-bg2);
   }
-  .ap-form { width: 100%; max-width: 760px; }
+  .ap-form { width: min(100%, calc(709 * var(--au))); margin-inline: auto; }
   .ap-form-title {
-    margin: 0 0 36px;
-    font-family: "Montserrat", sans-serif; font-weight: 500; font-size: 1.5rem; color: var(--orange);
+    margin: 0 0 calc(54 * var(--au));
+    font-family: "Montserrat", sans-serif; font-weight: 500; font-size: max(18px, calc(28 * var(--au))); color: var(--orange);
   }
-  .ap-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px 56px; }
+  .ap-grid { display: grid; grid-template-columns: 1fr 1fr; gap: calc(48 * var(--au)) calc(109 * var(--au)); }
   .ap-field { margin: 0; padding: 0; border: 0; min-width: 0; }
   .ap-field--wide { grid-column: 1 / -1; }
+  .ap-messengers > legend { white-space: nowrap; font-size: max(12px, calc(17 * var(--au))); }
   .ap-field > label, .ap-field > legend {
-    display: block; margin: 0 0 8px; padding: 0;
-    font-family: "Montserrat", sans-serif; font-weight: 700; font-size: .875rem;
+    display: block; margin: 0 0 calc(14 * var(--au)); padding: 0;
+    font-family: "Montserrat", sans-serif; font-weight: 700; font-size: max(12px, calc(19 * var(--au)));
   }
   
   .ap-field input[type="text"], .ap-field input[type="email"], .ap-field input[type="tel"],
   .ap-select select {
-    width: 100%; padding: 12px 2px 10px; border-radius: 0;
+    width: 100%; padding: calc(10 * var(--au)) 2px calc(10 * var(--au)); border-radius: 0;
     background: transparent; color: var(--text);
     border: 0; border-bottom: 1px solid #f4f4f5;
-    font-family: "Montserrat", sans-serif; font-size: 1rem;
+    font-family: "Montserrat", sans-serif; font-size: max(14px, calc(24 * var(--au)));
     transition: border-color .2s ease, box-shadow .2s ease;
   }
-  .ap-field input::placeholder, .ap-field textarea::placeholder { color: rgba(244,244,245,.45); }
-  .ap-field input:focus, .ap-field textarea:focus, .ap-select select:focus {
-    outline: none; border-color: var(--cyan);
-  }
+  .ap-field input::placeholder, .ap-field textarea::placeholder { color: rgba(244, 244, 245, .45); }
+  .ap-field input:focus, .ap-field textarea:focus, .ap-select select:focus { outline: none; border-color: var(--cyan); }
   .ap-field input:focus, .ap-select select:focus { box-shadow: 0 1px 0 var(--cyan); }
   
   .ap-select { position: relative; }
-  .ap-select select { appearance: none; -webkit-appearance: none; padding-right: 36px; cursor: pointer; }
-  .ap-select select:invalid { color: rgba(244,244,245,.45); }
+  .ap-select select { appearance: none; -webkit-appearance: none; padding-right: calc(52 * var(--au)); cursor: pointer; }
+  .ap-select select:invalid { color: rgba(244, 244, 245, .45); }
   .ap-select select option { background: #121214; color: #f4f4f5; }
   .ap-select::after {
-    content: ""; position: absolute; right: 6px; top: 50%;
-    width: 10px; height: 10px; pointer-events: none;
+    content: ""; position: absolute; right: calc(8 * var(--au)); top: 50%;
+    width: max(9px, calc(18 * var(--au))); height: max(9px, calc(18 * var(--au))); pointer-events: none;
     border-right: 1.5px solid #f4f4f5; border-bottom: 1.5px solid #f4f4f5;
     transform: translateY(-70%) rotate(45deg);
   }
   
   .ap-field textarea {
-    display: block; width: 100%; min-height: 130px; padding: 14px 18px; resize: vertical; border-radius: 0;
-    background: transparent; color: var(--text);
-    border: 1px solid #f4f4f5;
-    font-family: "Montserrat", sans-serif; font-size: .875rem; line-height: 1.6;
+    display: block; width: 100%; min-height: calc(120 * var(--au)); padding: calc(14 * var(--au)) calc(20 * var(--au)); resize: none; border-radius: 0;
+    background: transparent; color: var(--text); border: 1px solid #f4f4f5;
+    font-family: "Montserrat", sans-serif; font-size: max(13px, calc(19 * var(--au))); line-height: 1.6;
     transition: border-color .2s ease;
   }
   
   /* messenger picker */
-  .ap-msg-row { display: flex; gap: 42px; padding-top: 6px; }
+  .ap-msg-row { display: flex; gap: calc(65 * var(--au)); padding-top: 2px; }
   .ap-msg { position: relative; cursor: pointer; }
   .ap-msg input { position: absolute; opacity: 0; inset: 0; }
   .ap-msg span {
-    width: 52px; height: 52px; display: grid; place-items: center;
+    width: max(38px, calc(46 * var(--au))); height: max(38px, calc(46 * var(--au))); display: grid; place-items: center;
     background: var(--cyan); color: #121214;
     transition: background .25s ease, transform .2s ease, box-shadow .25s ease;
   }
-  .ap-msg svg { width: 28px; height: 28px; }
+  .ap-msg svg { width: 58%; height: 58%; }
   .ap-msg:hover span { transform: translateY(-2px); }
-  .ap-msg input:checked + span { background: var(--orange); box-shadow: 4px 4px 30px 1px rgba(255,92,0,.35); }
+  .ap-msg input:checked + span { background: var(--orange); box-shadow: 4px 4px 30px 1px rgba(255, 92, 0, .35); }
   .ap-msg input:focus-visible + span { outline: 2px solid #f4f4f5; outline-offset: 3px; }
   .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
   
   /* consent */
   .ap-consent {
-    position: relative; display: flex; align-items: center; justify-content: center; gap: 18px;
-    margin: 36px 0 0; font-family: "Montserrat", sans-serif; font-size: .8125rem; cursor: pointer;
+    position: relative; display: flex; align-items: center; justify-content: center; gap: calc(26 * var(--au));
+    margin: calc(32 * var(--au)) 0 0; font-family: "Montserrat", sans-serif; font-size: max(12px, calc(18 * var(--au))); cursor: pointer;
   }
   .ap-consent input { position: absolute; opacity: 0; width: 24px; height: 24px; margin: 0; }
   .ap-box {
-    width: 24px; height: 24px; flex: 0 0 auto; display: grid; place-items: center;
+    width: max(20px, calc(26 * var(--au))); height: max(20px, calc(26 * var(--au))); flex: 0 0 auto; display: grid; place-items: center;
     background: #e6e6e8; transition: background .2s ease;
   }
   .ap-box::after {
-    content: ""; width: 6px; height: 11px; margin-top: -2px;
+    content: ""; width: 28%; height: 52%; margin-top: -2px;
     border-right: 2px solid #121214; border-bottom: 2px solid #121214;
     transform: rotate(45deg) scale(0); transition: transform .2s ease;
   }
@@ -128,25 +136,56 @@
   .is-invalid input, .is-invalid select, .is-invalid textarea { border-color: var(--orange) !important; }
   .is-invalid > label, .is-invalid > legend { color: var(--orange); }
   .ap-consent.is-invalid .ap-box { background: var(--orange); }
-  .ap-status { min-height: 1.4em; margin: 18px 0 0; text-align: center; font-family: "Montserrat", sans-serif; font-size: .8125rem; }
+  .ap-status {
+    min-height: calc(22 * var(--au)); margin: calc(8 * var(--au)) 0 0; text-align: center;
+    font-family: "Montserrat", sans-serif; font-size: max(12px, calc(15 * var(--au)));
+  }
   .ap-status.is-error { color: var(--orange); }
   .ap-status.is-ok { color: var(--cyan); }
   
-  .ap-submit { display: flex; margin: 14px auto 0; padding: 10px 36px; font-size: 1.0625rem; letter-spacing: .1em; }
+  .ap-submit {
+    display: flex; margin: calc(8 * var(--au)) auto 0; height: max(44px, calc(52 * var(--au))); padding: 0 calc(32 * var(--au));
+    font-size: max(15px, calc(24 * var(--au))); letter-spacing: .1em;
+  }
   .ap-submit:disabled { opacity: .6; cursor: progress; transform: none; }
   
-  /* ---------- responsive ---------- */
+  /* ===== Footer (as in the FAQ design) ===== */
+  .footer-social { gap: 16px; }
+  @media (min-width: 961px) {
+    .site-footer { padding: calc(66 * var(--vu)) 0 calc(92 * var(--vu)); }
+    .footer-inner {
+      width: calc(100% - 2 * var(--gutter));
+      grid-template-columns: auto 1fr auto auto; column-gap: calc(108 * var(--vu)); row-gap: calc(57 * var(--vu));
+    }
+    .footer-logo img { width: max(56px, calc(116 * var(--vu))); height: auto; }
+    .footer-brand { align-self: start; margin-top: calc(64 * var(--vu)); font-size: max(1.125rem, calc(34 * var(--vu))); letter-spacing: .18em; }
+    .footer-legal { margin-left: calc(226 * var(--vu)); gap: 8px calc(80 * var(--vu)); font-size: max(11px, calc(15 * var(--vu))); }
+    .footer-nav, .footer-contacts { text-align: center; }
+    .footer-heading { margin-bottom: calc(18 * var(--vu)); font-size: max(.95rem, calc(25 * var(--vu))); }
+    .footer-links { justify-content: center; gap: calc(25 * var(--vu)) calc(25 * var(--vu)); font-size: max(14px, calc(21 * var(--vu))); }
+    .footer-links a::before { width: max(6px, calc(10 * var(--vu))); height: max(6px, calc(10 * var(--vu))); }
+    .footer-email { font-size: max(14px, calc(21 * var(--vu))); margin-bottom: calc(18 * var(--vu)); }
+    .footer-social { justify-content: space-between; gap: calc(25 * var(--vu)); }
+    .footer-social a { width: max(24px, calc(30 * var(--vu))); height: max(24px, calc(30 * var(--vu))); }
+    .footer-social svg { width: 62%; height: 62%; }
+  }
+  
+  
+  /* ---------- tablet / phone: normal scrolling page ---------- */
   @media (max-width: 960px) {
-    .ap { grid-template-columns: 1fr; min-height: 0; }
+    .page-apply { --au: clamp(.6px, calc(100vw / 1100), .9px); min-height: 0; display: block; }
+    .ap { display: grid; grid-template-columns: 1fr; min-height: 0; }
     .ap-intro { padding: 40px 20px 36px; border-right: none; border-bottom: 1px solid var(--orange); }
-    .ap-title { letter-spacing: .1em; }
+    .ap-intro-inner { max-width: none; }
     .ap-form-sec { padding: 40px 20px 56px; }
-    .ap-form { max-width: 640px; margin-inline: auto; }
+    .ap-form { max-width: 640px; }
+    .ap-grid { gap: 28px 40px; }
   }
   @media (max-width: 640px) {
     .ap-grid { grid-template-columns: 1fr; gap: 24px; }
+    .ap-field--wide { grid-column: auto; }
     .ap-msg-row { gap: 28px; }
     .ap-consent { align-items: flex-start; justify-content: flex-start; }
-    .ap-submit { width: 100%; min-height: 48px; justify-content: center; }
+    .ap-submit { width: 100%; justify-content: center; }
   }
   @media (hover: none) { .ap-msg:hover span { transform: none; } }

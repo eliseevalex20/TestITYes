@@ -1,18 +1,33 @@
 /* ===== navigation.js ===== */
 (() => {
-// Mobile navigation
-const toggle = document.querySelector(".nav-toggle");
-    const nav = document.getElementById("main-nav");
-    toggle?.addEventListener("click", () => {
-      const open = nav.classList.toggle("is-open");
-      toggle.setAttribute("aria-expanded", String(open));
-    });
-    nav.querySelectorAll("a").forEach((a) =>
-      a.addEventListener("click", () => {
-        nav.classList.remove("is-open");
-        toggle.setAttribute("aria-expanded", "false");
-      })
-    );
+  const toggle = document.querySelector(".nav-toggle");
+  const nav = document.getElementById("main-nav");
+  if (!toggle || !nav) return;
+
+  toggle.innerHTML = '<span class="burger" aria-hidden="true"><i></i><i></i><i></i></span>';
+  toggle.setAttribute("aria-label", "Відкрити меню");
+
+  // кнопка «Записатися» внутри меню (берёт ссылку из шапки)
+  const headerCta = document.querySelector(".header-cta");
+  if (headerCta) {
+    const cta = document.createElement("a");
+    cta.className = "btn btn-orange nav-cta";
+    cta.href = headerCta.getAttribute("href");
+    cta.textContent = headerCta.textContent.trim();
+    nav.append(cta);
+  }
+
+  const setOpen = (open) => {
+    nav.classList.toggle("is-open", open);
+    toggle.setAttribute("aria-expanded", String(open));
+    toggle.setAttribute("aria-label", open ? "Закрити меню" : "Відкрити меню");
+    document.documentElement.classList.toggle("menu-open", open);
+  };
+
+  toggle.addEventListener("click", () => setOpen(!nav.classList.contains("is-open")));
+  nav.addEventListener("click", (e) => { if (e.target.closest("a")) setOpen(false); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") setOpen(false); });
+  window.matchMedia("(max-width: 960px)").addEventListener("change", (e) => { if (!e.matches) setOpen(false); });
 })();
 
 /* ===== path.js ===== */
