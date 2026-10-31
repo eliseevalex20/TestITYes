@@ -161,24 +161,7 @@
         var sync = () => cta.classList.toggle("is-shown", window.scrollY > 500 && !footerVisible);
       }
   
-      /* ---------- chapter markers: "03 ─────── / 08", the line draws itself ---------- */
-      const chapterSecs = [...document.querySelectorAll(".about, .why, .courses, .path, .audience, .offers, .result, .ct-courses, .cx-road, .cx-prog, .fq-sec, .fq-contact, .pr-sec")];
       const pad2 = (n) => String(n).padStart(2, "0");
-      if (chapterSecs.length) {
-        const chapIO = new IntersectionObserver((es) => es.forEach((e) => {
-          if (e.isIntersecting) { e.target.classList.add("is-in"); chapIO.unobserve(e.target); }
-        }), { threshold: 0.6 });
-        chapterSecs.forEach((sec, i) => {
-          const inner = sec.querySelector(".about-inner, .why-inner, .courses-inner, .path-inner, .audience-inner, .offers-inner, .result-inner, .ct-inner, .cx-inner, .fq-inner, .pr-inner");
-          if (!inner) return;
-          const c = document.createElement("div");
-          c.className = "mv-chapter";
-          c.setAttribute("aria-hidden", "true");
-          c.innerHTML = `<b>${pad2(i + 1)}</b><i></i><em>/ ${pad2(chapterSecs.length)}</em>`;
-          inner.prepend(c);
-          chapIO.observe(c);
-        });
-      }
   
       /* ---------- select -> tappable option cards (kept in sync with the real <select>) ---------- */
       const syncers = [];
@@ -416,6 +399,21 @@
         top.textContent = "↑";
         top.addEventListener("click", () => window.scrollTo({ top: 0, behavior: calm ? "auto" : "smooth" }));
         footerEl.append(top);
+      }
+  
+      /* ---------- menu footer: school name + email ---------- */
+      const navEl = document.getElementById("main-nav");
+      const mailEl = document.querySelector(".footer-email");
+      if (navEl && mailEl && !navEl.querySelector(".mv-nav-foot")) {
+        const f = document.createElement("div");
+        f.className = "mv-nav-foot";
+        const p = document.createElement("p");
+        p.textContent = "Онлайн-школа програмування";
+        const a = document.createElement("a");
+        a.href = mailEl.getAttribute("href");
+        a.textContent = mailEl.textContent.trim();
+        f.append(p, a);
+        navEl.append(f);
       }
   
       /* ---------- scroll handler ---------- */
