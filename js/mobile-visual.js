@@ -403,7 +403,7 @@
   
       /* ---------- menu footer: school name + email ---------- */
       const navEl = document.getElementById("main-nav");
-      const mailEl = document.querySelector(".footer-email");
+      const mailEl = document.querySelector(".sf-email");
       if (navEl && mailEl && !navEl.querySelector(".mv-nav-foot")) {
         const f = document.createElement("div");
         f.className = "mv-nav-foot";

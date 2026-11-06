@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto:wght@400;500&family=Roboto+Mono:wght@400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/mobile.css">
   <link rel="stylesheet" href="css/mobile-visual.css">
 </head>
@@ -16,20 +17,7 @@
     <span class="cursor-ring"></span>
     <span class="cursor-dot"></span>
   </div>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="#" class="logo-link" aria-label="ITYes — на головну">
-        <img src="images/logo.svg" width="48" height="48" alt="ITYes">
-      </a>
-      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="main-nav">Меню</button>
-      <nav id="main-nav" class="main-nav" aria-label="Головна навігація">
-        <a href="courses.html">Курси</a>
-        <a href="prices.html">Ціни</a>
-        <a href="faq.html">FAQ</a>
-              </nav>
-      <a href="apply.html" class="btn btn-orange header-cta">Записатися</a>
-    </div>
-  </header>
+  <div data-include="header"></div>
 
   <main>
     <section class="hero">
@@ -512,7 +500,7 @@
         </header>
 
         <div class="offers-grid">
-          <article class="offer-card offer-card--cyan reveal">
+          <article class="offer-card offer-card--cyan offer-slide" data-side="left">
             <p class="offer-label">Early Bird</p>
             <div class="offer-body">
               <h3 class="offer-name">Реєстрація заздалегідь</h3>
@@ -542,7 +530,7 @@
             <a href="prices.html" class="offer-cta">Перейти до розрахунку</a>
           </article>
 
-          <article class="offer-card offer-card--cyan reveal">
+          <article class="offer-card offer-card--cyan offer-slide" data-side="right">
             <p class="offer-label">Family</p>
             <div class="offer-body">
               <h3 class="offer-name">Навчайтеся разом</h3>
@@ -551,7 +539,7 @@
             </div>
           </article>
 
-          <article class="offer-card offer-card--cyan reveal">
+          <article class="offer-card offer-card--cyan offer-slide" data-side="left">
             <p class="offer-label">Referral</p>
             <div class="offer-body">
               <h3 class="offer-name">Приведи друга</h3>
@@ -560,7 +548,7 @@
             </div>
           </article>
 
-          <article class="offer-card offer-card--cyan reveal">
+          <article class="offer-card offer-card--cyan offer-slide" data-side="right">
             <p class="offer-label">Combo</p>
             <div class="offer-body">
               <h3 class="offer-name">Розвивай своє навчання</h3>
@@ -608,49 +596,7 @@
     </section>
   </main>
   
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <a href="#" class="footer-logo" aria-label="ITYes — на головну">
-        <img src="images/logo.svg" width="76" height="76" alt="ITYes">
-      </a>
-  
-      <p class="footer-brand">Онлайн-школа програмування</p>
-  
-      <div class="footer-legal">
-        <a href="#">Політика конфіденційності</a>
-        <span>© 2026 ITYes</span>
-        <a href="#">Договір оферти</a>
-      </div>
-  
-      <nav class="footer-nav" aria-label="Навігація у футері">
-        <h3 class="footer-heading">Навігація</h3>
-        <ul class="footer-links">
-          <li><a href="courses.html">Курси</a></li>
-          <li><a href="prices.html">Ціни</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-        </ul>
-      </nav>
-  
-      <div class="footer-contacts">
-        <h3 class="footer-heading">Контакти</h3>
-        <a href="mailto:hello@ityes.ua" class="footer-email">hello@ityes.ua</a>
-        <div class="footer-social">
-          <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
-              <rect x="3" y="3" width="18" height="18" rx="5"/>
-              <circle cx="12" cy="12" r="4"/>
-              <circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/>
-            </svg>
-          </a>
-          <a href="https://t.me/" target="_blank" rel="noopener" aria-label="Telegram">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M21.5 3.3 2.9 10.5c-1 .4-1 1.2-.2 1.4l4.7 1.5 1.8 5.5c.2.6.4.8.8.8s.6-.2.9-.5l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.700c.3-1.200-.5-1.800-1.200-1.400ZM8.800 13.200l9.600-6c.5-.3.9-.1.5.2l-7.800 7-.3 3.300-2-4.500Z"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-    </div>
-  </footer>
+  <div data-include="footer"></div>
   
 
   <script type="module" src="js/site.js"></script>

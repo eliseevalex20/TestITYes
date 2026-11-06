@@ -1,3 +1,6 @@
+// Header and footer live in js/layout.js (single place to edit them)
+import "./layout.js";
+
 /* ===== navigation.js ===== */
 (() => {
   const toggle = document.querySelector(".nav-toggle");
@@ -600,4 +603,20 @@ if (!calm && finePointer && items.length) {
     start();
   });
 }
+})();
+
+
+/* ===== offers-slide.js ===== */
+(() => {
+// Offer cards on the sides slide in together from the screen edges
+const grid = document.querySelector(".offers-grid");
+if (!grid) return;
+const cards = [...grid.querySelectorAll(".offer-slide")];
+if (!cards.length) return;
+const io = new IntersectionObserver(([e]) => {
+  if (!e.isIntersecting) return;
+  cards.forEach((c) => c.classList.add("is-in"));
+  io.disconnect();
+}, { threshold: 0.2, rootMargin: "0px 0px -8% 0px" });
+io.observe(grid);
 })();
