@@ -2,9 +2,9 @@
    Scales the whole course page down (it was oversized). */
 
 /* ---------- shared type ---------- */
-.cx-label { font-size: .75rem; margin-bottom: 30px; }
+.cx-label { font-size: .75rem; margin-bottom: 20px; }
 .cx-title {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   font-size: clamp(1.5rem, 2.9vw, 2.25rem);
   line-height: 1.18; letter-spacing: .1em;
 }
@@ -52,6 +52,9 @@
 .cx-acc-chev { width: 9px; height: 9px; }
 .cx-acc-panel ul { gap: 7px; padding-block: 12px 14px; font-size: .8125rem; }
 .cx-lesson-num { flex-basis: 22px; }
+.cx-acc-item.is-open { border-color: var(--cyan); }
+.cx-acc-item.is-open .cx-acc-num { color: var(--cyan); }
+.cx-acc-item.is-open ul { border-top:  1px solid var(--border); }
 
 /* ---------- Desktop spacing (scoped so the mobile rules in site.css still win) ---------- */
 @media (min-width: 961px) {
@@ -113,8 +116,8 @@
    
    .ct-hero .editor-body {
      padding: clamp(24px, 2.5vw, 56px) 0;
-     font-size: clamp(1rem, 1.13vw, 1.4rem);
-     line-height: 3.7;
+     font-size: clamp(1rem, 1.5vw, 1.8rem);
+     line-height: 2.4;
    }
    .ct-hero .line-numbers {
      padding: 0 clamp(20px, 2.3vw, 48px) 0 clamp(24px, 4.6vw, 96px);
@@ -125,7 +128,7 @@
    .ct-hero .line-numbers span, .ct-code li { font-size: inherit; line-height: inherit; white-space: nowrap; }
    .ct-code a { color: rgba(244, 244, 245, .92); transition: color .2s ease; }
    .ct-code a:hover { color: var(--cyan); }
-   .ct-code .is-active a { color: var(--cyan); }
+   .ct-code .is-active a {font-size: clamp(1.2rem, 1.6vw, 1.9rem); line-height: 2.2; color: var(--cyan); }
    
    .ct-hero .editor-status { gap: 55px; padding: 10px 34px; font-size: .75rem; letter-spacing: .06em; }
    

@@ -77,8 +77,8 @@
     transition: border-color .2s ease, box-shadow .2s ease;
   }
   .ap-field input::placeholder, .ap-field textarea::placeholder { color: rgba(244, 244, 245, .45); }
-  .ap-field input:focus, .ap-field textarea:focus, .ap-select select:focus { outline: none; border-color: var(--cyan); }
-  .ap-field input:focus, .ap-select select:focus { box-shadow: 0 1px 0 var(--cyan); }
+  .ap-field input:focus, .ap-field textarea:focus, .ap-select select:focus { outline: none; border-color: var(--orange); }
+  .ap-field input:focus, .ap-select select:focus { box-shadow: 0 1px 0 var(--orange); }
   
   .ap-select { position: relative; }
   .ap-select select { appearance: none; -webkit-appearance: none; padding-right: calc(52 * var(--au)); cursor: pointer; }

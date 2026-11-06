@@ -70,13 +70,11 @@ img {
 
 .logo-link {
   flex-shrink: 0;
-  filter: drop-shadow(0 0 12px rgba(0, 229, 255, 0.35));
   transition: filter 0.3s ease, transform 0.3s ease;
 }
 
 .logo-link:hover {
   transform: translateY(-1px);
-  filter: drop-shadow(0 0 16px rgba(0, 229, 255, 0.55));
 }
 
 .logo-link img {
@@ -144,10 +142,9 @@ img {
 
 .btn-orange {
   background: var(--orange);
-  color: #F4F4F5;
+  color: #121212;
   box-shadow: 4px 4px 50px 1px rgba(255, 92, 0, 0.3);
   border-radius: 5px;
-  border: 1px solid #F4F4F5;
 }
 
 .btn-orange:hover {
@@ -272,7 +269,7 @@ img {
   font-size: 0.875rem;
   color: var(--text);
   margin-bottom: 20px;
-  margin: 0 0 30px;
+  margin: 0 0 20px;
 }
 
 .hero-label-dot {
@@ -287,7 +284,7 @@ img {
   font-weight: 800;
   font-size: clamp(2rem, 4vw, 3rem);
   line-height: 1;
-  margin: 0 0 30px;
+  margin: 0 0 20px;
   letter-spacing: 0.2em;
 }
 
@@ -299,7 +296,7 @@ img {
   font-family: "Montserrat", sans-serif;
   font-size: 1.0625rem;
   max-width: 520px;
-  margin: 0 0 30px;
+  margin: 0 0 20px;
   color: #F4F4F5;
 }
 
@@ -312,11 +309,10 @@ img {
 .btn-primary-hero {
   font-weight: 500;
   background: var(--orange);
-  color: #F4F4F5;
+  color: #121212;
   padding: 7px 30px;
   box-shadow: 4px 4px 50px 1px rgba(255, 92, 0, 0.3);
   border-radius: 5px;
-  border: 1px solid #F4F4F5;
 }
 
 .btn-primary-hero:hover {
@@ -360,7 +356,7 @@ img {
   align-items: center;
   gap: 8px;
   padding: 14px 16px;
-  border-bottom: 1px solid var(--border);
+  border: 1px solid #f4f4f5;
 }
 
 .editor-dot {
@@ -371,6 +367,7 @@ img {
 }
 
 .editor-body {
+  border: 1px solid #f4f4f5;
   display: flex;
   font-family: "Roboto Mono", "Consolas", monospace;
   font-size: 0.8125rem;
@@ -528,7 +525,7 @@ img {
   gap: 8px;
   font-size: 0.8125rem;
   color: #F4F4F5;
-  margin: 0 0 30px;
+  margin: 0 0 20px;
 }
 
 .why-kicker-dot {
@@ -543,7 +540,7 @@ img {
   font-size: clamp(2rem, 4vw, 3rem);
   line-height: 1;
   letter-spacing: 0.2em;
-  margin: 0 0 30px;
+  margin: 0 0 20px;
 }
 
 .why-title .accent {
@@ -651,7 +648,7 @@ img {
   font-size: 0.8125rem;
   letter-spacing: 0.1em;
   color: #f4f4f5;
-  margin: 0 0 30px;
+  margin: 0 0 20px;
 }
 
 .courses-kicker-dot {
@@ -668,7 +665,7 @@ img {
   line-height: 1;
   letter-spacing: 0.2em;
   color: #f4f4f5;
-  margin: 0 0 30px;
+  margin: 0 0 20px;
 }
 
 .courses-title .accent {
@@ -860,10 +857,9 @@ img {
   align-items: center;
   justify-content: center;
   padding: 10px 16px;
-  border: 1px solid #F4F4F5;
   border-radius: 5px;
   background: var(--card-accent);
-  color: #F4F4F5;
+  color: #121212;
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   font-size: 0.8125rem;
@@ -900,7 +896,7 @@ img {
   font-size: 0.8125rem;
   letter-spacing: 0.1em;
   color: #f4f4f5;
-  margin: 0 0 30px;
+  margin: 0 0 20px;
 }
 
 .path-kicker-dot {
@@ -1061,7 +1057,7 @@ img {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin: 0 0 30px;
+  margin: 0 0 20px;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 0.8125rem;
@@ -1078,7 +1074,7 @@ img {
 
 .audience-title,
 .offers-title {
-  margin: 0 0 30px;
+  margin: 0 0 20px;
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: clamp(1.7rem, 4vw, 2.5rem);
@@ -2278,7 +2274,7 @@ html {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    margin: 0 0 30px;
+    margin: 0 0 20px;
     font-family: "Roboto", sans-serif;
     font-size: 0.8125rem;
     color: var(--text);
@@ -2292,7 +2288,7 @@ html {
   }
   
   .result-title {
-    margin: 0 0 30px;
+    margin: 0 0 20px;
     font-family: "Montserrat", sans-serif;
     font-weight: 700;
     font-size: clamp(1.7rem, 4vw, 2.5rem);
@@ -2423,7 +2419,6 @@ html {
   
   .footer-logo {
     grid-area: logo;
-    filter: drop-shadow(0 0 12px rgba(0, 229, 255, 0.35));
   }
   
   .footer-logo img {
@@ -3254,7 +3249,7 @@ html {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin: 0 0 30px;
+  margin: 0 0 20px;
   font-size: 0.8125rem;
   color: rgba(244, 244, 245, 0.85);
 }
@@ -3266,7 +3261,7 @@ html {
 }
 
 .about-title {
-  margin: 0 0 30px;
+  margin: 0 0 20px;
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: clamp(1.5rem, 3.6vw, 2.75rem);
@@ -3550,7 +3545,7 @@ html {
   border-bottom: 0;
 }
 .offer-card--featured .offer-rules h3 {
-  margin: 0 0 30px;
+  margin: 0 0 20px;
   font-size: 1.15rem;
   font-weight: 400;
   color: var(--orange);
@@ -3582,7 +3577,7 @@ html {
   margin: 0;
   padding: 5px 10px;
   background: var(--orange);
-  color: #fff;
+  color: #121212;
   border-radius: 6px;
   font-size: 0.8125rem;
   white-space: nowrap;
@@ -3646,7 +3641,7 @@ html {
 .path--figma-head .path-header { margin-bottom: 60px; }
 .path--figma-head .path-kicker {
   flex-direction: row-reverse; justify-content: flex-start; gap: 15px;
-  margin: 0 0 30px;
+  margin: 0 0 20px;
   font-size: 1rem; line-height: 30px; letter-spacing: .1em; color: #fff;
 }
 .path--figma-head .path-title {

@@ -23,13 +23,13 @@
    
    /* ---------- Text column ---------- */
    .ct-deadline {
-     margin: 0 0 14px;
+     margin: 0 0 15px;
      font-family: "Montserrat", sans-serif; font-weight: 400;
      font-size: clamp(.9375rem, 1.3vw, 1.125rem); letter-spacing: .08em;
      color: var(--orange);
    }
-   .ct-hero .hero-title { font-size: clamp(1.75rem, 3.6vw, 3rem); margin-bottom: 24px; }
-   .ct-hero .hero-subtitle { max-width: 460px; margin-bottom: 28px; }
+   .ct-hero .hero-title { font-size: clamp(1.75rem, 3.6vw, 3rem); margin-bottom: 20px; }
+   .ct-hero .hero-subtitle { max-width: 460px; margin-bottom: 20px; }
    
    /* ---------- Editor window with the course list ---------- */
    .ct-hero .editor-titlebar { gap: 17px; padding: 19px 49px; border-bottom: 1px solid #f4f4f5; }
@@ -96,13 +96,13 @@
    .fq-head { margin-bottom: calc(60 * var(--vu)); text-align: right; }
    .fq-head--left { text-align: left; margin-bottom: 0; }
    .fq-kicker {
-     display: inline-flex; align-items: center; gap: 15px; margin: 0 0 30px;
+     display: inline-flex; align-items: center; gap: 15px; margin: 0 0 20px;
      font-family: "Roboto", sans-serif; font-weight: 400; font-size: 1rem; line-height: 30px;
      letter-spacing: .1em; color: #f4f4f5;
    }
    .fq-dot { width: 10px; height: 10px; background: var(--cyan); flex-shrink: 0; }
    .fq-title {
-     margin: 0 0 30px;
+     margin: 0 0 20px;
      font-family: "Montserrat", sans-serif; font-weight: 800;
      font-size: clamp(2rem, 3.23vw, 4rem); line-height: .94; letter-spacing: .2em;
    }
@@ -164,7 +164,7 @@
    
    /* ===== Contact ===== */
    .fq-contact { padding: calc(168 * var(--vu)) 0 calc(92 * var(--vu)); background: var(--page-bg); }
-   .fq-contact .fq-sub { margin-left: calc(10 * var(--vu)); font-size: max(15px, calc(23 * var(--vu))); line-height: calc(40 * var(--vu)); }
+   .fq-contact .fq-sub { font-size: max(15px, calc(23 * var(--vu))); line-height: calc(40 * var(--vu)); }
    .fq-ways { display: grid; grid-template-columns: 1fr 1fr; gap: calc(60 * var(--vu)); margin-top: calc(59 * var(--vu)); }
    .fq-way { display: flex; flex-direction: column; align-items: center; gap: calc(64 * var(--vu)); }
    .fq-way-box {

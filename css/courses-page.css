@@ -45,8 +45,8 @@ html { background: var(--page-bg); }
 
 .ct-hero .editor-body {
   padding: clamp(24px, 2.5vw, 56px) 0;
-  font-size: clamp(1rem, 1.13vw, 1.4rem);
-  line-height: 3.7;
+  font-size: clamp(1rem, 1.5vw, 1.8rem);
+  line-height: 2.4;
 }
 .ct-hero .line-numbers { padding: 0 clamp(20px, 2.3vw, 48px) 0 clamp(24px, 4.6vw, 96px); color: rgba(244,244,245,.35); }
 .ct-hero .line-numbers span, .ct-code li { font-size: inherit; line-height: inherit; white-space: nowrap; }
@@ -69,12 +69,12 @@ html { background: var(--page-bg); }
   .ct-inner { width: calc(100% - 2 * var(--gutter)); margin-inline: auto; }
   .ct-head { text-align: right; margin-bottom: 50px; }
   .ct-kicker {
-    display: inline-flex; align-items: center; gap: 8px; margin: 0 0 30px;
+    display: inline-flex; align-items: center; gap: 8px; margin: 0 0 20px;
     font-size: .8125rem;
   }
   .ct-kicker-dot { width: 10px; height: 10px; background: var(--cyan); }
   .ct-title {
-    margin: 0 0 30px;
+    margin: 0 0 20px;
     font-family: "Montserrat", sans-serif; font-weight: 700;
     font-size: clamp(1.75rem, 4.4vw, 3.25rem);
     line-height: 1.15; letter-spacing: .16em;
@@ -169,8 +169,7 @@ html { background: var(--page-bg); }
   .ct-price span { display: block; margin-bottom: 4px; font-size: .8125rem; }
   .ct-btn {
     padding: 6px 16px;
-    background: var(--orange); color: #f4f4f5;
-    border: 1px solid #f4f4f5;
+    background: var(--orange); color: #121212;
     font-family: "Montserrat", sans-serif; font-weight: 500; font-size: .875rem;
     box-shadow: 4px 4px 50px 1px rgba(255, 92, 0, .3);
     transition: transform .2s ease, box-shadow .2s ease;
@@ -194,6 +193,7 @@ html { background: var(--page-bg); }
     padding: 8px 16px;
     background: #1a1a1e;
     border: 1px solid var(--cyan); border-top: none; border-right: none;
+    border-radius: 0 5px 0 5px;
     font-family: "Montserrat", sans-serif; font-weight: 300; font-size: .8125rem;
     color: var(--cyan);
   }
