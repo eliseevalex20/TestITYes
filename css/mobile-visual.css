@@ -447,7 +447,7 @@
     font-family: "Roboto", sans-serif; font-weight: 300; letter-spacing: .1em; color: rgba(244, 244, 245, .4);
   }
   .offers-grid .offer-body {
-    display: grid; grid-template-columns: 1fr auto; column-gap: 14px; align-items: center;
+    display: grid; grid-template-columns: 1fr auto; column-gap: 14px;
     padding: 14px 14px 12px;
   }
   .offers-grid .offer-name {
@@ -705,3 +705,390 @@
   }
   .main-nav .mv-nav-foot a::before, .main-nav .mv-nav-foot a::after { content: none; }
 }
+
+/* ====================================================================
+   v10 — ЗАМЕНИТЬ блок v9 в конце mobile-visual.css на этот
+   no ticker · no burger · no hero-benefits · bottom nav (5 tabs) ·
+   section indicator strip · lesson timeline · calmer text
+   ==================================================================== */
+
+   .mv-bar { display: none; }
+   .mv-ticker { display: none !important; }
+   
+   @media (max-width: 960px) {
+     :root { --mv-bar: 56px; }
+   
+     /* ================= HEADER: logo only (navigation lives in the bottom bar) ================= */
+     .nav-toggle, .main-nav, .header-cta.btn { display: none !important; }
+     .header-inner { justify-content: center; }
+     .site-header { position: relative !important; }
+   
+     /* ================= HERO: no benefits strip ================= */
+     html .hero ul.hero-benefits, html .ct-hero ul.hero-benefits { display: none !important; }
+     .hero > .container, .hero > .ct-hero-inner { padding-bottom: 36px; }
+   
+     /* ================= BOTTOM NAV ================= */
+     .mv-cta { display: none !important; }
+     html.mv-has-bar body { padding-bottom: calc(var(--mv-bar) + env(safe-area-inset-bottom, 0px)); }
+     html.mv-has-bar .site-footer { padding-bottom: 28px !important; }
+   
+     .mv-bar {
+       display: grid; grid-template-columns: repeat(5, 1fr);
+       position: fixed; left: 0; right: 0; bottom: 0; z-index: 85;
+       height: calc(var(--mv-bar) + env(safe-area-inset-bottom, 0px));
+       padding-bottom: env(safe-area-inset-bottom, 0px);
+       background: rgba(18, 18, 20, .95);
+       -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+       border-top: 1px solid rgba(244, 244, 245, .22);
+       box-shadow: 0 -10px 30px rgba(0, 0, 0, .45);
+       transition: transform .35s cubic-bezier(.22, 1, .36, 1);
+     }
+     .mv-bar::before {
+       content: ""; position: absolute; left: 0; right: 0; top: -1px; height: 1px;
+       background: linear-gradient(90deg, var(--cyan), var(--orange)); opacity: .7;
+     }
+     .mv-bar.is-hidden { transform: translateY(120%); }
+   
+     .mv-tab {
+       position: relative; overflow: hidden;
+       display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px;
+       font-family: "Montserrat", sans-serif; font-size: .5625rem; font-weight: 500;
+       letter-spacing: .08em; text-transform: uppercase; white-space: nowrap;
+       color: rgba(244, 244, 245, .6);
+       transition: color .25s ease, background .25s ease;
+     }
+     .mv-tab svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+     .mv-tab:active { background: rgba(0, 229, 255, .1); }
+     .mv-tab.is-current { color: var(--cyan); }
+     .mv-tab.is-current::before {
+       content: ""; position: absolute; top: 0; left: 26%; right: 26%; height: 2px;
+       background: var(--cyan); box-shadow: 0 0 10px rgba(0, 229, 255, .8);
+     }
+   
+     /* centre button: raised square, sits above the bar */
+     .mv-tab--cta { overflow: visible; justify-content: flex-end; padding-bottom: 8px; gap: 6px; color: var(--orange); }
+     .mv-tab--cta:active { background: none; }
+     .mv-tab--cta.is-current::before { display: none; }
+     .mv-cta-box {
+       display: grid; place-items: center; width: 54px; height: 54px; margin-top: -26px;
+       background: var(--orange); color: #121214; border: 1px solid #f4f4f5;
+       box-shadow: 0 0 26px rgba(255, 92, 0, .55);
+       transition: transform .2s ease, box-shadow .25s ease;
+     }
+     .mv-cta-box svg { width: 24px; height: 24px; stroke-width: 2; }
+     .mv-tab--cta:active .mv-cta-box { transform: scale(.94); }
+     .mv-tab--cta .mv-ripple { display: none; }
+   
+     /* calculator total must sit above the bar */
+     .pr-res-total { bottom: calc(var(--mv-bar) + env(safe-area-inset-bottom, 0px)) !important; }
+   
+     /* ================= COURSE PAGE: modules & lessons ================= */
+     .cx-acc-btn { align-items: flex-start; }
+     .cx-acc-text { font-size: .9375rem; line-height: 1.4; }
+     .cx-acc-chev { margin-top: 6px; }
+     .cx-acc-item.is-open { box-shadow: 0 0 22px rgba(0, 229, 255, .16) !important; }
+     .cx-acc-panel ul { gap: 0 !important; padding: 6px 16px 10px !important; }
+     .cx-acc-panel li {
+       align-items: flex-start; gap: 12px; padding: 11px 0;
+       border-bottom: 1px dashed rgba(244, 244, 245, .16); font-size: .875rem; line-height: 1.4;
+     }
+     .cx-acc-panel li:last-child { border-bottom: 0; }
+     .cx-lesson-num {
+       flex: 0 0 26px !important; height: 26px; display: grid; place-items: center;
+       border: 1px solid rgba(0, 229, 255, .45); font-size: .6875rem; color: var(--cyan);
+     }
+   
+     /* ================= LESS WALL-OF-TEXT ================= */
+     .pr-lead { color: rgba(244, 244, 245, .88); }
+     .why-card-text, .audience-card-text, .about-note p { color: rgba(244, 244, 245, .8); }
+     .fq-btn, .cx-acc-btn { min-height: 56px; }
+   }
+   
+   @media (prefers-reduced-motion: reduce) {
+     .mv-bar { transition: none !important; }
+   }
+   
+   
+   /* ====================================================================
+      SIZE TUNING (everything a bit smaller) + one-card-at-a-time sliders
+      ==================================================================== */
+   @media (max-width: 960px) {
+     :root { --gutter: 16px; --header-height: 56px; --mv-bar: 56px; }
+     html { font-size: 14px; }                       /* every rem on the site scales by 12.5% */
+     .logo-link img { width: 34px; height: 34px; }
+   
+     /* sections */
+     .about, .why, .courses, .path, .audience, .offers, .result, .ct-courses,
+     .cx-road, .cx-prog, .fq-sec, .fq-contact, .pr-sec, #family { padding-block: 40px; }
+     .why-header, .about-header, .courses-header, .path-header, .path--figma-head .path-header,
+     .audience-header, .offers-header, .result-header, .ct-head, .cx-head, .fq-head, .pr-head { margin-bottom: 22px; }
+     .hero > .container, .hero > .ct-hero-inner { padding: 28px 0 30px; }
+   
+     /* type */
+     .hero-title, .ct-hero .hero-title { font-size: clamp(1.5rem, 6.6vw, 2rem); margin-bottom: 14px; }
+     .why-title, .courses-title, .about-title, .audience-title, .offers-title, .result-title,
+     .ct-title, .cx-title, .fq-title, .pr-title, .path-title, .path--figma-head .path-title {
+       font-size: clamp(1.3rem, 5.6vw, 1.75rem); margin-bottom: 12px;
+     }
+     .pr-offer { font-size: clamp(1.5rem, 7vw, 2rem); margin-bottom: 12px; }
+     .result-cta-title { font-size: 1.4rem; }
+     .ap-title { font-size: clamp(1.5rem, 6.6vw, 2rem); }
+     .why-card-text, .audience-card-text, .about-note p, .about-intro p, .course-desc, .pr-lead, .pr-note,
+     .hero-subtitle { letter-spacing: .01em; }
+   
+     /* sliders: one card per swipe */
+     .why-grid, .audience-grid, .about-side, .courses-grid {
+       scroll-snap-type: x mandatory; overscroll-behavior-x: contain;
+     }
+     .why-grid > *, .audience-grid > *, .about-side > *, .courses-grid > * {
+       scroll-snap-align: start; scroll-snap-stop: always;
+     }
+     .why-grid .why-card { flex-basis: 78%; min-height: 0; padding: 16px; }
+     .why-grid .why-card::before { font-size: 5rem; }
+     .why-grid .why-card-icon { width: 48px; }
+     .audience-grid .audience-card { flex-basis: 72%; min-height: 120px; padding: 16px; }
+     .audience-grid .audience-card::after { font-size: 3.75rem; }
+     .about-side .about-note { flex-basis: 80%; min-height: 0; padding: 14px; }
+     .about-intro { padding: 16px; }
+     .about-stat-num { font-size: clamp(2.25rem, 12vw, 3.25rem); }
+     .about-stat-body { padding: 16px 8px 10px; }
+   
+     /* course cards (home) */
+     .courses-grid .course-card { flex-basis: min(80%, 300px); padding: 20px 16px 16px; }
+     .courses-grid .course-name { font-size: 1.45rem; }
+     .courses-grid .course-meta { margin: 2px -16px 18px; }
+     .courses-grid .course-meta > div { padding: 10px 4px; }
+     .courses-grid .course-meta dd { font-size: .8125rem; }
+     .courses-grid .course-meta dt, .courses-grid .course-tags li, .courses-grid .course-badge { font-size: .75rem; }
+     .courses-grid .course-btn { min-height: 44px; }
+   
+     /* offers */
+     .offers-grid .offer-body { padding: 12px; }
+     .offers-grid .offer-value { font-size: 1.4rem; }
+     .offers-grid .offer-value span, .offers-grid .offer-note, .offers-grid .offer-card--cyan .offer-label { font-size: .75rem; }
+   
+     /* buttons / forms */
+     .hero-actions .btn, .hero-content > .btn, .btn-primary-hero, .btn-ghost { min-height: 46px; font-size: .9375rem; }
+     .mv-wiz-nav button { min-height: 48px; }
+     .ap-submit { height: 50px; }
+     .ap-form { padding: 18px 14px 20px; }
+     .fq-btn, .cx-acc-btn { min-height: 50px; }
+     .fq-way-btn { height: 48px; }
+     .fq-social a { height: 64px; font-size: .75rem; }
+     .mv-steps-label span { font-size: .75rem; }
+     .mv-calc-h { font-size: .8125rem; }
+   
+     /* footer */
+     .site-footer.sf .sf-inner, .sf-inner { padding: 32px 0 20px; }
+     .sf-soc { height: 64px; font-size: .75rem; }
+     .sf-links a { min-height: 46px; }
+   
+     /* bottom bar: slimmer */
+     .mv-tab { font-size: 9px; gap: 4px; letter-spacing: .06em; }
+     .mv-tab svg { width: 20px; height: 20px; }
+     .mv-tab--cta { padding-bottom: 6px; gap: 5px; }
+     .mv-cta-box { width: 46px; height: 46px; margin-top: -22px; }
+     .mv-cta-box svg { width: 22px; height: 22px; }
+   }
+   
+   /* ====================================================================
+      pr-note hidden on mobile · home offers = tabs + one big coupon
+      ==================================================================== */
+   .mv-otabs { display: none; }
+   
+   @media (max-width: 960px) {
+     .pr-note { display: none; }
+   
+     .mv-otabs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-bottom: 14px; }
+     .mv-otabs button {
+       min-height: 40px; padding: 0 4px; border-radius: 0; cursor: pointer;
+       background: #121214; color: rgba(244, 244, 245, .75); border: 1px solid rgba(0, 229, 255, .4);
+       font-family: "Montserrat", sans-serif; font-size: .75rem; font-weight: 500; white-space: nowrap;
+       transition: background .25s ease, color .25s ease, border-color .25s ease, box-shadow .25s ease;
+     }
+     .mv-otabs button[aria-selected="true"] {
+       background: var(--cyan); color: #0d0d0f; border-color: var(--cyan); box-shadow: 0 0 16px rgba(0, 229, 255, .45);
+     }
+   
+     .offers-grid { display: flex; flex-direction: column; gap: 16px; }
+     .offers-grid .offer-card--featured { order: 1; }
+     .offers-grid .mv-otabs { order: 2; margin: 0; }
+     .offers-grid .offer-card--cyan { order: 3; display: none; }
+     .offers-grid .offer-card--cyan.mv-o-on {
+       display: flex; overflow: hidden;
+       background: radial-gradient(240px 160px at 100% 0%, rgba(255, 92, 0, .18), transparent 70%), #121214;
+       border: 1px solid rgba(0, 229, 255, .6);
+       animation: mv-o-in .35s ease;
+     }
+     @keyframes mv-o-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+   
+     .offers-grid .offer-card--cyan .offer-label { display: none; }     /* the active tab already names it */
+     .offers-grid .offer-body { display: flex; flex-direction: column; flex: 1; padding: 22px 18px 18px; }
+     .offers-grid .offer-name {
+       display: block; order: 1; margin: 0 0 16px; text-align: left;
+       font-size: .9375rem; line-height: 1.3; letter-spacing: .04em; color: rgba(244, 244, 245, .8);
+     }
+     .offers-grid .offer-old { order: 2; margin: 0 0 2px; text-align: left; font-size: .8125rem; }
+     .offers-grid .offer-value {
+       order: 3; margin: 0 0 18px; text-align: left; white-space: nowrap;
+       font-size: 2.5rem; line-height: 1; font-weight: 600; color: var(--orange);
+       text-shadow: 0 0 24px rgba(255, 92, 0, .4);
+     }
+     .offers-grid .offer-value span {
+       display: block; margin-top: 8px; font-size: .875rem; font-weight: 400; letter-spacing: .03em;
+       color: rgba(244, 244, 245, .8); text-shadow: none; white-space: normal;
+     }
+     .offers-grid .offer-note {
+       order: 4; margin: auto 0 0; padding-top: 12px; border-top: 1px dashed rgba(0, 229, 255, .4);
+       text-align: left; font-size: .8125rem; line-height: 1.45; letter-spacing: .02em; color: var(--cyan);
+     }
+     .offer-card--orange.offer-card--featured { margin-bottom: 30px; }
+   }
+   @media (prefers-reduced-motion: reduce) { .offers-grid .offer-card--cyan.mv-o-on { animation: none; } }
+   
+   
+   /* ====================================================================
+      SPACING PASS — tighter margins and paddings everywhere
+      ==================================================================== */
+   @media (max-width: 960px) {
+     /* sections */
+     .about, .why, .courses, .path, .audience, .offers, .result, .ct-courses,
+     .cx-road, .cx-prog, .fq-sec, .fq-contact, .pr-sec, #family { padding-block: 30px; }
+     .ct-cta { padding-block: 0 30px; }
+     .why-header, .about-header, .courses-header, .path-header, .path--figma-head .path-header,
+     .audience-header, .offers-header, .result-header, .ct-head, .cx-head, .fq-head, .pr-head { margin-bottom: 16px; }
+     .why-kicker, .courses-kicker, .path-kicker, .audience-kicker, .offers-kicker, .result-kicker,
+     .about-kicker, .ct-kicker, .pr-kicker, .cx-label, .fq-kicker { margin-bottom: 10px; }
+     .why-title, .courses-title, .about-title, .audience-title, .offers-title, .result-title,
+     .ct-title, .cx-title, .fq-title, .pr-title { margin-bottom: 8px; }
+   
+     /* hero */
+     .hero > .container, .hero > .ct-hero-inner { padding: 20px 0 24px; }
+     .hero-label { margin-bottom: 12px; }
+     .ct-deadline { margin-bottom: 10px; }
+     .hero-title, .ct-hero .hero-title { margin-bottom: 14px; }
+     .hero-actions { gap: 10px; margin-top: 4px; }
+     .hero-content > .btn { margin-top: 4px; }
+   
+     /* sliders */
+     .why-grid, .audience-grid, .about-side { gap: 10px; padding: 4px var(--gutter) 10px; }
+     .courses-grid { gap: 10px; padding: 4px var(--gutter) 10px; }
+     .mv-dots { margin: 0; }
+     .why-grid .why-card { padding: 14px; }
+     .audience-grid .audience-card { min-height: 96px; padding: 14px; }
+     .about-side .about-note { padding: 12px; }
+     .about-grid { row-gap: 10px; }
+     .about-stats { gap: 10px; }
+     .about-intro { padding: 14px; }
+     .about-stat-body { padding: 14px 8px 8px; }
+   
+     /* home course cards */
+     .courses-grid .course-card { padding: 18px 14px 14px; }
+     .courses-grid .course-label { margin-bottom: 12px; }
+     .courses-grid .course-desc { margin-bottom: 12px; }
+     .courses-grid .course-tags { margin-bottom: 14px; }
+     .courses-grid .course-meta { margin: 0 -14px 14px; }
+     .courses-grid .course-footer { gap: 12px; }
+   
+     /* timelines */
+     .path-flow, .cx-road-flow { row-gap: 10px; }
+     .path--figma .path-box, .cx-road-box { height: 58px; min-height: 58px; padding: 0 12px; }
+     .path--figma .path-step, .cx-road-step { padding-left: 44px; }
+     .path--figma .path-num, .cx-road-num { width: 32px; height: 32px; font-size: .875rem; }
+     .path--figma .path-step:not(:last-child)::before, .cx-road-step:not(:last-child)::before {
+       left: 15px; top: 45px; bottom: -23px;
+     }
+   
+     /* offers */
+     .offers-grid { gap: 12px; }
+     .offer-card--orange.offer-card--featured { margin-bottom: 22px; }
+     .offer-featured-top, .offer-featured-price { padding: 10px 14px; }
+     .offers-grid .offer-card--featured .offer-rules { padding: 14px 14px 36px; }
+     .offers-grid .offer-card--featured .offer-rules h3 { margin-bottom: 10px; }
+     .offers-grid .offer-card--featured .offer-rules ul { gap: 10px; }
+     .mv-otabs { gap: 5px; }
+     .mv-otabs button { min-height: 38px; }
+     .offers-grid .offer-body { padding: 16px 14px 14px; }
+     .offers-grid .offer-name { margin-bottom: 10px; }
+     .offers-grid .offer-value { font-size: 2.25rem; margin-bottom: 12px; }
+     .offers-grid .offer-value span { margin-top: 6px; }
+     .offers-grid .offer-note { padding-top: 10px; }
+   
+     /* result */
+     .result-flow { row-gap: 8px !important; margin-bottom: 24px; }
+     .result-box { padding: 10px 12px 10px 10px; gap: 12px; min-height: 0; }
+     .result-box::before { flex-basis: 32px; width: 32px !important; height: 32px !important; }
+     .result-cta, .result-cta-actions { gap: 12px; }
+   
+     /* FAQ */
+     .fq-acc { gap: 8px; }
+     .fq-panel p { padding: 10px 14px 12px; }
+     .fq-grid { gap: 18px; }
+     .fq-ways { gap: 12px; margin-top: 16px; }
+     .fq-way { gap: 12px; padding: 12px; }
+     .fq-way-btn, .fq-social { margin-top: 0; }
+   
+     /* course page */
+     .cx-prog-grid { gap: 16px; }
+     .cx-prog-card { padding: 18px 14px; }
+     .cx-acc { gap: 8px; }
+     .cx-acc-btn { padding: 10px 12px; gap: 10px; }
+     .cx-acc-panel ul { padding: 2px 12px 6px !important; }
+     .cx-acc-panel li { padding: 8px 0; }
+   
+     /* courses page */
+     .ct-list { gap: 20px; }
+     .ct-name { padding-top: 16px; }
+     .ct-card:has(.ct-badge) .ct-name { padding-top: 40px; }
+     .ct-for { margin-top: 6px; }
+     .ct-tags { padding-top: 12px; padding-bottom: 14px; }
+     .ct-name, .ct-for, .ct-tags, .ct-meta { padding-inline: 14px; }
+     .ct-meta { padding-block: 12px; gap: 8px; }
+     .ct-foot { gap: 12px; padding: 12px 14px 14px; }
+   
+     /* prices */
+     .pr-split, .pr-split--eb, .pr-split--fam, .pr-split--ref, .pr-split--combo { gap: 18px; }
+     .pr-spots { column-gap: 8px; }
+     .pr-offer { margin-bottom: 8px; }
+     .pr-lead { margin-bottom: 10px; }
+     .pr-calc-sec { padding: 24px 0 40px; }
+     .pr-calc-intro { padding: 14px 14px 12px; }
+     .pr-calc-title { margin: 10px 0 6px; }
+     .pr-field label { margin-bottom: 8px; }
+     .mv-calc-h { margin-bottom: 10px; }
+     .mv-h2, .mv-h3 { padding: 12px 14px 8px; }
+     .pr-toggles { gap: 8px; padding: 0 14px 10px; }
+     .pr-toggles li { min-height: 56px; padding: 8px 12px; }
+     .pr-calc-foot { padding: 0 14px 12px; }
+     .pr-res-top { padding: 0 14px 8px; }
+     .pr-res-total { height: 56px; font-size: 1.6rem; }
+     .pr-res-row { min-height: 44px; padding: 0 14px; }
+     .mv-save { padding: 8px 14px; }
+     .pr-res-applied { padding: 12px 14px 14px; }
+     .pr-res-btn { margin-top: 14px; }
+     .pr-res-cta { padding: 4px 14px 20px; }
+     .mv-chips { gap: 8px; }
+     .mv-chip { min-height: 44px; padding: 8px 12px; }
+   
+     /* apply */
+     .page-apply .ap-intro { padding: 20px 16px 16px; }
+     .page-apply .ap-title { margin-bottom: 10px; }
+     .ap-form-sec { padding: 18px 16px 24px; }
+     .ap-form { padding: 16px 14px 18px; }
+     .ap-form .ap-field + .ap-field { margin-top: 16px; }
+     .ap-form .ap-field input[type="text"], .ap-form .ap-field input[type="email"],
+     .ap-form .ap-field input[type="tel"], .ap-form .ap-field textarea { padding: 11px 12px; }
+     .mv-steps { margin-bottom: 16px; }
+     .mv-wiz-nav { margin-top: 18px; }
+     .mv-wiz-nav.is-last { margin-top: 14px; }
+     .ap-consent { margin-top: 16px; }
+     .ap-submit { margin-top: 10px; }
+   
+     /* footer */
+     .sf-inner { padding: 26px 0 16px; }
+     .sf-top { gap: 12px; padding-bottom: 18px; }
+     .sf-cols { gap: 16px; padding: 18px 0 18px; }
+     .sf-heading { margin-bottom: 12px; }
+     .sf-bottom { padding-top: 14px; gap: 8px; }
+     html.mv-has-bar .site-footer { padding-bottom: 16px !important; }
+   }
