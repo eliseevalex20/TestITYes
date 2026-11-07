@@ -620,3 +620,19 @@ const io = new IntersectionObserver(([e]) => {
 }, { threshold: 0.2, rootMargin: "0px 0px -8% 0px" });
 io.observe(grid);
 })();
+
+/* ===== hero-fx — ДОБАВИТЬ В КОНЕЦ js/site.js ===== */
+(() => {
+  // Floating sparks in the first section of every page (hero; apply page: the left intro). All screen sizes.
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  document.querySelectorAll(".hero, .ap-intro").forEach((host) => {
+    if (host.querySelector(":scope > .mv-sparks")) return;
+    const sparks = document.createElement("div");
+    sparks.className = "mv-sparks";
+    sparks.setAttribute("aria-hidden", "true");
+    sparks.innerHTML = Array.from({ length: 14 }, (_, i) =>
+      `<i style="--x:${(i * 37 + 8) % 96}%;--d:${7 + (i % 5) * 2}s;--s:${(i * 0.8).toFixed(1)}s;--z:${3 + (i % 3) * 2}px"></i>`
+    ).join("");
+    host.prepend(sparks);
+  });
+  })();

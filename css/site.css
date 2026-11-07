@@ -3698,3 +3698,44 @@ ul.hero-benefits.hero-benefits--bar .hero-benefits-icon {
   .offer-slide[data-side]:not(.is-in) { transform: translateY(28px); }
   .offer-slide.is-in, .offer-slide[data-side="right"].is-in { animation-name: offer-slide-up; animation-duration: .8s; }
 }
+
+/* ===== hero-fx — ДОБАВИТЬ В КОНЕЦ css/site.css =====
+   Grid background + floating sparks on the first section of every page (hero; apply: the left intro).
+   Same look as on mobile. On mobile the existing rules in mobile-visual.css still apply. */
+
+   @keyframes hx-grid { to { background-position: 0 44px, 0 0; } }
+   @keyframes hx-rise {
+     0%   { transform: translateY(0) rotate(0); opacity: 0; }
+     15%  { opacity: .9; }
+     100% { transform: translateY(-95vh) rotate(200deg); opacity: 0; }
+   }
+   
+   .mv-sparks { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+   .mv-sparks i {
+     position: absolute; left: var(--x); bottom: -12px; width: var(--z); height: var(--z);
+     background: var(--cyan); box-shadow: 0 0 12px var(--cyan); opacity: 0;
+     animation: hx-rise var(--d) linear var(--s) infinite;
+   }
+   .mv-sparks i:nth-child(3n) { background: var(--orange); box-shadow: 0 0 12px var(--orange); }
+   
+   @media (min-width: 961px) {
+     /* grid ("клеточка") behind the content, fading out towards the bottom */
+     .hero::after, .ap-intro::after {
+       content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+       background-image:
+         linear-gradient(rgba(244, 244, 245, .05) 1px, transparent 1px),
+         linear-gradient(90deg, rgba(244, 244, 245, .05) 1px, transparent 1px);
+       background-size: 44px 44px;
+       -webkit-mask-image: linear-gradient(180deg, #000, transparent 90%);
+               mask-image: linear-gradient(180deg, #000, transparent 90%);
+       animation: hx-grid 14s linear infinite;
+     }
+     /* content stays above grid and sparks */
+     .hero > .container, .hero > .ct-hero-inner, .hero > ul { position: relative; z-index: 1; }
+     .ap-intro-inner { position: relative; z-index: 1; }
+   }
+   
+   @media (prefers-reduced-motion: reduce) {
+     .hero::after, .ap-intro::after, .mv-sparks i { animation: none !important; }
+     .mv-sparks { display: none; }
+   }
