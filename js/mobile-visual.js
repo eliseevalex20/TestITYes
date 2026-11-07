@@ -44,14 +44,7 @@
     document.addEventListener("pointerup", endTouch, { passive: true });
     document.addEventListener("pointercancel", endTouch, { passive: true });
 
-    /* ---------- floating sparks in the hero ---------- */
-    if (hero && !calm) {
-      const sparks = document.createElement("div");
-      sparks.className = "mv-sparks";
-      sparks.setAttribute("aria-hidden", "true");
-      sparks.innerHTML = Array.from({ length: 9 }, (_, i) => `<i style="--x:${(i * 37 + 8) % 96}%;--d:${6 + (i % 4) * 2}s;--s:${i * 0.9}s;--z:${3 + (i % 3) * 2}px"></i>`).join("");
-      hero.prepend(sparks);
-    }
+    /* sparks in the hero are created by site.js (all screen sizes) */
 
     /* ---------- tap ripple ---------- */
     if (!calm) {
@@ -160,6 +153,7 @@
         prices: '<circle cx="12" cy="12" r="9"/><path d="M14.5 9.2c-.6-.8-1.5-1.2-2.5-1.2-1.4 0-2.5.8-2.5 2s1 1.7 2.5 2 2.5.8 2.5 2-1.1 2-2.5 2c-1 0-2-.4-2.5-1.2M12 5.5V8M12 16v2.5"/>',
         faq: '<circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 .9-1 1.7M12 17h.01"/>',
         apply: '<path d="M4 20h4L19 9l-4-4L4 16v4zM13.5 6.5l4 4"/>',
+        arrow: '<path d="M5 12h14M13 6l6 6-6 6"/>',
       };
       const tab = (href, pages, label, icon) => {
         const cur = pages.includes(page);
@@ -168,10 +162,14 @@
       const tabbar = document.createElement("nav");
       tabbar.className = "mv-bar";
       tabbar.setAttribute("aria-label", "Навігація");
+      // CTA is the first (left) cell with an accent tile: browsers draw their own floating buttons (scroll-to-top etc.)
+      // at the bottom right / centre, so the left side always stays tappable.
+      // centre cell = raised "Записатися" button. It is WIDE (not a small square), so a browser's own
+      // floating scroll-to-top button can cover only a part of it; the rest stays tappable.
       tabbar.innerHTML =
         tab("index.html", ["index"], "Головна", ICON.home) +
         tab("courses.html", ["courses", "course"], "Курси", ICON.courses) +
-        `<a class="mv-tab mv-tab--cta${page === "apply" ? " is-current" : ""}" href="apply.html"><span class="mv-cta-box"><svg viewBox="0 0 24 24" aria-hidden="true">${ICON.apply}</svg></span><span>Заявка</span></a>` +
+        `<a class="mv-tab mv-tab--cta${page === "apply" ? " is-current" : ""}" href="apply.html"><span class="mv-cta-box"><svg viewBox="0 0 24 24" aria-hidden="true">${ICON.apply}</svg><span>Записатися</span></span></a>` +
         tab("prices.html", ["prices"], "Ціни", ICON.prices) +
         tab("faq.html", ["faq"], "FAQ", ICON.faq);
       document.body.append(tabbar);
