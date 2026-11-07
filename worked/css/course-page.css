@@ -1,0 +1,171 @@
+/* course-page.css — load AFTER site.css on course.html.
+   Scales the whole course page down (it was oversized). */
+
+/* ---------- shared type ---------- */
+.cx-label { font-size: .75rem; margin-bottom: 20px; }
+.cx-title {
+  margin-bottom: 20px;
+  font-size: clamp(1.5rem, 2.9vw, 2.25rem);
+  line-height: 1.18; letter-spacing: .1em;
+}
+.cx-sub { font-size: .9375rem; line-height: 1.6; }
+.cx-head { margin-bottom: 50px; }
+
+/* ---------- Hero ---------- */
+.cx-deadline { margin-bottom: 10px; font-size: clamp(.9375rem, 1.3vw, 1.125rem); }
+.cx-hero-title {
+  margin-bottom: 18px;
+  font-size: clamp(1.875rem, 3.6vw, 2.75rem);
+  line-height: 1.15; letter-spacing: .1em;
+}
+.cx-hero-sub { max-width: 420px; margin-bottom: 24px; font-size: 1rem; line-height: 1.6; }
+.cx-hero-btn { padding: 8px 22px; font-size: .9375rem; letter-spacing: .04em; }
+
+.cx-hero::before { width: 480px; height: 400px; }
+
+.cx-panel-bar { padding: 12px 20px; gap: 10px; }
+.cx-panel-list li { gap: 20px; font-size: 1rem; }
+.cx-panel-list span { flex-basis: 28px; font-size: .875rem; }
+.cx-panel-list .is-active { font-size: 1.25rem; }
+.cx-panel-list .is-active span { font-size: 1.25rem; }
+.cx-panel-status { padding: 9px 20px; gap: 24px; font-size: .5625rem; }
+
+.cx-float-label { font-size: .625rem; }
+.cx-float-value { font-size: 1.25rem; }
+.cx-float-line { width: 56px; height: 2px; margin-top: 6px; }
+.cx-float-small { font-size: .75rem; }
+
+.hero-benefits { padding-block: 14px; font-size: .875rem; }
+
+/* ---------- Roadmap ---------- */
+
+/* Roadmap boxes + number tabs: identical to .path--figma on index.html */
+.cx-road-flow { column-gap: 6px; }
+.cx-road-box {
+  min-height: clamp(104px, 6.6vw, 130px);
+  padding: 0 22px;
+  justify-content: center; align-items: center;
+  background: rgba(26, 26, 30, .8);
+  border: 1px solid #f4f4f5;
+  box-shadow: 4px 4px 50px 10px rgba(0, 0, 0, .1);
+}
+.cx-road-box p {
+  font-family: "Montserrat", sans-serif; font-weight: 400;
+  font-size: clamp(.8125rem, 1.01vw, 1.25rem);
+  line-height: 1; letter-spacing: .1em; text-align: left;
+}
+.cx-road-num {
+  width: 20px; height: 20px; right: -1px;
+  background: #f4f4f5; border: 1px solid #f4f4f5; color: #1a1a1e;
+  font-family: "Roboto", sans-serif; font-size: 16px; line-height: 1; letter-spacing: 0;
+}
+.cx-road-step.is-in .cx-road-num {
+  background: var(--cyan); border-color: var(--cyan); color: #121214;
+  box-shadow: 0 0 14px rgba(0, 229, 255, .7);
+}
+.cx-road-lines g:first-of-type path:nth-child(odd)  { stroke: #f4f4f5; }
+.cx-road-lines g:first-of-type path:nth-child(even) { fill: #f4f4f5; }
+@media (min-width: 961px) { .cx-road-flow { row-gap: 50px; } }
+
+/* ---------- Program ---------- */
+.cx-prog-card h3 { margin-bottom: 8px; font-size: clamp(1.125rem, 1.8vw, 1.5rem); }
+.cx-prog-card p { font-size: .8125rem; letter-spacing: .08em; }
+
+.cx-acc { gap: 12px; }
+.cx-acc-btn { gap: 16px; padding: 10px 18px; font-size: .9375rem; }
+.cx-acc-num { font-size: .875rem; }
+.cx-acc-chev { width: 9px; height: 9px; }
+.cx-acc-panel ul { gap: 7px; padding-block: 12px 14px; font-size: .8125rem; }
+.cx-lesson-num { flex-basis: 22px; }
+.cx-acc-item.is-open { border-color: var(--cyan); }
+.cx-acc-item.is-open .cx-acc-num { color: var(--cyan); }
+.cx-acc-item.is-open ul { border-top:  1px solid var(--border); }
+
+/* ---------- Desktop spacing (scoped so the mobile rules in site.css still win) ---------- */
+@media (min-width: 961px) {
+  .cx-hero-grid { min-height: 0; padding: 48px 0 64px; gap: 40px; }
+  .cx-panel-list { padding: 32px 30px 40px; gap: 20px; }
+  .cx-float--course { top: -26px; width: 180px; padding: 14px 20px 14px; }
+  .cx-float--price { bottom: -22px; left: -48px; padding: 12px 16px; }
+  .cx-road { padding: 80px 0; }
+  .cx-prog { padding: 80px 0; }
+  .cx-prog-grid { gap: 40px; }
+  .cx-prog-card { padding: 36px 20px; }
+  .cx-acc-panel ul { padding-left: 66px; }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 960px) {
+  .cx-hero-grid { padding: 32px 0 40px; gap: 28px; }
+  .cx-panel-list { padding: 24px 20px 28px; gap: 16px; }
+  .cx-road, .cx-prog { padding: 44px 0 52px; }
+  .cx-head { margin-bottom: 28px; }
+  .cx-road-box { min-height: 64px; }
+  .cx-prog-card { padding: 28px 16px; }
+  .cx-acc-btn { padding: 12px 14px; }
+}
+/* course-hero.css — put at the END of css/course-page.css (it must load after site.css).
+   Everything the new first screen of course.html needs, so it works even if the
+   shared .ct-hero rules were not moved into site.css. */
+
+   html { background: var(--page-bg); }
+
+   /* ---------- Layout: same container as the other pages, never clipped ---------- */
+   .ct-hero {
+     background: var(--page-bg);
+     height: auto;                                  /* content decides; no cut-off on short windows */
+     min-height: calc(100svh - var(--header-height));
+     max-height: none;
+     padding: 0;
+   }
+   .ct-hero > .ct-hero-inner {
+     flex: 1; display: flex; align-items: center;
+     width: calc(100% - 2 * var(--gutter)); margin-inline: auto;
+     padding-block: 64px 56px;                      /* room for the cards that hang out of the window */
+   }
+   .ct-hero .hero-content, .ct-hero .hero-visual { padding-inline: 0; }
+   
+   /* ---------- Text column ---------- */
+   .ct-deadline {
+     margin: 0 0 15px;
+     font-family: "Montserrat", sans-serif; font-weight: 400;
+     font-size: clamp(.9375rem, 1.3vw, 1.125rem); letter-spacing: .08em;
+     color: var(--orange);
+   }
+   .ct-hero .hero-title { font-size: clamp(1.75rem, 3.6vw, 3rem); margin-bottom: 30px; }
+   .ct-hero .hero-subtitle { max-width: 460px; margin-bottom: 30px; }
+   
+   /* ---------- Editor window with the course list ---------- */
+   .ct-hero .editor-titlebar { gap: 17px; padding: 19px 49px; border-bottom: 1px solid #f4f4f5; }
+   .ct-hero .editor-dot { width: 8px; height: 8px; background: transparent; border: 1px solid #f4f4f5; }
+   
+   .ct-hero .editor-body {
+     padding: clamp(24px, 2.5vw, 56px) 0;
+     font-size: clamp(1rem, 1.5vw, 1.8rem);
+     line-height: 2.4;
+   }
+   .ct-hero .line-numbers {
+     padding: 0 clamp(20px, 2.3vw, 48px) 0 clamp(24px, 4.6vw, 96px);
+     color: rgba(244, 244, 245, .35);
+   }
+   .ct-code { list-style: none !important; margin: 0; padding: 0; }   /* removes the "1." "2." "3." markers */
+   .ct-code li { list-style: none; }
+   .ct-hero .line-numbers span, .ct-code li { font-size: inherit; line-height: inherit; white-space: nowrap; }
+   .ct-code a { color: rgba(244, 244, 245, .92); transition: color .2s ease; }
+   .ct-code a:hover { color: var(--cyan); }
+   .ct-code .is-active a {font-size: clamp(1.2rem, 1.6vw, 1.9rem); line-height: 2.2; color: var(--cyan); }
+   
+   .ct-hero .editor-status { gap: 55px; padding: 10px 34px; font-size: .75rem; letter-spacing: .06em; }
+   
+   /* ---------- Floating cards ---------- */
+   @media (min-width: 961px) {
+     .ct-hero .hero-visual { padding-left: calc(12.5vw - var(--gutter)); }
+     .ct-hero .float-card--progress { top: -31px; right: -20px; }
+     .ct-hero .float-card--feedback { left: 3vw; bottom: -26px; }
+   }
+   
+   /* ---------- Phone / tablet ---------- */
+   @media (max-width: 960px) {
+     .ct-hero > .ct-hero-inner { padding-block: 32px 24px; }
+     .ct-hero .hero-visual { padding-left: 0; }
+   }

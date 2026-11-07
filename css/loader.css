@@ -1,0 +1,177 @@
+/* loader.css — заменяет старый css/loader.css целиком.
+   Разметка в index.html остаётся ТА ЖЕ (ничего менять в HTML не нужно).
+   Идея: загрузчик = то же окно редактора, что и в hero. Код «печатается»,
+   сканирующая линия идёт сверху вниз, прогресс-бар заливается cyan → orange,
+   потом экран «уезжает» вверх. */
+
+   @property --ld-a { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
+
+   /* пока загрузчик в DOM — страница не скроллится */
+   html:has(.ityes-loader) { overflow: hidden; }
+   /* если загрузчик уже был в этой сессии (inline-скрипт в <head>) — не мигаем им вообще */
+   html.no-loader .ityes-loader { display: none; }
+   
+   .ityes-loader {
+     position: fixed; inset: 0; z-index: 10000;
+     display: flex; align-items: center; justify-content: center;
+     overflow: hidden;
+     background: #0d0d0f; color: #f4f4f5;
+     clip-path: inset(0 0 0 0);
+     transition: clip-path .75s cubic-bezier(.77, 0, .18, 1);
+   }
+   .ityes-loader.is-leaving { clip-path: inset(0 0 100% 0); pointer-events: none; }
+   
+   /* свечение по углам */
+   .ityes-loader::before {
+     content: ""; position: absolute; inset: 0; pointer-events: none;
+     background:
+       radial-gradient(520px 380px at 85% 8%, rgba(0, 229, 255, .12), transparent 70%),
+       radial-gradient(460px 360px at 10% 95%, rgba(255, 92, 0, .10), transparent 70%);
+   }
+   /* клеточка, как в hero */
+   .ityes-loader::after {
+     content: ""; position: absolute; inset: 0; pointer-events: none;
+     background-image:
+       linear-gradient(rgba(244, 244, 245, .05) 1px, transparent 1px),
+       linear-gradient(90deg, rgba(244, 244, 245, .05) 1px, transparent 1px);
+     background-size: 44px 44px;
+     -webkit-mask-image: radial-gradient(ellipse at center, #000, transparent 75%);
+             mask-image: radial-gradient(ellipse at center, #000, transparent 75%);
+     animation: ld-grid 14s linear infinite;
+   }
+   @keyframes ld-grid { to { background-position: 0 44px, 0 0; } }
+   
+   .ityes-loader .mv-sparks { z-index: 0; }
+   
+   .ityes-loader__content {
+     position: relative; z-index: 1;
+     width: min(88%, 430px);
+     display: flex; flex-direction: column; align-items: center; gap: 26px;
+     text-align: center;
+     transition: opacity .35s ease, transform .5s ease;
+   }
+   .ityes-loader.is-leaving .ityes-loader__content { opacity: 0; transform: translateY(-14px) scale(.98); }
+   
+   /* ---------- бренд ---------- */
+   .ityes-loader__brand { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+   
+   .ityes-loader__logo-wrap { position: relative; display: grid; place-items: center; width: 70px; height: 70px; }
+   .ityes-loader__logo-wrap img { position: relative; z-index: 1; width: 70px; height: 70px; border-radius: 4px; }
+   /* бегущий по рамке огонёк */
+   .ityes-loader__orbit {
+     position: absolute; inset: -9px; pointer-events: none;
+     border-radius: 6px; padding: 1px;
+     background: conic-gradient(from var(--ld-a), transparent 0 70%, rgba(0, 229, 255, .15) 80%, #00e5ff 96%, transparent 100%);
+     -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+     -webkit-mask-composite: xor;
+             mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+     filter: drop-shadow(0 0 6px rgba(0, 229, 255, .8));
+     animation: ld-spin 2.6s linear infinite;
+   }
+   @keyframes ld-spin { to { --ld-a: 360deg; } }
+   
+   .ityes-loader__wordmark {
+     font-family: "Montserrat", sans-serif; font-weight: 800;
+     font-size: 1.75rem; line-height: 1; letter-spacing: .2em; padding-left: .2em;
+   }
+   .ityes-loader__wordmark span { color: #00e5ff; }
+   
+   /* ---------- окно редактора ---------- */
+   .ityes-loader__visual {
+     position: relative; width: 100%; overflow: hidden; text-align: left;
+     background: #16161a; border: 1px solid #f4f4f5;
+     box-shadow: 4px 4px 120px 6px rgba(0, 229, 255, .28);
+   }
+   /* заголовок окна с тремя кружками */
+   .ityes-loader__visual::before {
+     content: ""; display: block; height: 30px; border-bottom: 1px solid rgba(244, 244, 245, .6);
+     background:
+       radial-gradient(circle at 18px 50%, transparent 3px, #f4f4f5 3.5px 4.5px, transparent 5px),
+       radial-gradient(circle at 36px 50%, transparent 3px, #f4f4f5 3.5px 4.5px, transparent 5px),
+       radial-gradient(circle at 54px 50%, transparent 3px, #f4f4f5 3.5px 4.5px, transparent 5px);
+   }
+   /* статус-бар */
+   .ityes-loader__visual::after {
+     content: "UTF-8          PYTHON 3.12"; display: block; white-space: pre;
+     padding: 3px 14px; text-align: right;
+     background: #00e5ff; color: #0d0d0f;
+     font-family: "Roboto", sans-serif; font-size: .6875rem; letter-spacing: .04em;
+   }
+   
+   .ityes-loader__code {
+     padding: 16px 16px 18px 0;
+     font-family: "Roboto Mono", Consolas, monospace; font-size: .8125rem; line-height: 1.95;
+     color: rgba(244, 244, 245, .88);
+   }
+   .ityes-loader__code > div {
+     white-space: nowrap; overflow: hidden;
+     clip-path: inset(0 100% 0 0);
+     animation: ld-type 1s steps(26, end) forwards;
+   }
+   .ityes-loader__code > div:nth-child(1) { animation-delay: .25s; }
+   .ityes-loader__code > div:nth-child(2) { animation-delay: 1.15s; animation-duration: .6s; }
+   .ityes-loader__code > div:nth-child(3) { animation-delay: 1.85s; animation-duration: .7s; }
+   .ityes-loader__code > div:nth-child(4) { animation-delay: 2.65s; animation-duration: .2s; }
+   @keyframes ld-type { to { clip-path: inset(0 0 0 0); } }
+   
+   .ityes-loader__code i {
+     display: inline-block; width: 3.2em; padding-right: 1.2em; text-align: right;
+     font-style: normal; color: rgba(244, 244, 245, .35);
+   }
+   .code-purple { color: #bd93f9; }
+   .code-blue   { color: #00e5ff; }
+   .code-orange { color: #ffb86c; }
+   .code-green  { color: #7ee787; }
+   
+   /* луч-сканер */
+   .ityes-loader__scan {
+     position: absolute; left: 0; right: 0; top: 30px; height: 2px; pointer-events: none;
+     background: linear-gradient(90deg, transparent, #00e5ff 50%, transparent);
+     box-shadow: 0 0 16px 2px rgba(0, 229, 255, .65);
+     animation: ld-scan 2.4s ease-in-out infinite;
+   }
+   @keyframes ld-scan {
+     0%, 100% { top: 30px; opacity: 0; }
+     10%, 90% { opacity: 1; }
+     100%     { top: calc(100% - 22px); }
+   }
+   
+   /* ---------- текст + прогресс ---------- */
+   .ityes-loader__message {
+     margin: 0; font-family: "Montserrat", sans-serif; font-weight: 400;
+     font-size: .9375rem; letter-spacing: .06em;
+   }
+   .ityes-loader__dots b { display: inline-block; color: #ff5c00; animation: ld-dot 1.2s infinite; }
+   .ityes-loader__dots b:nth-child(2) { animation-delay: .2s; }
+   .ityes-loader__dots b:nth-child(3) { animation-delay: .4s; }
+   @keyframes ld-dot { 0%, 60%, 100% { opacity: .2; transform: none; } 30% { opacity: 1; transform: translateY(-3px); } }
+   
+   .ityes-loader__progress {
+     width: 100%; height: 4px; margin-top: -8px;
+     background: rgba(244, 244, 245, .14); overflow: hidden;
+   }
+   .ityes-loader__progress span {
+     display: block; width: 100%; height: 100%;
+     transform-origin: left; transform: scaleX(var(--p, 0));
+     background: linear-gradient(90deg, #00e5ff, #ff5c00);
+     box-shadow: 0 0 12px rgba(0, 229, 255, .7);
+   }
+   
+   .ityes-loader__caption {
+     margin-top: -6px;
+     font-family: "Roboto", sans-serif; font-size: .75rem; letter-spacing: .3em; color: rgba(244, 244, 245, .45);
+   }
+   .ityes-loader__caption i { font-style: normal; color: #ff5c00; margin: 0 .4em; }
+   
+   @media (max-width: 600px) {
+     .ityes-loader__content { gap: 22px; }
+     .ityes-loader__code { font-size: .75rem; }
+     .ityes-loader__code i { width: 2.6em; padding-right: .8em; }
+   }
+   
+   @media (prefers-reduced-motion: reduce) {
+     .ityes-loader::after, .ityes-loader__orbit, .ityes-loader__scan, .ityes-loader__dots b { animation: none !important; }
+     .ityes-loader__code > div { animation: none; clip-path: none; }
+     .ityes-loader, .ityes-loader__content { transition: opacity .3s ease; }
+     .ityes-loader.is-leaving { clip-path: none; opacity: 0; }
+   }

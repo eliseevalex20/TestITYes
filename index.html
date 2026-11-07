@@ -11,8 +11,67 @@
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/mobile.css">
   <link rel="stylesheet" href="css/mobile-visual.css">
+  <link rel="stylesheet" href="css/loader.css">
 </head>
 <body>
+  
+  <div class="ityes-loader" id="ityes-loader"
+  role="status" aria-label="Завантаження ITYes">
+
+  <div class="ityes-loader__content">
+
+  <div class="ityes-loader__brand">
+
+  <span class="ityes-loader__logo-wrap">
+    <img src="images/logo.svg" alt="" width="70" height="70">
+    <span class="ityes-loader__orbit"></span>
+  </span>
+
+  <span class="ityes-loader__wordmark">
+    IT<span>Yes</span>
+  </span>
+
+  </div>
+
+  <div class="ityes-loader__visual">
+
+  <div class="ityes-loader__code">
+
+    <div><i>01</i><span class="code-purple">const</span>
+      <span class="code-blue">ideas</span> =
+      <span class="code-orange">new</span>
+      <span class="code-green">Possibilities</span>();</div>
+
+    <div><i>02</i><span class="code-purple">while</span> (learning) {</div>
+
+    <div><i>03</i>&nbsp;&nbsp;build<span class="code-orange">.project</span>();</div>
+
+    <div><i>04</i>}</div>
+
+  </div>
+
+  <span class="ityes-loader__scan"></span>
+
+  </div>
+
+  <p class="ityes-loader__message">
+  Готуємо простір для твоїх ідей
+  <span class="ityes-loader__dots">
+    <b>.</b><b>.</b><b>.</b>
+  </span>
+  </p>
+
+  <div class="ityes-loader__progress">
+  <span></span>
+  </div>
+
+  <span class="ityes-loader__caption">
+  LEARN <i>·</i> BUILD <i>·</i> CREATE
+  </span>
+
+  </div>
+  </div>
+
   <div class="cursor" aria-hidden="true">
     <span class="cursor-ring"></span>
     <span class="cursor-dot"></span>
@@ -598,7 +657,7 @@
   
   <div data-include="footer"></div>
   
-
+  <script type="module" src="js/loader.js"></script>
   <script type="module" src="js/site.js"></script>
   <script type="module" src="js/mobile-visual.js"></script>
 </body>
