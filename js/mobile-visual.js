@@ -230,10 +230,6 @@
         save: document.getElementById("r-saving"),
         inst: document.getElementById("r-inst"),
       };
-      const sbar = document.createElement("div");
-      sbar.className = "mv-save";
-      sbar.innerHTML = `<span>Знижка</span><div class="mv-track"><i></i></div><b>0%</b>`;
-      el.tot.after(sbar);
 
       const fmt = (n) => Math.round(n).toLocaleString("uk-UA").replace(/ /g, " ");
       const parse = (node) => {

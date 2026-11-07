@@ -1,0 +1,120 @@
+/* calc-mobile.css — калькулятор на мобильной версии (<= 960px).
+   Подключать в prices.html ПОСЛЕДНИМ, после css/mobile-visual.css.
+   Десктоп не затрагивается. Разметка и prices.js / mobile-visual.js остаются как есть. */
+
+   .mv-calc-bar { display: none; }
+
+   @media (max-width: 960px) {
+   
+     .pr-calc-sec { padding: 24px 0 40px; }
+   
+     /* ================= карточка ================= */
+     .pr-calc-sec .pr-calc {
+       width: calc(100% - 2 * var(--gutter));
+       background: #16161a;
+       border: 1px solid var(--cyan);
+       box-shadow: 0 0 28px rgba(0, 229, 255, .14) !important;
+     }
+   
+     /* ================= заголовок ================= */
+     .pr-calc-sec .pr-calc-intro { min-height: 0; padding: 18px 16px 4px; background: none; }
+     .pr-calc-sec .pr-calc-intro .pr-kicker { font-size: .75rem; letter-spacing: .14em; }
+     .pr-calc-sec .pr-calc-title { margin: 12px 0 20px; font-size: 1.3rem; line-height: 1.25; letter-spacing: .04em; }
+     .pr-calc-sec .pr-calc-title .accent { display: inline; }
+   
+     /* ================= шаги ================= */
+     .pr-calc-sec .mv-calc-h {
+       display: flex; align-items: center; gap: 10px; margin: 0; padding: 0;
+       font-family: "Montserrat", sans-serif; font-size: .75rem; font-weight: 600;
+       letter-spacing: .14em; text-transform: uppercase; color: #f4f4f5;
+     }
+     .pr-calc-sec .mv-calc-h b {
+       display: grid; place-items: center; width: 24px; height: 24px;
+       border: 1px solid var(--cyan); color: var(--cyan);
+       font-family: "Roboto", sans-serif; font-size: .75rem; font-weight: 500; letter-spacing: 0;
+     }
+     .pr-calc-sec .pr-calc-intro .mv-calc-h { margin-bottom: 14px; }
+     .pr-calc-sec .mv-h2, .pr-calc-sec .mv-h3 {
+       padding: 20px 16px 14px; border-top: 1px solid rgba(244, 244, 245, .18); background: none;
+     }
+     .pr-calc-sec .mv-h3 { margin-top: 6px; border-top-color: var(--cyan); background: #0f0f11; }
+   
+     /* ================= 1. курс ================= */
+     .pr-calc-sec .pr-field { margin: 0 0 14px; width: 100%; }
+     .pr-calc-sec .pr-field label { display: none; }
+     .pr-calc-sec .mv-chips--col { gap: 8px; }
+     .pr-calc-sec .mv-chip { min-height: 46px; padding: 0 14px; font-size: .9375rem; }
+   
+     /* ================= 2. пропозиції ================= */
+     .pr-calc-sec .pr-toggles { gap: 8px; margin: 0; padding: 0 16px 6px; background: none; }
+     .pr-calc-sec .pr-toggles li { min-height: 56px; padding: 8px 12px 8px 14px; }
+     .pr-calc-sec .pr-toggles li > span:first-child { font-size: .9375rem; }
+     .pr-calc-sec .pr-switch { width: 54px; height: 30px; }
+     .pr-calc-sec .pr-switch i { left: 4px; width: 20px; height: 20px; }
+     .pr-calc-sec .pr-switch.is-on i { left: calc(100% - 24px); }
+     .pr-calc-sec .pr-calc-foot {
+       padding: 4px 16px 18px; background: none; text-align: left;
+       font-size: .75rem; line-height: 1.5; color: rgba(244, 244, 245, .55);
+     }
+   
+     /* ================= 3. розрахунок ================= */
+     .pr-calc-sec .pr-res-top {
+       display: flex; flex-direction: column; align-items: stretch; justify-content: flex-start; gap: 12px; min-height: 0;
+       padding: 0 16px 16px; background: #0f0f11; border: 0;
+     }
+     .pr-calc-sec .pr-res-old { margin: 0; text-align: right; font-size: .875rem; line-height: 1.3; }
+     .pr-calc-sec .pr-res-old span { float: left; font-size: .875rem; }
+     .pr-calc-sec .pr-res-top .pr-res-applied {
+       order: 0; display: flex; align-items: center; justify-content: space-between; gap: 12px;
+       flex: none; padding: 0; background: none;
+     }
+     .pr-calc-sec .pr-res-applied > p { margin: 0; font-size: .875rem; line-height: 1.3; color: rgba(244, 244, 245, .7); }
+     .pr-calc-sec .pr-res-applied li { min-height: 30px; padding: 0 12px; font-size: .8125rem; }
+   
+     .pr-calc-sec .pr-res-total {
+       position: relative !important; bottom: auto !important; z-index: 1;
+       display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 6px;
+       height: auto; padding: 18px 16px 20px;
+       border-block: 1px solid rgba(255, 92, 0, .7); box-shadow: none;
+       background: radial-gradient(280px 120px at 100% 100%, rgba(255, 92, 0, .22), transparent 70%), #0f0f11;
+       font-size: 2.25rem; font-weight: 300; line-height: 1;
+     }
+     .pr-calc-sec .pr-res-total::before {
+       font-size: .6875rem; letter-spacing: .14em; text-transform: uppercase; color: rgba(244, 244, 245, .6);
+     }
+   
+     .pr-calc-sec .pr-res-row {
+       min-height: 46px; padding: 0 16px; background: #0f0f11;
+       border-top: 1px dashed rgba(244, 244, 245, .16);
+       font-size: .875rem; color: rgba(244, 244, 245, .75);
+     }
+     .pr-calc-sec .pr-res-row strong { font-size: 1rem; font-weight: 500; color: var(--cyan); }
+     .pr-calc-sec .pr-res-row:has(#r-saving) { order: 9; }
+     .pr-calc-sec .pr-res-row:has(#r-inst)   { order: 10; }
+   
+     .pr-calc-sec .pr-res-cta { order: 11; padding: 14px 16px 18px; background: #0f0f11; }
+     .pr-calc-sec .pr-res-btn { width: 100%; min-height: 50px; margin: 0; font-size: .9375rem; }
+   
+     /* ================= мини-плашка с итогом (видна, пока основной итог за экраном) ================= */
+     .mv-calc-bar {
+       position: fixed; left: 0; right: 0; z-index: 84;
+       bottom: calc(var(--mv-bar, 56px) + env(safe-area-inset-bottom, 0px));
+       display: flex; align-items: center; justify-content: space-between; gap: 12px;
+       padding: 10px 16px;
+       background: rgba(15, 15, 17, .96); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+       border-top: 1px solid var(--orange); box-shadow: 0 -10px 26px rgba(0, 0, 0, .5);
+       opacity: 0; visibility: hidden; transform: translateY(12px);
+       transition: opacity .25s ease, transform .3s cubic-bezier(.22, 1, .36, 1), visibility 0s linear .3s;
+     }
+     .mv-calc-bar.is-on { opacity: 1; visibility: visible; transform: none; transition-delay: 0s; }
+     .mv-calc-bar-sum { display: grid; gap: 2px; min-width: 0; }
+     .mv-calc-bar-sum small { font-size: .625rem; letter-spacing: .14em; text-transform: uppercase; color: rgba(244, 244, 245, .6); }
+     .mv-calc-bar-sum b { font-family: "Montserrat", sans-serif; font-weight: 400; font-size: 1.25rem; line-height: 1.1; color: var(--orange); white-space: nowrap; }
+     .mv-calc-bar-tag {
+       flex: none; padding: 6px 12px; border: 1px solid var(--cyan); color: var(--cyan);
+       font-family: "Montserrat", sans-serif; font-size: .75rem;
+     }
+     .mv-calc-bar-tag:empty, .mv-calc-bar-tag.is-none { display: none; }
+   }
+   
+   @media (prefers-reduced-motion: reduce) { .mv-calc-bar { transition: none; } }

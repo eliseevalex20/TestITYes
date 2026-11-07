@@ -260,18 +260,6 @@
   .pr-res-total.mv-pop { animation: mv-pop .5s cubic-bezier(.22, 1, .36, 1); }
   @keyframes mv-pop { 0% { transform: scale(.94); } 60% { transform: scale(1.04); } 100% { transform: scale(1); } }
 
-  .mv-save {
-    order: 5; display: flex; align-items: center; gap: 12px; padding: 12px 16px;
-    background: #121214; border-bottom: 1px solid #f4f4f5;
-    font-family: "Montserrat", sans-serif; font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; color: rgba(244, 244, 245, .7);
-  }
-  .mv-track { flex: 1; height: 6px; background: rgba(244, 244, 245, .14); overflow: hidden; }
-  .mv-track i {
-    display: block; height: 100%; width: var(--pct, 0%);
-    background: linear-gradient(90deg, var(--cyan), var(--orange)); box-shadow: 0 0 10px rgba(0, 229, 255, .7);
-    transition: width .8s cubic-bezier(.22, 1, .36, 1);
-  }
-  .mv-save b { min-width: 3ch; text-align: right; font-weight: 600; font-size: .875rem; color: var(--cyan); }
   .pr-res-row:nth-of-type(2), .pr-res-row:nth-of-type(3) { transition: background .3s ease; }
   .pr-res-row strong { color: var(--cyan); }
 
@@ -395,7 +383,6 @@
   .mv-h3 { order: 5; }
   .pr-res-top { order: 6; }
   .pr-res-total { order: 7; }
-  .mv-save { order: 8; }
   .pr-res-row:nth-of-type(2) { order: 9; }
   .pr-res-row:nth-of-type(3) { order: 10; }
   .pr-res-applied { order: 11; }
@@ -447,7 +434,7 @@
     font-family: "Roboto", sans-serif; font-weight: 300; letter-spacing: .1em; color: rgba(244, 244, 245, .4);
   }
   .offers-grid .offer-body {
-    display: grid; grid-template-columns: 1fr auto; column-gap: 14px; align-items: center;
+    display: grid; grid-template-columns: 1fr auto; column-gap: 14px;
     padding: 14px 14px 12px;
   }
   .offers-grid .offer-name {
@@ -1062,7 +1049,6 @@
      .pr-res-top { padding:0 18px 10px; }
      .pr-res-total { height: 56px; font-size: 1.6rem; }
      .pr-res-row { min-height: 44px; padding:0 18px; }
-     .mv-save { padding:10px 18px; }
      .pr-res-applied { padding:15px 18px 18px; }
      .pr-res-btn { margin-top:18px; }
      .pr-res-cta { padding:5px 18px 25px; }

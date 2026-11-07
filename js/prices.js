@@ -72,13 +72,21 @@ function calc() {
     : `<li class="is-none">Без пропозицій</li>`;
 }
 
-switches.forEach((s) =>
+switches.forEach((s) => {
   s.addEventListener("click", () => {
-    const on = s.classList.toggle("is-on");
-    s.setAttribute("aria-checked", String(on));
+    const shouldTurnOn = !s.classList.contains("is-on");
+
+    // Активной может быть только одна пропозиция.
+    switches.forEach((item) => {
+      const active = shouldTurnOn && item === s;
+
+      item.classList.toggle("is-on", active);
+      item.setAttribute("aria-checked", String(active));
+    });
+
     calc();
-  })
-);
+  });
+});
 select.addEventListener("change", calc);
 calc();
 
